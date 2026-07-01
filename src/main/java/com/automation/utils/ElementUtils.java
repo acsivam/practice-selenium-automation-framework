@@ -78,5 +78,10 @@ public class ElementUtils {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
     
+    public void uploadFile(By locator, String filePath) {
+    	WebElement e = waitForPresence(locator);
+    	e.sendKeys(filePath);
+    }
+    
 
 }
