@@ -46,7 +46,7 @@ public class ContactUsPage extends BasePage{
 	private By messageSubmitted		= By.xpath("//div[@class='status alert alert-success']");
 	private By homeButton			= By.xpath("//span[normalize-space()='Home']");
 	
-	public boolean isContactUsDisplyed() {
+	public boolean isContactUsHeadingDisplyed() {
 		return eleUtil.isDisplayed(contactUsHeading);
 	}
 	
@@ -107,7 +107,12 @@ public class ContactUsPage extends BasePage{
 		return new HomePage(driver);
 	}
 	
-	public void submitMessage(String name, String email, String subject, String message, String filePath) {
+	public void submitMessage(
+			String name, 
+			String email, 
+			String subject, 
+			String message, 
+			String filePath) {
 		enterName(name);
 		enterEmail(email);
 		enterSubject(subject);
@@ -136,7 +141,7 @@ public class ContactUsPage extends BasePage{
 		return eleUtil.isDisplayed(feedbackEmail);
 	}
 	
-	public String getFeedbackEMal() {
+	public String getFeedbackEmaill() {
 		return eleUtil.getText(emailField);
 	}
 	
