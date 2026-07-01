@@ -1,11 +1,13 @@
 package com.automation.utils;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -48,6 +50,16 @@ public class ElementUtils {
 		return getElement(locator).getText();
 	}
 	
+	public List<String>  getElementsText(By locator) {
+		List<String>  textList = new ArrayList<>();
+		
+		for(WebElement element : getElements(locator)) {
+			textList.add(element.getText());
+		}
+		
+		return textList;
+	}
+	
 	// 6. Is displayed
 	public boolean isDisplayed(By locator) {
 		return getElement(locator).isDisplayed();
@@ -87,6 +99,11 @@ public class ElementUtils {
     public void selectByVisibleText(By locator, String value) {
         Select select = new Select(driver.findElement(locator));
         select.selectByVisibleText(value);
+    }
+    
+    public void moveToElement(By locator) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(getElement(locator)).perform();
     }
 
 }

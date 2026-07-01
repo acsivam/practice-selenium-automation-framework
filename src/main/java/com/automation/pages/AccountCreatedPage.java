@@ -11,6 +11,7 @@ public class AccountCreatedPage extends BasePage{
 	
 	public AccountCreatedPage(WebDriver driver) {
 		super(driver);
+		this.eleUtil = new ElementUtils(driver);
 	}
 	
 	private By accountCreatedHeading 	= By.xpath("//b[normalize-space()='Account Created!']");

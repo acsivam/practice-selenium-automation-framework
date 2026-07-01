@@ -11,6 +11,7 @@ public class LoginPage extends BasePage{
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
+		this.eleUtil = new ElementUtils(driver);
 	}
 	
 	private By loginHeading		= By.xpath("//h2[normalize-space()='Login to your account']");
