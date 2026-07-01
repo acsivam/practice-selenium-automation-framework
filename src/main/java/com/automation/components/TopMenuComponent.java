@@ -3,6 +3,8 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.pages.LoginPage;
+
 public class TopMenuComponent {
 
 	private WebDriver driver;
@@ -19,6 +21,7 @@ public class TopMenuComponent {
 	private By apiTestingMenu		= By.xpath("//a[normalize-space()='API Testing']");
 	private By videoTutorialsMenu	= By.xpath("//a[normalize-space()='Video Tutorials']");
 	private By contactUsMenu		= By.xpath("//a[normalize-space()='Contact us']");
+	private By logoutMenu			= By.xpath("//a[normalize-space()='Logout']");
 	
 	
 	public void goToHomePage() {
@@ -51,5 +54,9 @@ public class TopMenuComponent {
 	
 	public void goToContactUsPage() {
 		driver.findElement(contactUsMenu).click();
+	}
+	
+	public LoginPage logout() {
+		return new LoginPage(driver);
 	}
 }
