@@ -3,6 +3,7 @@ package com.automation.tests;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.automation.base.BaseTest;
 import com.automation.components.TopMenuComponent;
@@ -17,29 +18,29 @@ public class TC01_RegisterUser extends BaseTest{
 
 	@Test
 	public void verifyRegisterUser() {
-		System.out.println(">>> SET UP RUNNING");
+		SoftAssert softAssert = new SoftAssert();
 	
 		HomePage homePage = new HomePage(driver);
 		String title = homePage.getPageTitle();
-		Assert.assertEquals(title, "Automation Exercise");
+		//Assert.assertEquals(title, "Automation Exercise"); //hard assert
+		softAssert.assertEquals(title, "Automation Exercise");
 		
 		LoginPage loginPage = homePage.topMenu.goToLoginPage();
 		boolean b = loginPage.isSignupHeadingDisplayed();
-		Assert.assertTrue(b, "Signup section is not visible");
-	
-		System.out.println(">>> 1");
-		loginPage.enterName("Adam a");
-		loginPage.enterSingupEmail("pass2@qwe.com");
+		//Assert.assertTrue(b, "Signup section is not visible");
+		softAssert.assertTrue(b, "Signup section is not visible");
+		
+		loginPage.enterName("Adam");
+		loginPage.enterSingupEmail("abcd@123.com");
 		loginPage.clickSignup();
 		SignupPage signupPage = new SignupPage(driver);
 		String accountInfo = signupPage.getAccountInfoHeading();
-		Assert.assertEquals(accountInfo, "ENTER ACCOUNT INFORMATION");
-		System.out.println(">>> 2");
+		//Assert.assertEquals(accountInfo, "ENTER ACCOUNT INFORMATION");
+		softAssert.assertEquals(accountInfo, "ENTER ACCOUNT INFORMATION");
 		
 		String addressInfo = signupPage.getAddressInfoHeading();
-		System.out.println(addressInfo);
-		Assert.assertEquals(addressInfo, "ADDRESS INFORMATION");
-		System.out.println(">>> 3");
+		//Assert.assertEquals(addressInfo, "ADDRESS INFORMATION");
+		softAssert.assertEquals(addressInfo, "ADDRESS INFORMATION");
 		
 		signupPage.selectTitle("mrs");
 		signupPage.enterName("Hohn");
@@ -62,24 +63,23 @@ public class TC01_RegisterUser extends BaseTest{
 		
 		AccountCreatedPage acountCreatedPage = new AccountCreatedPage(driver);
 		String accCreated = acountCreatedPage.getAccountCreatedHeading();
-		Assert.assertEquals(accCreated, "ACCOUNT CREATED!");
+		//Assert.assertEquals(accCreated, "ACCOUNT CREATED!");
+		softAssert.assertEquals(accCreated, "ACCOUNT CREATED!");
 		
 		acountCreatedPage.clickContinue();
 		boolean loginAs = homePage.topMenu.isLoginAsDisplayed();
-		Assert.assertTrue(loginAs, "Loggedin as not displayed");
-		//loginPage.signup("Adam", "pass123");
-		System.out.println(">>> 4");
+		//Assert.assertTrue(loginAs, "Loggedin as not displayed");
 		
 		AccountDeletedPage accountDeletedPage = homePage.topMenu.deleteAccount();
 		String accDeleted;
 		accDeleted = accountDeletedPage.getAccountDeletedHeading();
-		System.out.println(accDeleted);
 		Assert.assertEquals(accDeleted, "ACCOUNT DELETED!");
-		System.out.println(">>> 5");
-			System.out.println(">>> here");
-		//String title = homePage.getPageTitle();
-		//System.out.println(title);
-		//Assert.assertEquals(title, "Automation Exercise");
+		softAssert.assertEquals(accDeleted, "ACCOUNT DELETED!");
+
+		title = homePage.getPageTitle();
+		Assert.assertEquals(title, "Automation Exercise - Account Created");
+		
+		softAssert.assertAll();
 	}
 
 

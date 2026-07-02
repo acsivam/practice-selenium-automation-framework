@@ -4,7 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.pages.AccountDeletedPage;
+import com.automation.pages.ContactUsPage;
 import com.automation.pages.LoginPage;
+import com.automation.pages.ProductsPage;
+import com.automation.pages.TestCasesPage;
 
 public class TopMenuComponent extends BaseComponent{
 
@@ -28,8 +31,9 @@ public class TopMenuComponent extends BaseComponent{
 		driver.findElement(homeMenu).click();
 	}
 	
-	public void goToProductsPage() {
-		driver.findElement(homeMenu).click();
+	public ProductsPage goToProductsPage() {
+		eleUtil.click(productsMenu);
+		return new ProductsPage(driver);
 	}
 	
 	public void viewCart() {
@@ -42,8 +46,9 @@ public class TopMenuComponent extends BaseComponent{
 		return new LoginPage(driver);
 	}
 	
-	public void goToTestCasesPage() {
-		driver.findElement(testCasesMenu).click();
+	public TestCasesPage goToTestCasesPage() {
+		eleUtil.click(testCasesMenu);
+		return new TestCasesPage(driver);
 	}
 	
 	public void goToVideoTutorials() {
@@ -54,8 +59,9 @@ public class TopMenuComponent extends BaseComponent{
 		driver.findElement(apiTestingMenu).click();
 	}
 	
-	public void goToContactUsPage() {
-		driver.findElement(contactUsMenu).click();
+	public ContactUsPage goToContactUsPage() {
+		eleUtil.click(contactUsMenu);
+		return new ContactUsPage(driver);
 	}
 	
 	public LoginPage logout() {

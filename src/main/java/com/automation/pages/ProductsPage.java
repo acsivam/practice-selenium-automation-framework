@@ -33,7 +33,8 @@ public class ProductsPage extends BasePage{
 	//	private By bibaSubCategories		= By.cssSelector("a[href='/brand_products/Biba']");
 	private By productHeading			= By.xpath("//h2[@class='title text-center']");
 	private By products 				= By.cssSelector(".product-image-wrapper");
-	
+	private By viewProductLinks 		= By.cssSelector("a[href*='product_details']");
+	private By productsGrid 			= By.cssSelector(".features_items");
 	
 	public boolean isSaleImageDisplayed() {
 		return eleUtil.isDisplayed(saleImage);
@@ -48,7 +49,7 @@ public class ProductsPage extends BasePage{
 	}
 	
 	//business logic
-	public ProductsPage searchPriduct(String product) {
+	public ProductsPage searchProduct(String product) {
 		enterProduct(product);
 		clickSearch();
 		return new ProductsPage(driver);
@@ -57,7 +58,6 @@ public class ProductsPage extends BasePage{
 	public int getProductCount() {
 		return eleUtil.getCount(products);
 	}
-	
 	
 	
 	public boolean isProductHeadingDisplayed() {
@@ -89,6 +89,15 @@ public class ProductsPage extends BasePage{
 
 	    eleUtil.click(locator);
 	    return new ProductDetailsPage(driver);
+	}
+	
+	public ProductDetailsPage viewProduct(int index) {
+	    eleUtil.getElements(viewProductLinks).get(index).click();
+	    return new ProductDetailsPage(driver);
+	}
+	
+	public boolean isProductsListDisplayed() {
+	    return eleUtil.isDisplayed(productsGrid);
 	}
 	
 }

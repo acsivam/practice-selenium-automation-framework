@@ -12,16 +12,18 @@ public class LoginPage extends BasePage{
 		super(driver);
 	}
 	
-	private By loginHeading		= By.xpath("//h2[normalize-space()='Login to your account']");
-	private By loginEmailField	= By.xpath("//input[@data-qa='login-email']");
-	private By passwordField	= By.xpath("//input[@placeholder='Password']");
-	private By loginButton		= By.xpath("//button[normalize-space()='Login']");
-	private By signupHeading	= By.xpath("//h2[normalize-space()='New User Signup!']");
-	private By nameField		= By.xpath("//input[@placeholder='Name']");
-	private By signupEmailField	= By.xpath("//input[@data-qa='signup-email']");
-	private By signupButton		= By.xpath("//button[normalize-space()='Signup']");
+	private By loginHeading			= By.xpath("//h2[normalize-space()='Login to your account']");
+	private By loginEmailField		= By.xpath("//input[@data-qa='login-email']");
+	private By passwordField		= By.xpath("//input[@placeholder='Password']");
+	private By loginButton			= By.xpath("//button[normalize-space()='Login']");
+	private By signupHeading		= By.xpath("//h2[normalize-space()='New User Signup!']");
+	private By nameField			= By.xpath("//input[@placeholder='Name']");
+	private By signupEmailField		= By.xpath("//input[@data-qa='signup-email']");
+	private By signupButton			= By.xpath("//button[normalize-space()='Signup']");
+	private By loginErrorMessage	= By.xpath("//p[normalize-space()='Your email or password is incorrect!']");
+	private By signupErrorMessage	= By.xpath("//p[normalize-space()='Email Address already exist!']");
 	
-	public boolean isLoginHeadingDisplayed() {
+			public boolean isLoginHeadingDisplayed() {
 		return eleUtil.isDisplayed(loginHeading);
 	}
 	
@@ -76,6 +78,14 @@ public class LoginPage extends BasePage{
 		
 	}
 	
+	public String getLoginErrorMessage() {
+		return eleUtil.getText(loginErrorMessage);
+	}
+	
+	public String getSignupErrorMessage() {
+		return eleUtil.getText(signupErrorMessage);
+	}
+	/*
 	public boolean isEmailInvalid() {
 		
 	    WebElement emailField = driver.findElement(By.name("email"));
@@ -88,4 +98,5 @@ public class LoginPage extends BasePage{
 	    return (String) ((JavascriptExecutor) driver)
 	            .executeScript("return arguments[0].validationMessage;", emailField);
 	}
+	*/
 }

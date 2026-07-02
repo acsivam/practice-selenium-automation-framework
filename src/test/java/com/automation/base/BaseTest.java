@@ -16,7 +16,7 @@ public class BaseTest {
 		System.out.println(">>> SET UP RUNNING");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://automationexercise.com/");
 		driver.manage().window().maximize();
 	}
@@ -24,8 +24,7 @@ public class BaseTest {
 	
 	@AfterClass
 	public void teardown() {
-		
-		driver.close();
+		driver.quit();
 	}
 
 }

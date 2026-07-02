@@ -1,9 +1,13 @@
 package com.automation.pages;
 
 import java.io.File;
+import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.automation.utils.ElementUtils;
 
@@ -97,7 +101,7 @@ public class ContactUsPage extends BasePage{
 	}
 	
 	public String getSubmitSuccessMessage() {
-		return eleUtil.getText(messageField);
+		return eleUtil.getText(messageSubmitted);
 	}
 	
 	public HomePage clickHomeButton() {
@@ -117,6 +121,14 @@ public class ContactUsPage extends BasePage{
 		enterMessage(message);
 		uploadFile(filePath);
 		clickSubmit();		
+		acceptConfirmationAlert();
+	}
+	
+	private void acceptConfirmationAlert() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.alertIsPresent());
+	    Alert alert = driver.switchTo().alert();
+	    alert.accept(); // clicks "OK"
 	}
 	
 	public boolean isFeedbackHeadingDisplayed() {
