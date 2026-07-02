@@ -9,11 +9,8 @@ import com.automation.utils.ElementUtils;
 
 public class ContactUsPage extends BasePage{
 	
-	private ElementUtils eleUtil;
-
 	public ContactUsPage(WebDriver driver) {
 		super(driver);
-		this.eleUtil = new ElementUtils(driver);
 	}
 	
 	String noteText = "Note: Below contact form is for testing purpose.";

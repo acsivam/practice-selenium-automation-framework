@@ -7,11 +7,8 @@ import com.automation.utils.ElementUtils;
 
 public class AccountCreatedPage extends BasePage{
 	
-	private ElementUtils eleUtil;
-	
 	public AccountCreatedPage(WebDriver driver) {
 		super(driver);
-		this.eleUtil = new ElementUtils(driver);
 	}
 	
 	private By accountCreatedHeading 	= By.xpath("//b[normalize-space()='Account Created!']");

@@ -7,11 +7,8 @@ import com.automation.utils.ElementUtils;
 
 public class LoginPage extends BasePage{
 	
-	private ElementUtils eleUtil;
-	
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		this.eleUtil = new ElementUtils(driver);
 	}
 	
 	private By loginHeading		= By.xpath("//h2[normalize-space()='Login to your account']");

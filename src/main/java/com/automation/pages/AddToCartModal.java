@@ -1,0 +1,40 @@
+package com.automation.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class AddToCartModal extends BasePage{
+	
+	public AddToCartModal(WebDriver driver) {
+		super(driver);
+	}
+	
+	
+	private By addedToCartModal 		= By.cssSelector(".modal-content");
+	private By continueShoppingButton	= By.cssSelector(".close-modal");
+	private By viewCartLink 			= By.linkText("View Cart");
+	private By addedTitle				= By.cssSelector("..modal-title.w-100");
+	private By addedMessage 			= By.cssSelector(".modal-body p.text-center");
+
+	
+	public boolean isDisplayed() {
+		return eleUtil.isDisplayed(addedToCartModal);
+	}
+	
+	public String getAddedTitle() {
+		return eleUtil.getText(addedTitle);
+	}
+	
+	public String getAddedMessage() {
+		return eleUtil.getText(addedMessage);
+	}
+	
+	public void continueShopping() {
+		eleUtil.click(continueShoppingButton);
+	}
+	
+	public CartPage viewCart() {
+		eleUtil.click(viewCartLink);
+		return new CartPage(driver);
+	}
+}

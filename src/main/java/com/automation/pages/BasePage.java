@@ -5,9 +5,11 @@ import org.openqa.selenium.WebDriver;
 import com.automation.components.FooterComponent;
 import com.automation.components.HeaderComponent;
 import com.automation.components.TopMenuComponent;
+import com.automation.utils.ElementUtils;
 
 public class BasePage {
 	protected WebDriver driver;
+	protected ElementUtils eleUtil;
 	
 	public HeaderComponent header;
 	public FooterComponent footer;
@@ -15,6 +17,7 @@ public class BasePage {
 	
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
+		this.eleUtil = new ElementUtils(driver);
 		
 		header 	= new HeaderComponent(driver);
 		footer 	= new FooterComponent(driver);

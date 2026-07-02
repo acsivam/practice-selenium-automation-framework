@@ -2,9 +2,9 @@ package com.automation.pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class ViewCartPage extends BasePage{
+public class CartPage extends BasePage{
 
-	public ViewCartPage(WebDriver driver) {
+	public CartPage(WebDriver driver) {
 		super(driver);
 	}
 
