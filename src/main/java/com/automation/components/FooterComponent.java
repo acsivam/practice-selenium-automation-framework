@@ -3,10 +3,9 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.automation.pages.BasePage;
 import com.automation.utils.ElementUtils;
 
-public class FooterComponent extends BasePage{
+public class FooterComponent extends BaseComponent{
 	
 	public FooterComponent(WebDriver driver) {
 		super(driver);

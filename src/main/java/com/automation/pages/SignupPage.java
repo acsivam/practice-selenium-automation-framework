@@ -9,8 +9,6 @@ import com.automation.utils.ElementUtils;
 
 public class SignupPage extends BasePage{
 	
-	private ElementUtils eleUtil;
-	
 	public SignupPage(WebDriver driver) {
 		super(driver);
 	}
@@ -140,7 +138,6 @@ public class SignupPage extends BasePage{
 	
 	public void fillAccountInfo(
 			String name,
-			String email,
 			String password,
 			String day,
 			String month,
@@ -148,7 +145,6 @@ public class SignupPage extends BasePage{
 			boolean newsletter,
 			boolean offers) {
 		enterName(name);
-		enterEmail(email);
 		enterPassword(password);
 		selectDateOfBirth(day, month, year);
 		selectNewsLetter(newsletter);
@@ -179,7 +175,6 @@ public class SignupPage extends BasePage{
 	
 	public AccountCreatedPage createAccount(
 			String name,
-			String email,
 			String password,
 			String day,
 			String month,
@@ -196,7 +191,7 @@ public class SignupPage extends BasePage{
 			String city,
 			String zipCode,
 			String mobileNumber) {
-		fillAccountInfo(name, email, password, day, month, year, newsletter, offers);
+		fillAccountInfo(name, password, day, month, year, newsletter, offers);
 		fillAddressInfo(firstName, lastName, company, address1, address2,	country, state, city, zipCode, mobileNumber);
 		return new AccountCreatedPage(driver);
 	}

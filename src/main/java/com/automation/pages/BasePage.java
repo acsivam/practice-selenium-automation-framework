@@ -16,12 +16,11 @@ public class BasePage {
 	public TopMenuComponent topMenu;
 	
 	public BasePage(WebDriver driver) {
-		this.driver = driver;
-		this.eleUtil = new ElementUtils(driver);
-		
-		header 	= new HeaderComponent(driver);
-		footer 	= new FooterComponent(driver);
-		topMenu	= new TopMenuComponent(driver);
+		this.driver 	= driver;
+		this.eleUtil 	= new ElementUtils(driver);
+        this.footer 	= new FooterComponent(driver);
+        this.header 	= new HeaderComponent(driver);
+        this.topMenu	= new TopMenuComponent(driver);
 	}
 	
     // page-level navigation helper

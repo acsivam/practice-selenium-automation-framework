@@ -21,6 +21,7 @@ public class ElementUtils {
 		this.driver = driver;
 		this.wait	= new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
+
 	
 	// 1. Get element (with wait)
 	public WebElement getElement(By locator) {

@@ -3,10 +3,7 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.automation.pages.BasePage;
-import com.automation.utils.ElementUtils;
-
-public class HeaderComponent extends BasePage{
+public class HeaderComponent extends BaseComponent{
 	
 	public HeaderComponent(WebDriver driver) {
 		super(driver);

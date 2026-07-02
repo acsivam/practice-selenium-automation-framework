@@ -3,10 +3,9 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.automation.pages.BasePage;
 import com.automation.pages.CartPage;
 
-public class AddToCartModal extends BasePage{
+public class AddToCartModal extends BaseComponent{
 	
 	public AddToCartModal(WebDriver driver) {
 		super(driver);

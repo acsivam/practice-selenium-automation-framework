@@ -5,11 +5,10 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.automation.pages.BasePage;
 import com.automation.pages.BrandProductsPage;
 import com.automation.pages.CategoryProductsPage;
 
-public class CategoryBrandSidebar extends BasePage{
+public class CategoryBrandSidebar extends BaseComponent{
 
 	public CategoryBrandSidebar(WebDriver driver) {
 		super(driver);

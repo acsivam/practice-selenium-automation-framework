@@ -2,6 +2,7 @@ package com.automation.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.automation.utils.ElementUtils;
 
@@ -60,11 +61,11 @@ public class LoginPage extends BasePage{
 	}
 	
 	public void enterSingupEmail(String email) {
-		eleUtil.enterText(passwordField, email);
+		eleUtil.enterText(signupEmailField, email);
 	}
 	
 	public void clickSignup() {
-		eleUtil.click(loginButton);
+		eleUtil.click(signupButton);
 	}
 	
 	public SignupPage signup(String name, String email) {
@@ -73,5 +74,18 @@ public class LoginPage extends BasePage{
 		clickSignup();
 		return new SignupPage(driver);
 		
+	}
+	
+	public boolean isEmailInvalid() {
+		
+	    WebElement emailField = driver.findElement(By.name("email"));
+	    return !(Boolean) ((JavascriptExecutor) driver)
+	            .executeScript("return arguments[0].checkValidity();", emailField);
+	}
+	
+	public String getEmailValidationMessage() {
+	    WebElement emailField = driver.findElement(By.name("email"));
+	    return (String) ((JavascriptExecutor) driver)
+	            .executeScript("return arguments[0].validationMessage;", emailField);
 	}
 }

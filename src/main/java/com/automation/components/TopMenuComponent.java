@@ -3,10 +3,9 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.automation.pages.BasePage;
 import com.automation.pages.LoginPage;
 
-public class TopMenuComponent extends BasePage{
+public class TopMenuComponent extends BaseComponent{
 
 	public TopMenuComponent(WebDriver driver) {
 		super(driver);
@@ -21,6 +20,8 @@ public class TopMenuComponent extends BasePage{
 	private By videoTutorialsMenu	= By.xpath("//a[normalize-space()='Video Tutorials']");
 	private By contactUsMenu		= By.xpath("//a[normalize-space()='Contact us']");
 	private By logoutMenu			= By.xpath("//a[normalize-space()='Logout']");
+	private By loginAs				= By.xpath("//li[10]//a[1]");
+	private By deleteAccountMenu	= By.xpath("//a[normalize-space()='Delete Account']");
 	
 	
 	public void goToHomePage() {
@@ -35,8 +36,10 @@ public class TopMenuComponent extends BasePage{
 		driver.findElement(cartMenu).click();
 	}
 	
-	public void goToLoginPage() {
-		driver.findElement(loginMenu).click();
+	public LoginPage goToLoginPage() {
+		//driver.findElement(loginMenu).click();
+		eleUtil.click(loginMenu);
+		return new LoginPage(driver);
 	}
 	
 	public void goToTestCasesPage() {
@@ -58,4 +61,10 @@ public class TopMenuComponent extends BasePage{
 	public LoginPage logout() {
 		return new LoginPage(driver);
 	}
+	
+	public boolean isLoginAsDisplayed() {
+		return eleUtil.isDisplayed(loginAs);
+	}
+	
+	
 }
