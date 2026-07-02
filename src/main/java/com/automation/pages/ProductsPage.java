@@ -58,56 +58,7 @@ public class ProductsPage extends BasePage{
 		return eleUtil.getCount(products);
 	}
 	
-	public boolean isCategoryHeadingDisplayed() {
-		return eleUtil.isDisplayed(categoryHeading);
-	}
 	
-	public String getCategoryHeading() {
-		return eleUtil.getText(categoryHeading);
-	}
-	
-	public List<String> getCategoryNames(){
-		return eleUtil.getElementsText(categoryNames);
-	}
-	
-	private By categoryByName(String category) {
-	    return By.cssSelector("a[href='#" + category + "']");
-	}
-		
-	public void expandCategory(String category) {
-	    eleUtil.click(categoryByName(category));
-	}
-	
-	public void getSubCategoryNames(String category, String subCategory) {
-	    expandCategory(category);
-	    By locator = By.xpath("//div[@id='" + category + "']//a[normalize-space()='" + subCategory + "']");
-	    eleUtil.getElementsText(locator);
-	}
-	
-	public CategoryProductsPage selectSubCategory(String category, String subCategory) {
-		expandCategory(category);
-		By locator = By.xpath("//div[@id='" + category + "']//a[normalize-space()='" + subCategory + "']");
-		eleUtil.click(locator);
-		return new CategoryProductsPage(driver);
-	}
-	
-	public boolean isBrandHeadingDisplayed() {
-		return eleUtil.isDisplayed(brandHeading);
-	}
-	
-	public String getBrandHeading() {
-		return eleUtil.getText(brandHeading);
-	}
-	
-	public List<String> getBrandNames(){
-		return eleUtil.getElementsText(brandNames);
-	}
-	
-	public BrandProductsPage selectBrand(String brand) {
-		By locator = By.xpath("//a[href='/brand_products/" + brand + "']");
-		eleUtil.click(locator);
-		return new BrandProductsPage(driver);
-	}
 	
 	public boolean isProductHeadingDisplayed() {
 		return eleUtil.isDisplayed(productHeading);

@@ -3,15 +3,13 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.pages.BasePage;
 import com.automation.utils.ElementUtils;
 
-public class HeaderComponent {
-	
-	private WebDriver driver;
-	private ElementUtils eleUtil;
+public class HeaderComponent extends BasePage{
 	
 	public HeaderComponent(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 	
 	private By logo	= By.xpath("//img[@alt='Website for automation practice']");

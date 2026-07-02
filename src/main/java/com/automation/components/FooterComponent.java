@@ -3,15 +3,13 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.pages.BasePage;
 import com.automation.utils.ElementUtils;
 
-public class FooterComponent {
-	
-	private WebDriver driver;
-	private ElementUtils eleUtil;
+public class FooterComponent extends BasePage{
 	
 	public FooterComponent(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 	
 	private By subscribeEmail 			= By.xpath("//input[@id='susbscribe_email']");

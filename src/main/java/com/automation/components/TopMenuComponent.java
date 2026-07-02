@@ -3,14 +3,13 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.pages.BasePage;
 import com.automation.pages.LoginPage;
 
-public class TopMenuComponent {
+public class TopMenuComponent extends BasePage{
 
-	private WebDriver driver;
-	
 	public TopMenuComponent(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 	
 	private By homeMenu				= By.xpath("//a[normalize-space()='Home']'");
