@@ -3,6 +3,7 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.pages.AccountDeletedPage;
 import com.automation.pages.LoginPage;
 
 public class TopMenuComponent extends BaseComponent{
@@ -22,8 +23,7 @@ public class TopMenuComponent extends BaseComponent{
 	private By logoutMenu			= By.xpath("//a[normalize-space()='Logout']");
 	private By loginAs				= By.xpath("//li[10]//a[1]");
 	private By deleteAccountMenu	= By.xpath("//a[normalize-space()='Delete Account']");
-	
-	
+
 	public void goToHomePage() {
 		driver.findElement(homeMenu).click();
 	}
@@ -66,5 +66,8 @@ public class TopMenuComponent extends BaseComponent{
 		return eleUtil.isDisplayed(loginAs);
 	}
 	
-	
+	public AccountDeletedPage deleteAccount() {
+		eleUtil.click(deleteAccountMenu);
+		return new AccountDeletedPage(driver);
+	}
 }

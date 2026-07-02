@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.automation.base.BaseTest;
 import com.automation.components.TopMenuComponent;
 import com.automation.pages.AccountCreatedPage;
+import com.automation.pages.AccountDeletedPage;
 import com.automation.pages.HomePage;
 import com.automation.pages.LoginPage;
 import com.automation.pages.SignupPage;
@@ -28,7 +29,7 @@ public class TC01_RegisterUser extends BaseTest{
 	
 		System.out.println(">>> 1");
 		loginPage.enterName("Adam a");
-		loginPage.enterSingupEmail("pass@qwe.com");
+		loginPage.enterSingupEmail("pass2@qwe.com");
 		loginPage.clickSignup();
 		SignupPage signupPage = new SignupPage(driver);
 		String accountInfo = signupPage.getAccountInfoHeading();
@@ -67,9 +68,14 @@ public class TC01_RegisterUser extends BaseTest{
 		boolean loginAs = homePage.topMenu.isLoginAsDisplayed();
 		Assert.assertTrue(loginAs, "Loggedin as not displayed");
 		//loginPage.signup("Adam", "pass123");
-		System.out.println(">>> 1");
+		System.out.println(">>> 4");
 		
-		System.out.println(">>> 2");
+		AccountDeletedPage accountDeletedPage = homePage.topMenu.deleteAccount();
+		String accDeleted;
+		accDeleted = accountDeletedPage.getAccountDeletedHeading();
+		System.out.println(accDeleted);
+		Assert.assertEquals(accDeleted, "ACCOUNT DELETED!");
+		System.out.println(">>> 5");
 			System.out.println(">>> here");
 		//String title = homePage.getPageTitle();
 		//System.out.println(title);
