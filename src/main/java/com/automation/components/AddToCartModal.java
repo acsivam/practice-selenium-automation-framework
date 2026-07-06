@@ -7,14 +7,17 @@ import com.automation.pages.CartPage;
 
 public class AddToCartModal extends BaseComponent{
 	
+	private static final By By = null;
+
+
 	public AddToCartModal(WebDriver driver) {
 		super(driver);
 	}
 	
 	
-	private By addedToCartModal 		= By.cssSelector(".modal-content");
-	private By continueShoppingButton	= By.cssSelector(".close-modal");
-	private By viewCartLink 			= By.linkText("View Cart");
+	private By addedToCartModal 		= By.cssSelector(".modal-content"); 
+	private By continueShoppingButton	= By.xpath("//button[@class='btn btn-success close-modal btn-block']"); 
+	private By viewCartLink 			= By.xpath("//u[normalize-space()='View Cart']");
 	private By addedTitle				= By.cssSelector("..modal-title.w-100");
 	private By addedMessage 			= By.cssSelector(".modal-body p.text-center");
 

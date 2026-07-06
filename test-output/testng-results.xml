@@ -1,25 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-02T21:35:06 IST" name="Default suite" finished-at="2026-07-02T21:35:47 IST" duration-ms="41894">
+  <suite started-at="2026-07-06T18:30:36 IST" name="Default suite" finished-at="2026-07-06T18:31:08 IST" duration-ms="32652">
     <groups>
     </groups>
-    <test started-at="2026-07-02T21:35:06 IST" name="Default test" finished-at="2026-07-02T21:35:47 IST" duration-ms="41894">
-      <class name="com.automation.tests.TC09_SearchProduct">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.automation.tests.TC09_SearchProduct@196a42c3]" started-at="2026-07-02T21:35:06 IST" name="setup" finished-at="2026-07-02T21:35:27 IST" duration-ms="21547" status="PASS">
+    <test started-at="2026-07-06T18:30:36 IST" name="Default test" finished-at="2026-07-06T18:31:08 IST" duration-ms="32652">
+      <class name="com.automation.tests.TC08_ProductAndDetails">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.automation.tests.TC08_ProductAndDetails@196a42c3]" started-at="2026-07-06T18:30:36 IST" name="setup" finished-at="2026-07-06T18:30:54 IST" duration-ms="17948" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyUserCanSearchProduct()[pri:0, instance:com.automation.tests.TC09_SearchProduct@196a42c3]" started-at="2026-07-02T21:35:27 IST" name="verifyUserCanSearchProduct" finished-at="2026-07-02T21:35:47 IST" duration-ms="20100" status="PASS">
+        <test-method signature="verifyAllProductsAndProductDetailsPage()[pri:0, instance:com.automation.tests.TC08_ProductAndDetails@196a42c3]" started-at="2026-07-06T18:30:54 IST" name="verifyAllProductsAndProductDetailsPage" finished-at="2026-07-06T18:30:58 IST" duration-ms="4464" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [ALL PRODUCTS] but found [FEATURES ITEMS]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [ALL PRODUCTS] but found [FEATURES ITEMS]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.automation.tests.TC08_ProductAndDetails.verifyAllProductsAndProductDetailsPage(TC08_ProductAndDetails.java:39)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserCanSearchProduct -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.TC09_SearchProduct@196a42c3]" started-at="2026-07-02T21:35:47 IST" name="teardown" finished-at="2026-07-02T21:35:47 IST" duration-ms="205" status="PASS">
+        </test-method> <!-- verifyAllProductsAndProductDetailsPage -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.TC08_ProductAndDetails@196a42c3]" started-at="2026-07-06T18:30:58 IST" name="teardown" finished-at="2026-07-06T18:31:08 IST" duration-ms="10193" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.automation.tests.TC09_SearchProduct -->
+      </class> <!-- com.automation.tests.TC08_ProductAndDetails -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

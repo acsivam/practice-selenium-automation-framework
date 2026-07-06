@@ -18,16 +18,15 @@ public class TC08_ProductAndDetails extends BaseTest{
 		String title = homePage.getPageTitle();
 		softAssert.assertEquals(title, "Automation Exercise");
 
-		ProductsPage productsPage = homePage.topMenu.goToProductsPage();
+		ProductsPage productsPage = homePage.getTopMenu().goToProductsPage();
 		String productHeading = productsPage.getProductHeading();
 		softAssert.assertEquals(productHeading, "ALL PRODUCTS");
 		
 		boolean grid = productsPage.isProductHeadingDisplayed();
 		softAssert.assertTrue(grid, "Product grid is not displayed");
 		
-		ProductDetailsPage productDetailsPage = productsPage.viewProduct(0);
+		ProductDetailsPage productDetailsPage = productsPage.viewProduct("1");
 		title = productDetailsPage.getPageTitle();
-		System.out.println(title);
 		softAssert.assertEquals(title, "Automation Exercise - Product Details");
 		
 		boolean details = productDetailsPage.areProductDetailsDisplayed();

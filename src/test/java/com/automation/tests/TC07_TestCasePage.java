@@ -17,7 +17,7 @@ public class TC07_TestCasePage extends BaseTest{
 		String title = homePage.getPageTitle();
 		softAssert.assertEquals(title, "Automation Exercise");
 		
-		TestCasesPage testCasesPage = homePage.topMenu.goToTestCasesPage();
+		TestCasesPage testCasesPage = homePage.getTopMenu().goToTestCasesPage();
 		String heading = testCasesPage.getTestCasesHeading();
 		softAssert.assertEquals(heading, "TEST CASES");
 		

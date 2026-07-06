@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.pages.AccountDeletedPage;
+import com.automation.pages.CartPage;
 import com.automation.pages.ContactUsPage;
 import com.automation.pages.LoginPage;
 import com.automation.pages.ProductsPage;
@@ -36,8 +37,9 @@ public class TopMenuComponent extends BaseComponent{
 		return new ProductsPage(driver);
 	}
 	
-	public void viewCart() {
-		driver.findElement(cartMenu).click();
+	public CartPage goToCartPage() {
+		eleUtil.click(cartMenu);
+		return new CartPage(driver);
 	}
 	
 	public LoginPage goToLoginPage() {

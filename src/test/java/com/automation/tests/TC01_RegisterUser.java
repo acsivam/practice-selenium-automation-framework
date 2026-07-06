@@ -25,7 +25,7 @@ public class TC01_RegisterUser extends BaseTest{
 		//Assert.assertEquals(title, "Automation Exercise"); //hard assert
 		softAssert.assertEquals(title, "Automation Exercise");
 		
-		LoginPage loginPage = homePage.topMenu.goToLoginPage();
+		LoginPage loginPage = homePage.getTopMenu().goToLoginPage();
 		boolean b = loginPage.isSignupHeadingDisplayed();
 		//Assert.assertTrue(b, "Signup section is not visible");
 		softAssert.assertTrue(b, "Signup section is not visible");
@@ -67,10 +67,10 @@ public class TC01_RegisterUser extends BaseTest{
 		softAssert.assertEquals(accCreated, "ACCOUNT CREATED!");
 		
 		acountCreatedPage.clickContinue();
-		boolean loginAs = homePage.topMenu.isLoginAsDisplayed();
+		boolean loginAs = homePage.getTopMenu().isLoginAsDisplayed();
 		//Assert.assertTrue(loginAs, "Loggedin as not displayed");
 		
-		AccountDeletedPage accountDeletedPage = homePage.topMenu.deleteAccount();
+		AccountDeletedPage accountDeletedPage = homePage.getTopMenu().deleteAccount();
 		String accDeleted;
 		accDeleted = accountDeletedPage.getAccountDeletedHeading();
 		Assert.assertEquals(accDeleted, "ACCOUNT DELETED!");

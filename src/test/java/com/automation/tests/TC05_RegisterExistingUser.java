@@ -16,7 +16,7 @@ public class TC05_RegisterExistingUser extends BaseTest{
 		String title = homePage.getPageTitle();
 		Assert.assertEquals(title, "Automation Exercise");
 		
-		LoginPage loginPage = homePage.topMenu.goToLoginPage();
+		LoginPage loginPage = homePage.getTopMenu().goToLoginPage();
 		boolean b = loginPage.isSignupHeadingDisplayed();
 		Assert.assertTrue(b, "Signup section is not visible");
 		

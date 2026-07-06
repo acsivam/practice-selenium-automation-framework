@@ -11,9 +11,9 @@ public class BasePage {
 	protected WebDriver driver;
 	protected ElementUtils eleUtil;
 	
-	public HeaderComponent header;
-	public FooterComponent footer;
-	public TopMenuComponent topMenu;
+	private HeaderComponent header;
+	private FooterComponent footer;
+	private TopMenuComponent topMenu;
 	
 	public BasePage(WebDriver driver) {
 		this.driver 	= driver;
@@ -30,6 +30,18 @@ public class BasePage {
 
     public String getPageUrl() {
         return driver.getCurrentUrl();
+    }
+    
+    public HeaderComponent getHeader() {
+        return header;
+    }
+
+    public FooterComponent getFooter() {
+        return footer;
+    }
+    
+    public TopMenuComponent getTopMenu() {
+    	return topMenu;
     }
 
 }

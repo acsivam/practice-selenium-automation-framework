@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,7 +38,14 @@ public class ElementUtils {
 	
 	// 3. Click
 	public void click(By locator) {
-		wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+		WebElement element = getElement(locator);
+
+	    try {
+	        element.click();
+	    } catch (ElementClickInterceptedException e) {
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("arguments[0].click();", element);
+	    }
 	}
 	
 	// 4. Enter / Send keys
@@ -92,6 +101,10 @@ public class ElementUtils {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
     
+    public WebElement waitForClickable(By locator) {
+    	return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+    
     public void uploadFile(By locator, String filePath) {
     	WebElement e = waitForPresence(locator);
     	e.sendKeys(filePath);
@@ -102,9 +115,28 @@ public class ElementUtils {
         select.selectByVisibleText(value);
     }
     
+  
+    public void scrollToBottom() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+    
+    public void scrollToTop() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, 0);");
+    }
+    
     public void moveToElement(By locator) {
         Actions actions = new Actions(driver);
-        actions.moveToElement(getElement(locator)).perform();
+        actions.moveToElement(driver.findElement(locator)).perform();
+    }
+    
+    public void scrollToElement(By locator) {
+        WebElement element = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(locator));
+
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block:'center'});", element);
     }
 
 }

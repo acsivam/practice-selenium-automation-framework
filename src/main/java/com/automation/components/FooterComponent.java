@@ -11,9 +11,14 @@ public class FooterComponent extends BaseComponent{
 		super(driver);
 	}
 	
+	private By subcriptionHeading		= By.xpath("//h2[normalize-space()='Subscription']");
 	private By subscribeEmail 			= By.xpath("//input[@id='susbscribe_email']");
 	private By submitSubscription		= By.xpath("//button[@id='subscribe']");
 	private By subscribeSuccessMessage	= By.xpath("//div[@class='alert-success alert']");
+	
+	public String getSubscriptionHeading() {
+		return eleUtil.getText(subcriptionHeading);
+	}
 	
 	public void enterEmail(String email) {
 		eleUtil.enterText(subscribeEmail, email);
@@ -33,6 +38,6 @@ public class FooterComponent extends BaseComponent{
 	}
 	
 	public String getSubscriberSuccessMessage() {
-		return eleUtil.getText(submitSubscription);
+		return eleUtil.waitForVisibility(subscribeSuccessMessage).getText();
 	}
 }

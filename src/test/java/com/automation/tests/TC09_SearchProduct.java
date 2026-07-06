@@ -17,7 +17,7 @@ public class TC09_SearchProduct extends BaseTest{
 		String title = homePage.getPageTitle();
 		softAssert.assertEquals(title, "Automation Exercise");
 
-		ProductsPage productsPage = homePage.topMenu.goToProductsPage();
+		ProductsPage productsPage = homePage.getTopMenu().goToProductsPage();
 		String productHeading = productsPage.getProductHeading();
 		softAssert.assertEquals(productHeading, "ALL PRODUCTS");
 		

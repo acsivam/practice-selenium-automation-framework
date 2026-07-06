@@ -15,7 +15,7 @@ public class TC06_Contactus extends BaseTest{
 		String title = homePage.getPageTitle();
 		Assert.assertEquals(title, "Automation Exercise");
 		
-		ContactUsPage contactUsPage = homePage.topMenu.goToContactUsPage();
+		ContactUsPage contactUsPage = homePage.getTopMenu().goToContactUsPage();
 		String getIn = contactUsPage.getGetInTouchGeading();
 		Assert.assertEquals(getIn, "GET IN TOUCH");
 		
