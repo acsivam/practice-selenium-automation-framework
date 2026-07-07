@@ -1,0 +1,15 @@
+<suite name="Automation Suite">
+
+    <listeners>
+        <listener class-name="com.automation.listeners.ExtentReportListener"/>
+    </listeners>
+
+    <test name="Regression Test">
+        <classes>
+            <class name="com.automation.tests.TC01_RegisterUser"/>
+            <class name="com.automation.tests.TC02_UserLoginSuccessfully"/>
+            <class name="com.automation.tests.TC03_UserLoginError"/>
+        </classes>
+    </test>
+
+</suite>

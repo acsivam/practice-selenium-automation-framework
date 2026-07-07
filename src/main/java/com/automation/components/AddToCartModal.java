@@ -7,7 +7,7 @@ import com.automation.pages.CartPage;
 
 public class AddToCartModal extends BaseComponent{
 	
-	private static final By By = null;
+	//private static final By By = null;
 
 
 	public AddToCartModal(WebDriver driver) {

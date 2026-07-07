@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automation.base.BaseTest;
-import com.automation.pages.AccountDeletedPage;
 import com.automation.pages.HomePage;
 import com.automation.pages.LoginPage;
 

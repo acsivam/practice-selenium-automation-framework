@@ -1,12 +1,10 @@
 package com.automation.tests;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.automation.base.BaseTest;
-import com.automation.components.TopMenuComponent;
 import com.automation.pages.AccountCreatedPage;
 import com.automation.pages.AccountDeletedPage;
 import com.automation.pages.HomePage;
@@ -18,6 +16,7 @@ public class TC01_RegisterUser extends BaseTest{
 
 	@Test
 	public void verifyRegisterUser() {
+		logger.info("**** Starting verifyRegisterUser ****");
 		SoftAssert softAssert = new SoftAssert();
 	
 		HomePage homePage = new HomePage(driver);
@@ -43,7 +42,7 @@ public class TC01_RegisterUser extends BaseTest{
 		softAssert.assertEquals(addressInfo, "ADDRESS INFORMATION");
 		
 		signupPage.selectTitle("mrs");
-		signupPage.enterName("Hohn");
+		signupPage.enterName("John");
 		signupPage.enterPassword("1234asd");
 		signupPage.selectDateOfBirth("19", "February", "1994");
 		signupPage.selectNewsLetter(true);
@@ -67,12 +66,8 @@ public class TC01_RegisterUser extends BaseTest{
 		softAssert.assertEquals(accCreated, "ACCOUNT CREATED!");
 		
 		acountCreatedPage.clickContinue();
-		boolean loginAs = homePage.getTopMenu().isLoginAsDisplayed();
-		//Assert.assertTrue(loginAs, "Loggedin as not displayed");
-		
 		AccountDeletedPage accountDeletedPage = homePage.getTopMenu().deleteAccount();
-		String accDeleted;
-		accDeleted = accountDeletedPage.getAccountDeletedHeading();
+		String accDeleted = accountDeletedPage.getAccountDeletedHeading();
 		Assert.assertEquals(accDeleted, "ACCOUNT DELETED!");
 		softAssert.assertEquals(accDeleted, "ACCOUNT DELETED!");
 
@@ -80,7 +75,7 @@ public class TC01_RegisterUser extends BaseTest{
 		Assert.assertEquals(title, "Automation Exercise - Account Created");
 		
 		softAssert.assertAll();
+		
+		logger.info("**** Finished verifyRegisterUser ****");
 	}
-
-
 }

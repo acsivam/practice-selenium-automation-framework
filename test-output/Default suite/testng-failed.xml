@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.tests.TC14_PlaceOrderRegisterWhileCheckout">
+      <class name="com.automation.tests.TC01_RegisterUser">
         <methods>
-          <include name="verifyUserCanRegisteWhileCheckout"/>
+          <include name="verifyRegisterUser"/>
           <include name="setup"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.automation.tests.TC14_PlaceOrderRegisterWhileCheckout -->
+      </class> <!-- com.automation.tests.TC01_RegisterUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
