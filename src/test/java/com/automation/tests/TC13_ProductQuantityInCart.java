@@ -11,7 +11,7 @@ import com.automation.pages.CartPage;
 import com.automation.pages.HomePage;
 import com.automation.pages.ProductDetailsPage;
 
-public class TCC13_ProductQuantityInCart extends BaseTest{
+public class TC13_ProductQuantityInCart extends BaseTest{
 
 	@Test
 	public void verifyProductQuantityInCarts(){

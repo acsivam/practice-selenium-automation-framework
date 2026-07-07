@@ -3,6 +3,7 @@ package com.automation.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BasePage;
 import com.automation.utils.ElementUtils;
 
 public class AccountCreatedPage extends BasePage{

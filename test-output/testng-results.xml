@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-07T11:07:02 IST" name="Default suite" finished-at="2026-07-07T11:07:19 IST" duration-ms="17591">
+  <suite started-at="2026-07-07T16:09:20 IST" name="Default suite" finished-at="2026-07-07T16:10:36 IST" duration-ms="76195">
     <groups>
     </groups>
-    <test started-at="2026-07-07T11:07:02 IST" name="Default test" finished-at="2026-07-07T11:07:19 IST" duration-ms="17591">
-      <class name="com.automation.tests.TCC13_ProductQuantityInCart">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.automation.tests.TCC13_ProductQuantityInCart@196a42c3]" started-at="2026-07-07T11:07:02 IST" name="setup" finished-at="2026-07-07T11:07:14 IST" duration-ms="11753" status="PASS">
+    <test started-at="2026-07-07T16:09:20 IST" name="Default test" finished-at="2026-07-07T16:10:36 IST" duration-ms="76195">
+      <class name="com.automation.tests.TC14_PlaceOrderRegisterWhileCheckout">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.automation.tests.TC14_PlaceOrderRegisterWhileCheckout@196a42c3]" started-at="2026-07-07T16:09:20 IST" name="setup" finished-at="2026-07-07T16:09:36 IST" duration-ms="15522" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyProductQuantityInCarts()[pri:0, instance:com.automation.tests.TCC13_ProductQuantityInCart@196a42c3]" started-at="2026-07-07T11:07:14 IST" name="verifyProductQuantityInCarts" finished-at="2026-07-07T11:07:19 IST" duration-ms="5551" status="PASS">
+        <test-method signature="verifyUserCanRegisteWhileCheckout()[pri:0, instance:com.automation.tests.TC14_PlaceOrderRegisterWhileCheckout@196a42c3]" started-at="2026-07-07T16:09:36 IST" name="verifyUserCanRegisteWhileCheckout" finished-at="2026-07-07T16:10:36 IST" duration-ms="60273" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyProductQuantityInCarts -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.TCC13_ProductQuantityInCart@196a42c3]" started-at="2026-07-07T11:07:19 IST" name="teardown" finished-at="2026-07-07T11:07:19 IST" duration-ms="236" status="PASS">
+        </test-method> <!-- verifyUserCanRegisteWhileCheckout -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.TC14_PlaceOrderRegisterWhileCheckout@196a42c3]" started-at="2026-07-07T16:10:36 IST" name="teardown" finished-at="2026-07-07T16:10:36 IST" duration-ms="335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.automation.tests.TCC13_ProductQuantityInCart -->
+      </class> <!-- com.automation.tests.TC14_PlaceOrderRegisterWhileCheckout -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

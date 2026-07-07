@@ -60,13 +60,12 @@ public class ElementUtils {
 		return getElement(locator).getText();
 	}
 	
+	
 	public List<String>  getElementsText(By locator) {
 		List<String>  textList = new ArrayList<>();
-		
 		for(WebElement element : getElements(locator)) {
 			textList.add(element.getText());
 		}
-		
 		return textList;
 	}
 	
@@ -138,5 +137,7 @@ public class ElementUtils {
         ((JavascriptExecutor) driver).executeScript(
                 "arguments[0].scrollIntoView({block:'center'});", element);
     }
+    
+    
 
 }

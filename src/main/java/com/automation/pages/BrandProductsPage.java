@@ -2,6 +2,8 @@ package com.automation.pages;
 
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BasePage;
+
 public class BrandProductsPage extends BasePage{
 
 	public BrandProductsPage(WebDriver driver) {

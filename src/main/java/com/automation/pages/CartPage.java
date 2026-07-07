@@ -7,18 +7,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.automation.base.BasePage;
+import com.automation.components.CheckoutModal;
+
 public class CartPage extends BasePage{
 
 	public CartPage(WebDriver driver) {
 		super(driver);
 	}
 	
-	private By cartRows 			= By.cssSelector("tr[id^='product-']");
-    private By productNameLinks 	= By.xpath("//td[@class='cart_description']/h4/a");
-    private By productPrice			= By.xpath(".//td[@class='cart_price']/p");
-    private By productQuantity		= By.xpath(".//td[@class='cart_quantity']/button");
-    private By productTotalPrice 	= By.xpath(".//td[@class='cart_total']/p");
-    
+	private By cartRows 				= By.cssSelector("tr[id^='product-']");
+    private By productNameLinks 		= By.xpath("//td[@class='cart_description']/h4/a");
+    private By productPrice				= By.xpath(".//td[@class='cart_price']/p");
+    private By productQuantity			= By.xpath(".//td[@class='cart_quantity']/button");
+    private By productTotalPrice 		= By.xpath(".//td[@class='cart_total']/p");
+    private By proceedToCheckoutButton 	= By.xpath("//a[@class='btn btn-default check_out']");
     
 	public int getCartItemCount() {
 		List<WebElement> cartItems = eleUtil.getElements(cartRows);
@@ -74,6 +77,16 @@ public class CartPage extends BasePage{
 	public String getProductTotalPrice(int index) {
 	    return eleUtil.getElements(cartRows).get(index)
 	                  .findElement(productTotalPrice).getText();
+	}
+	
+	public CheckoutPage proceedToCheckoutAsLoggedInUser() {
+	    eleUtil.click(proceedToCheckoutButton);
+	    return new CheckoutPage(driver);
+	}
+
+	public CheckoutModal proceedToCheckoutAsGuest() {
+	    eleUtil.click(proceedToCheckoutButton);
+	    return new CheckoutModal(driver);
 	}
 
 }

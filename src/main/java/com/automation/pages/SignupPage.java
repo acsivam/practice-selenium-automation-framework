@@ -5,6 +5,7 @@ import java.time.Month;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BasePage;
 import com.automation.utils.ElementUtils;
 
 public class SignupPage extends BasePage{
@@ -168,6 +169,7 @@ public class SignupPage extends BasePage{
 		enterAddress1(address1);
 		enterAddress2(address2);
 		selectCountry(country);
+		enterState(state);
 		enterCity(city);
 		enterZipCode(zipCode);
 		enterMobileNumber(mobileNumber);
@@ -193,6 +195,7 @@ public class SignupPage extends BasePage{
 			String mobileNumber) {
 		fillAccountInfo(name, password, day, month, year, newsletter, offers);
 		fillAddressInfo(firstName, lastName, company, address1, address2,	country, state, city, zipCode, mobileNumber);
+		clickCreateAccount();
 		return new AccountCreatedPage(driver);
 	}
 	
