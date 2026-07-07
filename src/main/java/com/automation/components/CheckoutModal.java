@@ -12,14 +12,22 @@ public class CheckoutModal extends BaseComponent{
 		super(driver);
 	}
 
+	private By checkoutModal			= By.cssSelector(".modal-content");
 	private By checkoutHeading 			= By.xpath("//h4[@class='modal-title w-100']");
 	private By checkoutBody				= By.xpath(")//p[normalize-space()='Register / Login account to proceed on checkout.']");
 	private By registerLoginLink		= By.xpath("//u[normalize-space()='Register / Login']");
 	private By continueOnCartButton		= By.xpath("//button[@class='btn btn-success close-checkout-modal btn-block']");
 	
+	public boolean isDiplayed() {
+		return eleUtil.isDisplayed(checkoutModal);
+	}
 	
 	public String getCheckoutHeading() {
 		return eleUtil.getElement(checkoutHeading).getText();
+	}
+	
+	public String getCheckoutMessage() {
+		return eleUtil.getText(checkoutBody);
 	}
 	
 	public LoginPage clickRegisterLogin() {

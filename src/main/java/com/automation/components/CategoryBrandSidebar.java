@@ -31,26 +31,31 @@ public class CategoryBrandSidebar extends BaseComponent{
 	public List<String> getCategoryNames(){
 		return eleUtil.getElementsText(categoryNames);
 	}
-	
-	private By getCategoryLocator(String category) {
-	    return By.cssSelector("a[href='#" + category + "']");
-	}
 		
-	public void expandCategory(String category) {
-	    eleUtil.click(getCategoryLocator(category));
+	public void expandCategory(String categotyName) {
+	    eleUtil.click(category(categotyName));
+	}
+
+	private By category(String categoryName) {
+	    return By.cssSelector("a[href='#" + categoryName + "']");
 	}
 	
-	public void getSubCategoryNames(String category, String subCategory) {
-	    expandCategory(category);
-	    By locator = By.xpath("//div[@id='" + category + "']//a[normalize-space()='" + subCategory + "']");
-	    eleUtil.getElementsText(locator);
+	public List<String> getSubCategoryNames(String categoryName) {
+	    return eleUtil.getElementsText(subCategory(categoryName));
 	}
 	
-	public CategoryProductsPage selectSubCategory(String category, String subCategory) {
-		expandCategory(category);
-		By locator = By.xpath("//div[@id='" + category + "']//a[normalize-space()='" + subCategory + "']");
-		eleUtil.click(locator);
+	private By subCategory(String categoryName) {
+	    return By.xpath("//div[@id='" + categoryName + "']//li/a");
+	}
+	
+	public CategoryProductsPage selectSubCategory(String categoryName, String subCategotyName) {
+		expandCategory(categoryName);
+		eleUtil.click(subCategory(categoryName, subCategotyName));
 		return new CategoryProductsPage(driver);
+	}
+	
+	private By subCategory(String categoryName, String subCategotyName) {
+		return By.xpath("//div[@id='" + categoryName + "']//a[normalize-space()='" + subCategotyName + "']");
 	}
 	
 	public boolean isBrandHeadingDisplayed() {
@@ -65,9 +70,12 @@ public class CategoryBrandSidebar extends BaseComponent{
 		return eleUtil.getElementsText(brandNames);
 	}
 	
-	public BrandProductsPage selectBrand(String brand) {
-		By locator = By.xpath("//a[href='/brand_products/" + brand + "']");
-		eleUtil.click(locator);
+	public BrandProductsPage selectBrand(String brandName) {
+		eleUtil.click(brand(brandName));
 		return new BrandProductsPage(driver);
+	}
+	
+	private By brand(String brandName) {
+		return By.xpath("//a[href='/brand_products/" + brandName + "']");
 	}
 }

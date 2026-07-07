@@ -16,6 +16,7 @@ public class TopMenuComponent extends BaseComponent{
 		super(driver);
 	}
 	
+	private By topMenu				= By.cssSelector(".nav.navbar-nav");
 	private By homeMenu				= By.xpath("//a[normalize-space()='Home']'");
 	private By productsMenu			= By.xpath("//a[@href='/products']");
 	private By cartMenu				= By.xpath("/html[1]/body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]");
@@ -28,8 +29,13 @@ public class TopMenuComponent extends BaseComponent{
 	private By loginAs				= By.xpath("//li[10]//a[1]");
 	private By deleteAccountMenu	= By.xpath("//a[normalize-space()='Delete Account']");
 
+	
+	public boolean isDisplayed() {
+		return eleUtil.isDisplayed(topMenu);
+	}
+	
 	public void goToHomePage() {
-		driver.findElement(homeMenu).click();
+		eleUtil.click(homeMenu);
 	}
 	
 	public ProductsPage goToProductsPage() {
@@ -54,11 +60,11 @@ public class TopMenuComponent extends BaseComponent{
 	}
 	
 	public void goToVideoTutorials() {
-		driver.findElement(videoTutorialsMenu).click();
+		eleUtil.click(videoTutorialsMenu);
 	}
 	
 	public void goToAPITutorailsMenu() {
-		driver.findElement(apiTestingMenu).click();
+		eleUtil.click(apiTestingMenu);
 	}
 	
 	public ContactUsPage goToContactUsPage() {
@@ -67,11 +73,16 @@ public class TopMenuComponent extends BaseComponent{
 	}
 	
 	public LoginPage logout() {
+		eleUtil.click(logoutMenu);
 		return new LoginPage(driver);
 	}
 	
 	public boolean isLoginAsDisplayed() {
 		return eleUtil.isDisplayed(loginAs);
+	}
+	
+	public String loggedInAs() {
+		return eleUtil.getText(loginAs);
 	}
 	
 	public AccountDeletedPage deleteAccount() {

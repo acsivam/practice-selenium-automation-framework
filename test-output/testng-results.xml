@@ -1,21 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-07T21:02:57 IST" name="Default suite" finished-at="2026-07-07T21:04:11 IST" duration-ms="73845">
+  <suite started-at="2026-07-07T21:09:23 IST" name="Default suite" finished-at="2026-07-07T21:11:59 IST" duration-ms="155565">
     <groups>
     </groups>
-    <test started-at="2026-07-07T21:02:57 IST" name="Default test" finished-at="2026-07-07T21:04:11 IST" duration-ms="73845">
+    <test started-at="2026-07-07T21:09:23 IST" name="Default test" finished-at="2026-07-07T21:11:59 IST" duration-ms="155565">
       <class name="com.automation.tests.TC01_RegisterUser">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.automation.tests.TC01_RegisterUser@5afa3c9]" started-at="2026-07-07T21:02:57 IST" name="setup" finished-at="2026-07-07T21:03:22 IST" duration-ms="24673" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.automation.tests.TC01_RegisterUser@5afa3c9]" started-at="2026-07-07T21:09:23 IST" name="setup" finished-at="2026-07-07T21:10:36 IST" duration-ms="72802" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisterUser()[pri:0, instance:com.automation.tests.TC01_RegisterUser@5afa3c9]" started-at="2026-07-07T21:03:22 IST" name="verifyRegisterUser" finished-at="2026-07-07T21:04:11 IST" duration-ms="48894" status="PASS">
+        <test-method signature="verifyRegisterUser()[pri:0, instance:com.automation.tests.TC01_RegisterUser@5afa3c9]" started-at="2026-07-07T21:10:36 IST" name="verifyRegisterUser" finished-at="2026-07-07T21:11:48 IST" duration-ms="72341" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//b[normalize-space()='Account Deleted!']"}
+  (Session info: chrome=149.0.7827.201)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3d6ec545743b6f5174fd52f1830be39a, findElement {using=xpath, value=//b[normalize-space()='Account Deleted!']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.201, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: /var/folders/12/dyh3vm3d59n...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62512}, goog:processID: 24265, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62512/devtoo..., se:cdpVersion: 149.0.7827.201, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3d6ec545743b6f5174fd52f1830be39a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//b[normalize-space()='Account Deleted!']"}
+  (Session info: chrome=149.0.7827.201)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3d6ec545743b6f5174fd52f1830be39a, findElement {using=xpath, value=//b[normalize-space()='Account Deleted!']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.201, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: /var/folders/12/dyh3vm3d59n...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62512}, goog:processID: 24265, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62512/devtoo..., se:cdpVersion: 149.0.7827.201, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3d6ec545743b6f5174fd52f1830be39a
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+at com.automation.utils.ElementUtils.getElement(ElementUtils.java:30)
+at com.automation.utils.ElementUtils.getText(ElementUtils.java:60)
+at com.automation.pages.AccountDeletedPage.getAccountDeletedHeading(AccountDeletedPage.java:19)
+at com.automation.tests.TC01_RegisterUser.verifyRegisterUser(TC01_RegisterUser.java:70)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegisterUser -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.TC01_RegisterUser@5afa3c9]" started-at="2026-07-07T21:04:11 IST" name="teardown" finished-at="2026-07-07T21:04:11 IST" duration-ms="239" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.TC01_RegisterUser@5afa3c9]" started-at="2026-07-07T21:11:49 IST" name="teardown" finished-at="2026-07-07T21:11:59 IST" duration-ms="10337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
