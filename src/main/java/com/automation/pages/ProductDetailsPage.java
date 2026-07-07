@@ -3,6 +3,8 @@ package com.automation.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.components.AddToCartModal;
+
 public class ProductDetailsPage extends BasePage{
 
 	public ProductDetailsPage(WebDriver driver) {
@@ -13,8 +15,8 @@ public class ProductDetailsPage extends BasePage{
 	private By categoryName		= By.xpath("//p[normalize-space()='Category: Women > Tops']");
 	private By price			= By.xpath("//p[normalize-space()='Category: Women > Tops']");
 	private By quantityField	= By.xpath("//input[@id='quantity']");			
-	private By addToCard		= By.name("//button[@type='button']");
-	private By availablity		= By.xpath("//button[@type='button']");
+	private By addToCard		= By.xpath("//button[@type='button']");
+	private By availablity		= By.xpath("//b[normalize-space()='Availability:']");
 	private By condition		= By.xpath("//b[normalize-space()='Condition:']");
 	private By brand			= By.xpath("//b[normalize-space()='Brand:']");
 	
@@ -50,4 +52,15 @@ public class ProductDetailsPage extends BasePage{
 	            && isConditionDisplayed()
 	            && isBrandDisplayed();
 	}
+	
+	public void setQuantity(int quantity) {
+		eleUtil.getElement(quantityField).clear();
+		eleUtil.getElement(quantityField).sendKeys(String.valueOf(quantity));
+	}
+	
+	public AddToCartModal addToCart() {
+		eleUtil.getElement(addToCard).click();
+		return new AddToCartModal(driver);
+	}
+	
 }

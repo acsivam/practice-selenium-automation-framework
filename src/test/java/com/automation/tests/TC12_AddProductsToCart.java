@@ -28,7 +28,6 @@ public class TC12_AddProductsToCart extends BaseTest{
 		softAssert.assertEquals(actualResults, "Automation Exercise");
 		
 		ProductsPage productsPage = homePage.getTopMenu().goToProductsPage();
-		String expectedProductId0 = productsPage.getProductNameByIndex(0);
 		AddToCartModal addToCartModal = productsPage.clickAddToCartByProductId("1");
 
 		addToCartModal.continueShopping();
@@ -43,6 +42,9 @@ public class TC12_AddProductsToCart extends BaseTest{
 		softAssert.assertTrue(list.contains("1"));
 		softAssert.assertTrue(list.contains("21"));
 		
+		list = cartPage.getCartProductName();
+		softAssert.assertTrue(list.contains("Blue Top"));
+		softAssert.assertTrue(list.contains("Blue Cotton Indie Mickey Dress"));
 		softAssert.assertAll();	
 	}
 

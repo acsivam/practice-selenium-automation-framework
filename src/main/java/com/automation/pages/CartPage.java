@@ -32,6 +32,13 @@ public class CartPage extends BasePage{
                 .collect(Collectors.toList());
 	}
 	
+	public List<String> getProductQuantyty(){
+		return eleUtil.getElements(productQuantity)
+				.stream()
+				.map(WebElement::getText)
+				.collect(Collectors.toList());
+	}
+	
 	/*
 	public List<String> getCartProductNames() {
 	    List<WebElement> names = driver.findElements(By.xpath("//td[@class='cart_description']/h4/a"));
@@ -41,7 +48,6 @@ public class CartPage extends BasePage{
 
 	public List<String> getCartProductIds() {
 	    List<WebElement> rows = eleUtil.getElements(cartRows);
-	    System.out.println("Cart rows found: " + eleUtil.getElements(cartRows).size());
 	    if (rows.isEmpty()) {
 	        throw new RuntimeException("No cart rows found. Check locator or page load.");
 	    }
