@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 
 import com.automation.pages.HomePage;
 
-public class HeaderComponent extends BaseComponent{
+public class Header extends BaseComponent{
 	
-	public HeaderComponent(WebDriver driver) {
+	public Header(WebDriver driver) {
 		super(driver);
 	}
 	

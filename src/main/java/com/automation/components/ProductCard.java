@@ -8,11 +8,11 @@ import com.automation.pages.ProductDetailsPage;
 
 public class ProductCard extends BaseComponent{
 
-	private By productLocator;
+	private WebElement productCard;
 	
-	public ProductCard(WebDriver driver, By productLocator){
+	public ProductCard(WebDriver driver, WebElement productCard){
 		 super(driver);
-		 this.productLocator = productLocator;
+		 this.productCard = productCard;
 	}
 	
 	private By productName 	= By.cssSelector(".productinfo p");
@@ -21,25 +21,21 @@ public class ProductCard extends BaseComponent{
 	private By viewProduct 	= By.cssSelector(".choose a");
 	
 	
-	private WebElement getProduct() {
-        return driver.findElement(productLocator);
-    }
-	
 	public String getName() {
-        return getProduct().findElement(productName).getText();
+        return productCard.findElement(productName).getText();
     }
 
     public String getPrice() {
-        return getProduct().findElement(productPrice).getText();
+        return productCard.findElement(productPrice).getText();
     }
 
     public AddToCartModal clickAddToCart() {
-    	getProduct().findElement(addToCart).click();
+    	productCard.findElement(addToCart).click();
         return new AddToCartModal(driver);
     }
 
     public ProductDetailsPage clickViewProduct() {
-    	getProduct().findElement(viewProduct).click();
+    	productCard.findElement(viewProduct).click();
         return new ProductDetailsPage(driver);
     }
 

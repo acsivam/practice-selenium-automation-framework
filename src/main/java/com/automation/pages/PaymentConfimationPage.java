@@ -12,7 +12,27 @@ public class PaymentConfimationPage extends BasePage{
 	}
 	
 	
-	private By confirmationHeading 	= By.xpath("//b[normalize-space()='Order Placed!']");
+	private By orderPlacedHeading 		= By.cssSelector("[data-qa='order-placed']");
+	private By successMessage 			= By.cssSelector("h2[data-qa='order-placed'] + p");
+	//private By successMessage 		= By.xpath("//h2[@data-qa='order-placed']/following-sibling::p[1]");
+	private By downloadInvoiceButton 	= By.cssSelector("a[href*='download_invoice']");
+	private By continueButton 			= By.cssSelector("[data-qa='continue-button']");
 	
+	public boolean isOrderPlacedDisplayed() {
+	    return eleUtil.isDisplayed(orderPlacedHeading);
+	}
+
+	public String getSuccessMessage() {
+	    return eleUtil.getText(successMessage);
+	}
+
+	public void downloadInvoice() {
+	    eleUtil.click(downloadInvoiceButton);
+	}
+
+	public HomePage clickContinue() {
+	    eleUtil.click(continueButton);
+	    return new HomePage(driver);
+	}
 
 }

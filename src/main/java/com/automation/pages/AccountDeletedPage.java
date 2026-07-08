@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import com.automation.base.BasePage;
 
 public class AccountDeletedPage extends BasePage{
-
+	
 	public AccountDeletedPage(WebDriver driver) {
 		super(driver);
 	}

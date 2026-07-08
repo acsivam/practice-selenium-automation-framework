@@ -11,24 +11,34 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.automation.base.BasePage;
 import com.automation.components.AddToCartModal;
+import com.automation.components.CategoryBrandSidebar;
+import com.automation.components.ProductGrid;
 import com.automation.utils.ElementUtils;
 
 public class ProductsPage extends BasePage{
 	
+	private CategoryBrandSidebar sidebar;
+	private ProductGrid productGrid;
+	
 	public ProductsPage(WebDriver driver) {
 		super(driver);
+		
+		this.sidebar = new CategoryBrandSidebar(driver);
+		this.productGrid = new ProductGrid(driver);
 	}
 	
 	private By saleImage 				= By.xpath("//img[@id='sale_image']");
+	
 	private By searchProductField		= By.xpath("//input[@id='search_product']");
 	private By searchButton				= By.xpath("//button[@id='submit_search']");
-	private By categoryHeading			= By.xpath("//h2[normalize-space()='Category']");
-	private By categoryNames 			= By.cssSelector("#accordian .panel-title a");
+	
+	//private By categoryHeading			= By.xpath("//h2[normalize-space()='Category']");
+	//private By categoryNames 			= By.cssSelector("#accordian .panel-title a");
 	//	private By womenSubCategories 		= By.cssSelector("#Women li");
 	//   private By menSubCategories 		= By.cssSelector("#Men li");
 	//   private By kidsSubCategories 		= By.cssSelector("#Kids li");
-	private By brandHeading				= By.xpath("//h2[normalize-space()='Brands']");
-	private By brandNames				= By.cssSelector(".brands-name");
+	//private By brandHeading				= By.xpath("//h2[normalize-space()='Brands']");
+	//private By brandNames				= By.cssSelector(".brands-name");
 	//	private By poloSubCategories		= By.cssSelector("a[href='/brand_products/Polo']");
 	//	private By hnmSubCategories			= By.cssSelector("a[href='/brand_products/H&M']");
 	//	private By madameSubCategories		= By.cssSelector("a[href='/brand_products/Madame']");
@@ -37,13 +47,20 @@ public class ProductsPage extends BasePage{
 	//	private By allenSolySubCategories	= By.cssSelector("a[href='/brand_products/Allen Solly Junior']");
 	//	private By kookieSubCategories		= By.cssSelector("a[href='/brand_products/Kookie Kids']");
 	//	private By bibaSubCategories		= By.cssSelector("a[href='/brand_products/Biba']");
-	private By productHeading			= By.xpath("//h2[@class='title text-center']");
-	private By products 				= By.cssSelector(".product-image-wrapper");
-	private By viewProductLinks 		= By.cssSelector("a[href*='product_details']");
-	private By productsGrid 			= By.cssSelector(".features_items");
+	//private By productHeading			= By.xpath("//h2[@class='title text-center']");
+	//private By products 				= By.cssSelector(".product-image-wrapper");
+	//private By viewProductLinks 		= By.cssSelector("a[href*='product_details']");
+	//private By productsGrid 			= By.cssSelector(".features_items");
 
 	
-			
+	public CategoryBrandSidebar getSidebar() {
+		return sidebar;
+	}
+	
+	public ProductGrid getProductGrid() {
+		return productGrid;
+	}
+	
 	public boolean isSaleImageDisplayed() {
 		return eleUtil.isDisplayed(saleImage);
 	}
@@ -63,6 +80,7 @@ public class ProductsPage extends BasePage{
 		return new ProductsPage(driver);
 	}
 	
+	/*
 	public int getProductCount() {
 		return eleUtil.getCount(products);
 	}
@@ -75,7 +93,7 @@ public class ProductsPage extends BasePage{
 	public String getProductHeading() {
 		return eleUtil.getText(productHeading);
 	}
-	
+	*/
 	/*
 	public AddToCartModal addProductToCartViaHover(String productName){
 		eleUtil.getElement(addToCart);
@@ -96,6 +114,7 @@ public class ProductsPage extends BasePage{
 	}
 	*/ 
 
+	/*
 	private By addToCartById(String productId) {
 	    return By.cssSelector("a.add-to-cart[data-product-id='" + productId + "']");
 	}
@@ -111,6 +130,7 @@ public class ProductsPage extends BasePage{
 		eleUtil.click(viewProductLinks);
 	    return new ProductDetailsPage(driver);
 	}
+	*/
 	
 	/* 
 	public AddToCartModal clickAddToCartOnOverlay (String productName) {
@@ -177,6 +197,7 @@ public class ProductsPage extends BasePage{
 	
 	*/
 	
+	/*
 	public String getProductNameByIndex(int index) {
 	    return eleUtil.getElements(products)
 	    		.get(index)
@@ -193,6 +214,8 @@ public class ProductsPage extends BasePage{
 	public boolean isProductsListDisplayed() {
 	    return eleUtil.isDisplayed(productsGrid);
 	}
+	*/
+	
 	
 	/*
 	// ==================== Dynamic Locators ====================

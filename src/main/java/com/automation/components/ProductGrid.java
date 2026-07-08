@@ -1,7 +1,11 @@
 package com.automation.components;
 
+import java.util.List;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ProductGrid extends BaseComponent{
 
@@ -12,7 +16,8 @@ public class ProductGrid extends BaseComponent{
 	private By products 		= By.cssSelector(".features_items .product-image-wrapper");
 	private By productGrid 		= By.cssSelector(".features_items");
 	private By productHeading 	= By.cssSelector(".features_items h2.title");
-	private By productCards 	= By.cssSelector(".product-image-wrapper");
+	private By productCards		= By.cssSelector(".product-image-wrapper");
+	private By productNames 	= By.cssSelector(".productinfo p");
 	
 	
 	public boolean isDisplayed(){
@@ -24,25 +29,39 @@ public class ProductGrid extends BaseComponent{
     }
 
     public int getProductCount(){
-        return eleUtil.getCount(productCards);
+        return eleUtil.getCount(products);
+    }
+    
+    public boolean isProductDisplayed(String expectedProductName) {
+        List<WebElement> productElements = eleUtil.getElements(productNames);
+
+        for(WebElement product : productElements) {
+            if(product.getText().equals(expectedProductName)) {
+                return true;
+            }
+        }
+        return false;
     }
     
     public ProductCard getProductById(String productId) {
-    	//eleUtil.getElement(productIdLocator(productId));
-        return new ProductCard(driver,productIdLocator(productId));
-    }
+        List<WebElement> cards = eleUtil.getElements(productCards);
+        for (WebElement card : cards) {
+            String id = card.findElement(By.cssSelector(".add-to-cart"))
+                            .getAttribute("data-product-id");
 
-    private By productIdLocator(String productId) {
-    	return By.cssSelector(".product-image-wrapper a[data-product-id='" + productId + "']");
+            if (id.equals(productId)) {
+                return new ProductCard(driver, card);
+            }
+        }
+        throw new NoSuchElementException("Product not found: " + productId);
     }
     
-    public ProductCard getProductByName(String productName) {
-    	//eleUtil.getElement(productNameLocator(productName));
-    	return new ProductCard(driver, productNameLocator(productName));
-    }
-    
-    private By productNameLocator(String productName) {
-    	return By.xpath("//div[@class='productinfo text-center']" +
-                        "[p[normalize-space()='" + productName + "']]");
+    public ProductCard getProductByName(String name) {
+        for (WebElement card : eleUtil.getElements(productCards)) {
+            if (card.findElement(productNames).getText().equals(name)) {
+                return new ProductCard(driver, card);
+            }
+        }
+        throw new NoSuchElementException("Product not found: " + name);
     }
 }

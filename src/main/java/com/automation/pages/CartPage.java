@@ -1,28 +1,47 @@
 package com.automation.pages;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import com.automation.base.BasePage;
+import com.automation.components.CartTable;
 import com.automation.components.CheckoutModal;
 
 public class CartPage extends BasePage{
+	
+	private CartTable cartTable;
 
 	public CartPage(WebDriver driver) {
 		super(driver);
+		this.cartTable 	= new CartTable(driver);
 	}
 	
+	/*
 	private By cartRows 				= By.cssSelector("tr[id^='product-']");
     private By productNameLinks 		= By.xpath("//td[@class='cart_description']/h4/a");
     private By productPrice				= By.xpath(".//td[@class='cart_price']/p");
     private By productQuantity			= By.xpath(".//td[@class='cart_quantity']/button");
     private By productTotalPrice 		= By.xpath(".//td[@class='cart_total']/p");
+    */
     private By proceedToCheckoutButton 	= By.xpath("//a[@class='btn btn-default check_out']");
+
     
+	
+    public CartTable getCartTable() {
+    	return cartTable;
+    }
+    
+	public CheckoutPage proceedToCheckoutAsLoggedInUser() {
+	    eleUtil.click(proceedToCheckoutButton);
+	    return new CheckoutPage(driver);
+	}
+
+	public CheckoutModal proceedToCheckoutAsGuest() {
+	    eleUtil.click(proceedToCheckoutButton);
+	    return new CheckoutModal(driver);
+	}
+    
+    /*
 	public int getCartItemCount() {
 		List<WebElement> cartItems = eleUtil.getElements(cartRows);
 	    return cartItems.size();
@@ -42,13 +61,16 @@ public class CartPage extends BasePage{
 				.collect(Collectors.toList());
 	}
 	
+	*/
+	
 	/*
 	public List<String> getCartProductNames() {
 	    List<WebElement> names = driver.findElements(By.xpath("//td[@class='cart_description']/h4/a"));
 	    return names.stream().map(WebElement::getText).collect(Collectors.toList());
 	}
 	*/ 
-
+    
+    /*
 	public List<String> getCartProductIds() {
 	    List<WebElement> rows = eleUtil.getElements(cartRows);
 	    if (rows.isEmpty()) {
@@ -79,14 +101,7 @@ public class CartPage extends BasePage{
 	                  .findElement(productTotalPrice).getText();
 	}
 	
-	public CheckoutPage proceedToCheckoutAsLoggedInUser() {
-	    eleUtil.click(proceedToCheckoutButton);
-	    return new CheckoutPage(driver);
-	}
+	*/
 
-	public CheckoutModal proceedToCheckoutAsGuest() {
-	    eleUtil.click(proceedToCheckoutButton);
-	    return new CheckoutModal(driver);
-	}
 
 }

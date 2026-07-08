@@ -10,9 +10,9 @@ import com.automation.pages.LoginPage;
 import com.automation.pages.ProductsPage;
 import com.automation.pages.TestCasesPage;
 
-public class TopMenuComponent extends BaseComponent{
+public class TopMenu extends BaseComponent{
 
-	public TopMenuComponent(WebDriver driver) {
+	public TopMenu(WebDriver driver) {
 		super(driver);
 	}
 	

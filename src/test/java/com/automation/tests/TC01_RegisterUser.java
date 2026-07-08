@@ -45,8 +45,8 @@ public class TC01_RegisterUser extends BaseTest{
 		signupPage.enterName("John");
 		signupPage.enterPassword("1234asd");
 		signupPage.selectDateOfBirth("19", "February", "1994");
-		signupPage.selectNewsLetter(true);
-		signupPage.selectOffers(true);
+		signupPage.subscribeToNewsletter(true);
+		signupPage.receiveSpecialOffers(true);
 		
 		signupPage.enterFirstName("John");
 		signupPage.enterLastName("Will");

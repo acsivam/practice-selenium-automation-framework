@@ -1,17 +1,46 @@
 package com.automation.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
-import com.automation.components.AddToCartModal;
+import com.automation.components.CategoryBrandSidebar;
+import com.automation.components.ProductImage;
+import com.automation.components.ProductInformation;
+import com.automation.components.ReviewForm;
 
 public class ProductDetailsPage extends BasePage{
 
+	private CategoryBrandSidebar sidebar;
+	private ProductImage productImage;
+    private ProductInformation productInformation;
+    private ReviewForm reviewForm;
+    
 	public ProductDetailsPage(WebDriver driver) {
 		super(driver);
+		
+		this.sidebar = new CategoryBrandSidebar(driver);
+		this.productImage = new ProductImage(driver);
+        this.productInformation = new ProductInformation(driver);
+        this.reviewForm = new ReviewForm(driver);
 	}
 	
+	public CategoryBrandSidebar getSidebar() {
+		return sidebar;
+	}
+	
+    public ProductImage getProductImage() {
+        return productImage;
+    }
+
+    public ProductInformation getProductInformation() {
+        return productInformation;
+    }
+
+    public ReviewForm getReviewForm() {
+        return reviewForm;
+    }
+    
+    /*
 	private By productName		= By.xpath("//h2[normalize-space()='Blue Top']");
 	private By categoryName		= By.xpath("//p[normalize-space()='Category: Women > Tops']");
 	private By price			= By.xpath("//p[normalize-space()='Category: Women > Tops']");
@@ -63,5 +92,5 @@ public class ProductDetailsPage extends BasePage{
 		eleUtil.getElement(addToCard).click();
 		return new AddToCartModal(driver);
 	}
-	
+	*/
 }
