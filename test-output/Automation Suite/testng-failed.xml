@@ -5,14 +5,15 @@
     <listener class-name="com.automation.listeners.ExtentReportListener"/>
   </listeners>
   <test thread-count="5" name="Regression Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.automation.tests.TC01_RegisterUser">
+      <class name="com.automation.tests.ProductsPageTest">
         <methods>
-          <include name="verifyRegisterUser"/>
           <include name="setup"/>
+          <include name="TC001_Verify_Products_Page_Is_Displayed"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.automation.tests.TC01_RegisterUser -->
+      </class> <!-- com.automation.tests.ProductsPageTest -->
     </classes>
   </test> <!-- Regression Test(failed) -->
 </suite> <!-- Failed suite [Automation Suite] -->

@@ -15,3 +15,12 @@
 21:05:11.014 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
 21:06:39.796 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished verifyRegisterUser ****
 21:10:36.682 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
+20:18:26.282 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+20:20:02.128 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+20:21:39.039 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+20:30:27.332 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+20:36:00.059 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+20:37:46.906 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+20:38:39.302 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+20:38:44.744 [main] INFO  com.automation.tests.ProductsPageTest - *** Finished TC001_Verify_Products_Page_Is_Displayed
+21:45:30.264 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed

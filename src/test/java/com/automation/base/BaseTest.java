@@ -1,5 +1,6 @@
 package com.automation.base;
 
+import java.sql.DriverManager;
 import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
@@ -8,29 +9,47 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+
+import com.automation.base.DriverFactory;
 
 public class BaseTest {
 
-	public static WebDriver driver;
-	public Logger logger;
+	//protected WebDriver driver;
+	protected Logger logger;
+	
+	/*
+	public WebDriver getDriver() {
+	    return driver;
+	}
+	*/
 	
 	@BeforeClass
-	public void setup() {
+	@Parameters({"browser"})
+	public void setup(String browser) {
 		System.out.println(">>> SET UP RUNNING");
 		
 		logger = LogManager.getLogger(this.getClass());
 		
-		driver = new ChromeDriver();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get("https://automationexercise.com/");
-		driver.manage().window().maximize();
+		DriverFactory.initDriver(browser);
+		DriverFactory.getDriver()
+			.manage().deleteAllCookies();
+		DriverFactory.getDriver()
+			.get("https://automationexercise.com/");
+		DriverFactory.getDriver()
+			.manage().window().maximize();
+		
+		//driver = new ChromeDriver();
+		//driver.manage().deleteAllCookies();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		//driver.get("https://automationexercise.com/");
+		//driver.manage().window().maximize();
 	}
 	
 	
 	@AfterClass
 	public void teardown() {
-		driver.quit();
+		DriverFactory.quitDriver();
 	}
 
 }

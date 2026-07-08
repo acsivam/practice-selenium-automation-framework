@@ -22,7 +22,6 @@ public class ProductInformation extends BasePage {
         return eleUtil.getText(productName);
     }
 
-    
     public String getCategory() {
     	return eleUtil.getText(category);
     }
@@ -31,12 +30,10 @@ public class ProductInformation extends BasePage {
         return eleUtil.getText(price);
     }
 
-
     public void enterQuantity(String qty) {
     	eleUtil.getElement(quantity).clear();
     	eleUtil.enterText(quantity, qty);
     }
-
 
     public void clickAddToCart() {
     	eleUtil.click(addToCartButton);

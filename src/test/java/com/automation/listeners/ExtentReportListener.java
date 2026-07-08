@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.automation.base.BaseTest;
+import com.automation.base.DriverFactory;
 import com.automation.utils.ExtentReportManager;
 import com.automation.utils.ScreenshotUtil;
 import com.aventstack.extentreports.ExtentTest;
@@ -44,9 +46,12 @@ public class ExtentReportListener implements ITestListener {
         extendTest.assignCategory(result.getMethod().getGroups());
         extendTest.log(Status.FAIL, result.getName() + " got failed");
         
+        //BaseTest baseTest 	= (BaseTest) result.getInstance();
+        //WebDriver driver	= baseTest.getDriver();
+        
         String screenshotPath =
                 ScreenshotUtil.captureScreenshot(
-                        BaseTest.driver,
+                		DriverFactory.getDriver(),
                         result.getMethod().getMethodName()
                 );
 

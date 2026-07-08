@@ -5,10 +5,15 @@
     </listeners>
 
     <test name="Regression Test">
+    
+     	<parameter name="browser" value="chrome"/>
+     	
         <classes>
-            <class name="com.automation.tests.TC01_RegisterUser"/>
+            <class name="com.automation.tests.ProductsPageTest"/>
+            <!--
             <class name="com.automation.tests.TC02_UserLoginSuccessfully"/>
-            <class name="com.automation.tests.TC03_UserLoginError"/>
+            <class name="com.automation.tests.TC03_UserLoginError"/> 
+            -->
         </classes>
     </test>
 

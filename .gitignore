@@ -1,0 +1,24 @@
+# Maven
+target/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# TestNG
+test-output/
+
+# Reports
+reports/
+extent-report/
+
+# Screenshots
+screenshots/
