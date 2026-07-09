@@ -9,47 +9,26 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    public static WebDriver createDriver(String browser) {
 
-    public static void initDriver(String browser) {
+        switch(browser.trim().toLowerCase()) {
 
-    	switch(browser.trim().toLowerCase()) {
-    	
-    	case "chrome":
-    		WebDriverManager.chromedriver().setup();
-    		driver.set(new ChromeDriver());
-    		break;
-    		
-    	case "firefox":
-    		WebDriverManager.firefoxdriver().setup();
-    		driver.set(new FirefoxDriver());
-    		break;
-    		
-    	case "safari":
-    		WebDriverManager.safaridriver().setup();
-    		driver.set(new SafariDriver());
-    		break;
-   
-    	default:
-    		throw new IllegalArgumentException(
-                    "Browser not supported: " + browser
-                );
-    	}
-    
-    }
-    	
-   
-    public static WebDriver getDriver() {
-        return driver.get();
-    }
+        case "chrome":
+            WebDriverManager.chromedriver().setup();
+            return new ChromeDriver();
 
+        case "firefox":
+            WebDriverManager.firefoxdriver().setup();
+            return new FirefoxDriver();
 
-    public static void quitDriver() {
-        if(driver.get() != null) {
-            driver.get().quit();
-            driver.remove();
+        case "safari":
+            WebDriverManager.safaridriver().setup();
+            return new SafariDriver();
 
+        default:
+            throw new IllegalArgumentException(
+                "Browser not supported: " + browser
+            );
         }
     }
-    
 }

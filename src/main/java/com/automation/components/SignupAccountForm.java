@@ -3,6 +3,8 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.models.User;
+
 public class SignupAccountForm extends BaseComponent{
 
 	public SignupAccountForm(WebDriver driver) {
@@ -50,21 +52,46 @@ public class SignupAccountForm extends BaseComponent{
 		eleUtil.enterText(passwordField, password);
 	}
 	
-	public void selectDateOfBirth(String day, String month, String year) {
+	private void selectDay(String day) {
 		eleUtil.selectByVisibleText(dayDropdown, day);
+	}
+
+	private void selectMonth(String month) {
 		eleUtil.selectByVisibleText(monthDropdown, month);
+	}
+
+	private void selectYear(String year) {
 		eleUtil.selectByVisibleText(yearDropdown, year);
 	}
 	
+	public void selectDateOfBirth(String day, String month, String year) {
+		selectDay(day);
+		selectMonth(month);
+		selectYear(year);
+	}
+	
 	public void subscribeToNewsletter(boolean value) {
-		if(value) {
+		if(value && !eleUtil.isSelected(newsletter)) {
 			eleUtil.click(newsletter);
 		}
 	}
 	
 	public void receiveSpecialOffers(boolean value) {
-		if(value) {
+		if(value && !eleUtil.isSelected(specialOffers)) {
 			eleUtil.click(specialOffers);
 		}
+	}
+	
+	public void fill(User user) {
+	    selectTitle(user.getTitle());
+	    enterName(user.getName());
+	    enterPassword(user.getPassword());
+	    selectDay(user.getDay());
+	    selectMonth(user.getMonth());
+	    selectYear(user.getYear());
+	    //selectDateOfBirth(user.getDay(),user.getMonth(),user.getYear());
+
+	    subscribeToNewsletter(user.isNewsletter());
+	    receiveSpecialOffers(user.isSpecialOffers());
 	}
 }

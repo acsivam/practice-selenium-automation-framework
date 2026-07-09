@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-08T21:45:14 IST" name="Automation Suite" finished-at="2026-07-08T21:46:33 IST" duration-ms="78116">
+  <suite started-at="2026-07-09T15:35:58 IST" name="Automation Suite" finished-at="2026-07-09T15:36:37 IST" duration-ms="38660">
     <groups>
     </groups>
-    <test started-at="2026-07-08T21:45:14 IST" name="Regression Test" finished-at="2026-07-08T21:46:33 IST" duration-ms="78116">
-      <class name="com.automation.tests.ProductsPageTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.automation.tests.ProductsPageTest@1c5920df]" started-at="2026-07-08T21:45:14 IST" name="setup" finished-at="2026-07-08T21:45:29 IST" duration-ms="15058" status="PASS">
+    <test started-at="2026-07-09T15:35:58 IST" name="Regression Test" finished-at="2026-07-09T15:36:37 IST" duration-ms="38660">
+      <class name="com.automation.tests.TC01_RegisterUser">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.automation.tests.TC01_RegisterUser@4c60d6e9]" started-at="2026-07-09T15:35:58 IST" name="setup" finished-at="2026-07-09T15:36:01 IST" duration-ms="3198" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,20 +18,55 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TC001_Verify_Products_Page_Is_Displayed()[pri:0, instance:com.automation.tests.ProductsPageTest@1c5920df]" started-at="2026-07-08T21:45:30 IST" name="TC001_Verify_Products_Page_Is_Displayed" finished-at="2026-07-08T21:45:30 IST" duration-ms="743" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.TC01_RegisterUser@4c60d6e9]" started-at="2026-07-09T15:36:01 IST" name="launchApplication" finished-at="2026-07-09T15:36:12 IST" duration-ms="10753" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:com.automation.tests.TC01_RegisterUser@4c60d6e9]" started-at="2026-07-09T15:36:12 IST" name="setUpTest" finished-at="2026-07-09T15:36:12 IST" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method signature="tc02_verifyUserCanCreateAccount()[pri:0, instance:com.automation.tests.TC01_RegisterUser@4c60d6e9]" started-at="2026-07-09T15:36:12 IST" name="tc02_verifyUserCanCreateAccount" finished-at="2026-07-09T15:36:31 IST" duration-ms="18791" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[expected [ALL PRODUCTS] but found [FEATURES ITEMS]]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//li[10]//a[1]"}
+  (Session info: chrome=149.0.7827.201)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d2b3852afa3d4e9ce76024200aa7c7fc, findElement {using=xpath, value=//li[10]//a[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.201, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: /var/folders/12/dyh3vm3d59n...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51119}, goog:processID: 39636, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:51119/devtoo..., se:cdpVersion: 149.0.7827.201, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d2b3852afa3d4e9ce76024200aa7c7fc]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [ALL PRODUCTS] but found [FEATURES ITEMS]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at com.automation.tests.ProductsPageTest.TC001_Verify_Products_Page_Is_Displayed(ProductsPageTest.java:23)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[10]//a[1]"}
+  (Session info: chrome=149.0.7827.201)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d2b3852afa3d4e9ce76024200aa7c7fc, findElement {using=xpath, value=//li[10]//a[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.201, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: /var/folders/12/dyh3vm3d59n...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51119}, goog:processID: 39636, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:51119/devtoo..., se:cdpVersion: 149.0.7827.201, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d2b3852afa3d4e9ce76024200aa7c7fc
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+at com.automation.utils.ElementUtils.getElement(ElementUtils.java:30)
+at com.automation.utils.ElementUtils.isDisplayed(ElementUtils.java:74)
+at com.automation.components.TopMenu.isLoginAsDisplayed(TopMenu.java:81)
+at com.automation.tests.TC01_RegisterUser.tc02_verifyUserCanCreateAccount(TC01_RegisterUser.java:92)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -60,23 +95,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC001_Verify_Products_Page_Is_Displayed -->
-        <test-method signature="TC002_Verify_Total_Products_Displayed()[pri:0, instance:com.automation.tests.ProductsPageTest@1c5920df]" started-at="2026-07-08T21:45:31 IST" name="TC002_Verify_Total_Products_Displayed" finished-at="2026-07-08T21:45:53 IST" duration-ms="21630" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC002_Verify_Total_Products_Displayed -->
-        <test-method signature="TC003_Verify_Product_Information_Is_Displayed()[pri:0, instance:com.automation.tests.ProductsPageTest@1c5920df]" started-at="2026-07-08T21:45:53 IST" name="TC003_Verify_Product_Information_Is_Displayed" finished-at="2026-07-08T21:46:32 IST" duration-ms="39554" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC003_Verify_Product_Information_Is_Displayed -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.ProductsPageTest@1c5920df]" started-at="2026-07-08T21:46:32 IST" name="teardown" finished-at="2026-07-08T21:46:33 IST" duration-ms="219" status="PASS">
+        </test-method> <!-- tc02_verifyUserCanCreateAccount -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.TC01_RegisterUser@4c60d6e9]" started-at="2026-07-09T15:36:32 IST" name="teardown" finished-at="2026-07-09T15:36:37 IST" duration-ms="5155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.automation.tests.ProductsPageTest -->
+      </class> <!-- com.automation.tests.TC01_RegisterUser -->
     </test> <!-- Regression Test -->
   </suite> <!-- Automation Suite -->
 </testng-results>

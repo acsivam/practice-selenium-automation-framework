@@ -16,11 +16,11 @@ public class BasePage {
 	private TopMenu topMenu;
 	
 	public BasePage(WebDriver driver) {
-		this.driver 	= driver;
-		this.eleUtil 	= new ElementUtils(driver);
-        this.footer 	= new Footer(driver);
-        this.header 	= new Header(driver);
-        this.topMenu	= new TopMenu(driver);
+		this.driver 	= DriverManager.getDriver();
+		this.eleUtil 	= new ElementUtils(DriverManager.getDriver());
+        this.footer 	= new Footer(DriverManager.getDriver());
+        this.header 	= new Header(DriverManager.getDriver());
+        this.topMenu	= new TopMenu(DriverManager.getDriver());
 	}
 	
 	

@@ -1,10 +1,13 @@
 package com.automation.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.automation.base.BaseTest;
+import com.automation.base.DriverFactory;
+import com.automation.models.User;
 import com.automation.pages.AccountCreatedPage;
 import com.automation.pages.AccountDeletedPage;
 import com.automation.pages.HomePage;
@@ -13,32 +16,98 @@ import com.automation.pages.SignupPage;
 
 public class TC01_RegisterUser extends BaseTest{
 	
-
+    private HomePage homePage;
+    private LoginPage LoginPage;
+    private User user;
+	
+	@BeforeMethod
+    public void setUpTest() {
+		//launchApplication();
+        homePage	= new HomePage(driver);
+       // LoginPage 	= homePage.getTopMenu().goToLoginPage();
+        
+    	user = new User();
+		user.setName("John");
+		user.setEmail("john123@testnow.com");
+    }
+	
 	@Test
-	public void verifyRegisterUser() {
-		logger.info("**** Starting verifyRegisterUser ****");
+	public void tc01_verifyUserCanSignup() {
+		logger.info("**** Starting tc01_verifyUserCanSignup ****");
 		SoftAssert softAssert = new SoftAssert();
 	
-		HomePage homePage = new HomePage(driver);
 		String title = homePage.getPageTitle();
-		//Assert.assertEquals(title, "Automation Exercise"); //hard assert
 		softAssert.assertEquals(title, "Automation Exercise");
 		
 		LoginPage loginPage = homePage.getTopMenu().goToLoginPage();
-		boolean b = loginPage.isSignupHeadingDisplayed();
-		//Assert.assertTrue(b, "Signup section is not visible");
-		softAssert.assertTrue(b, "Signup section is not visible");
+		Assert.assertTrue(
+				loginPage.getSignupForm().isDisplayed(),
+				"Signup form is not displayed"
+				);
 		
-		loginPage.enterName("Adam");
-		loginPage.enterSingupEmail("abcd@123.com");
-		loginPage.clickSignup();
+		SignupPage signupPage = loginPage.getSignupForm().signup(user);
+		Assert.assertTrue(
+				signupPage.isAccountInfoSectionDisplayed(),
+				"Account Information Section not displayed"
+				);
+		
+		softAssert.assertAll();
+		
+		logger.info("**** Finished tc01_verifyUserCanSignup ****");
+	}	
+	
+	@Test
+	public void tc02_verifyUserCanCreateAccount() {
+		logger.info("**** Starting tc01_verifyUserCanSignup ****");
+		SoftAssert softAssert = new SoftAssert();
+		
+		LoginPage loginPage = homePage.getTopMenu().goToLoginPage();
+		SignupPage signupPage = loginPage.getSignupForm().signup(user);
+		
+		User usr = new User();
+		usr.setTitle("Mr");
+		usr.setName("John");
+		usr.setPassword("pass123");
+		usr.setDay("19");
+		usr.setMonth("August");
+		usr.setYear("1999");
+		usr.setNewsletter(true);
+		usr.setSpecialOffers(false);
+		usr.setFirstName("John");
+		usr.setLastName("William");
+		usr.setCompany("Baur And Company");
+	    usr.setAddress1("Main Road");
+	    usr.setAddress2("Galaxy Path");
+	    usr.setCountry("India");
+	    usr.setState("ABCD");
+	    usr.setCity("Mumbai");
+	    usr.setZipcode("1234");
+	    usr.setMobile("123456");
+
+		AccountCreatedPage accCreated= signupPage.createAccount(usr);
+		Assert.assertTrue(
+				accCreated.isAccountCreatedHeadingDisplayed(),
+				"Account Created");
+		homePage = accCreated.clickContinue();
+		softAssert.assertTrue(
+				homePage.getTopMenu().isLoginAsDisplayed(),
+				"Login As not displayed");
+		AccountDeletedPage accDel = homePage.getTopMenu().deleteAccount();
+		softAssert.assertEquals(
+				accDel.getAccountDeletedHeading(),
+				"ACCOUNT DELETED!");
+		accDel.clickContinue();
+		
+		softAssert.assertAll();		
+	}
+		/*
 		SignupPage signupPage = new SignupPage(driver);
-		String accountInfo = signupPage.getAccountInfoHeading();
-		//Assert.assertEquals(accountInfo, "ENTER ACCOUNT INFORMATION");
+		String accountInfo = signupPage.getSignupAccountForm().getHeading();
 		softAssert.assertEquals(accountInfo, "ENTER ACCOUNT INFORMATION");
 		
-		String addressInfo = signupPage.getAddressInfoHeading();
-		//Assert.assertEquals(addressInfo, "ADDRESS INFORMATION");
+		signupPage.getSignupAccountForm().fill(User user);
+		
+		String addressInfo = signupPage.getAddressForm().getAddressInfoHeading();
 		softAssert.assertEquals(addressInfo, "ADDRESS INFORMATION");
 		
 		signupPage.selectTitle("mrs");
@@ -76,6 +145,6 @@ public class TC01_RegisterUser extends BaseTest{
 		
 		softAssert.assertAll();
 		
-		logger.info("**** Finished verifyRegisterUser ****");
-	}
+		*/
+
 }

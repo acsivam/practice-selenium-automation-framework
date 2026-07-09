@@ -10,7 +10,10 @@ public class ScreenshotUtil {
 
     public static String captureScreenshot(WebDriver driver, String testName) {
 
-        String screenshotPath = "./screenshots/" + testName + ".png";
+        String screenshotPath = System.getProperty("user.dir") 
+        		+ "./screenshots/" 
+        		+ testName 
+        		+ ".png";
 
         TakesScreenshot ts = (TakesScreenshot) driver;
 

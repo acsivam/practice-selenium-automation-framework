@@ -13,6 +13,7 @@ import org.testng.ITestResult;
 
 import com.automation.base.BaseTest;
 import com.automation.base.DriverFactory;
+import com.automation.base.DriverManager;
 import com.automation.utils.ExtentReportManager;
 import com.automation.utils.ScreenshotUtil;
 import com.aventstack.extentreports.ExtentTest;
@@ -51,11 +52,11 @@ public class ExtentReportListener implements ITestListener {
         
         String screenshotPath =
                 ScreenshotUtil.captureScreenshot(
-                		DriverFactory.getDriver(),
+                		DriverManager.getDriver(),
                         result.getMethod().getMethodName()
                 );
-
-        extendTest.addScreenCaptureFromPath(screenshotPath);
+        System.out.println("Driver in listener: " + DriverManager.getDriver());
+        extendTest.addScreenCaptureFromPath(screenshotPath, "Failed Screenshot");
     }
 
     @Override

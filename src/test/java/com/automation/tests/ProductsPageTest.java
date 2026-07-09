@@ -6,6 +6,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.automation.base.BaseTest;
 import com.automation.base.DriverFactory;
+import com.automation.base.DriverManager;
 import com.automation.pages.HomePage;
 import com.automation.pages.ProductDetailsPage;
 import com.automation.pages.ProductsPage;
@@ -17,7 +18,7 @@ public class ProductsPageTest extends BaseTest{
 	public void TC001_Verify_Products_Page_Is_Displayed() {
 		logger.info("*** Starting TC001_Verify_Products_Page_Is_Displayed");
 		
-		HomePage homePage = new HomePage(DriverFactory.getDriver());
+		HomePage homePage = new HomePage(DriverManager.getDriver());
 		ProductsPage productsPage = homePage.getTopMenu().goToProductsPage();
 		System.out.println(productsPage.getProductGrid().getHeading());
 		Assert.assertEquals(
@@ -33,7 +34,7 @@ public class ProductsPageTest extends BaseTest{
 	@Test
 	public void TC002_Verify_Total_Products_Displayed() {
 
-		HomePage homePage = new HomePage(DriverFactory.getDriver());
+		HomePage homePage = new HomePage(DriverManager.getDriver());
 		ProductsPage productsPage = homePage.getTopMenu().goToProductsPage();
 		
 		Assert.assertTrue(
@@ -45,7 +46,7 @@ public class ProductsPageTest extends BaseTest{
 	public void TC003_Verify_Product_Information_Is_Displayed() {
 		
 		SoftAssert softAssert = new SoftAssert();
-		HomePage homePage = new HomePage(DriverFactory.getDriver());
+		HomePage homePage = new HomePage(DriverManager.getDriver());
 		
 		ProductsPage productsPage = 
 				homePage.getTopMenu().goToProductsPage();

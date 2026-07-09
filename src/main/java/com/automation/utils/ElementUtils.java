@@ -138,6 +138,8 @@ public class ElementUtils {
                 "arguments[0].scrollIntoView({block:'center'});", element);
     }
     
-    
+    public boolean isSelected(By locator) {
+        return getElement(locator).isSelected();
+    }
 
 }

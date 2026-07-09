@@ -1,26 +1,32 @@
-17:30:45.808 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-18:04:26.646 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-18:06:10.734 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-18:26:55.559 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-18:34:59.003 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-18:37:38.636 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-18:38:02.630 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished verifyRegisterUser ****
-18:39:56.945 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-18:41:19.879 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished verifyRegisterUser ****
-18:49:27.418 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-18:50:03.745 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished verifyRegisterUser ****
-20:54:45.722 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-21:03:22.378 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-21:04:11.255 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished verifyRegisterUser ****
-21:05:11.014 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-21:06:39.796 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished verifyRegisterUser ****
-21:10:36.682 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting verifyRegisterUser ****
-20:18:26.282 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
-20:20:02.128 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
-20:21:39.039 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
-20:30:27.332 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
-20:36:00.059 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
-20:37:46.906 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
-20:38:39.302 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
-20:38:44.744 [main] INFO  com.automation.tests.ProductsPageTest - *** Finished TC001_Verify_Products_Page_Is_Displayed
-21:45:30.264 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+14:21:54.663 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:24:22.668 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:24:27.755 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
+14:24:44.955 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:26:18.938 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:26:24.271 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
+14:26:31.460 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:27:10.477 [main] INFO  com.automation.tests.ProductsPageTest - *** Starting TC001_Verify_Products_Page_Is_Displayed
+14:31:21.222 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:31:27.508 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
+14:31:43.459 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:33:22.560 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:33:33.416 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
+14:34:33.388 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:43:03.883 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:43:08.985 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
+14:43:21.069 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:48:38.924 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:48:46.634 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
+14:49:01.078 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:50:04.108 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:58:00.268 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+14:59:29.601 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:02:24.911 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:06:40.054 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:07:57.996 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:09:57.378 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:12:13.449 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:19:25.709 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:22:43.024 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:25:30.162 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+15:36:12.894 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****

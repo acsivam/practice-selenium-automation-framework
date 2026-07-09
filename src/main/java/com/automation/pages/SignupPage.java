@@ -5,16 +5,17 @@ import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
 import com.automation.components.AddressForm;
-import com.automation.components.SignupForm;
+import com.automation.components.SignupAccountForm;
+import com.automation.models.User;
 
 public class SignupPage extends BasePage{
 	
-	private SignupForm signupForm;
+	private SignupAccountForm signupAccountForm;
 	private AddressForm addressForm;
 	
 	public SignupPage(WebDriver driver) {
 		super(driver);
-		this.signupForm = new SignupForm(driver);
+		this.signupAccountForm = new SignupAccountForm(driver);
 		this.addressForm = new AddressForm(driver);
 	}
 	
@@ -22,8 +23,8 @@ public class SignupPage extends BasePage{
 	private By createAccountButton 			= By.cssSelector("[data-qa='create-account']");
 	
 	
-	public SignupForm getSignupForm() {
-		return signupForm;
+	public SignupAccountForm getSignupAccountForm() {
+		return signupAccountForm;
 	}
 	
 	public AddressForm getAddressForm() {
@@ -38,6 +39,12 @@ public class SignupPage extends BasePage{
 		eleUtil.click(createAccountButton);
 	}
 	
+	public AccountCreatedPage createAccount(User user) {
+		getSignupAccountForm().fill(user);
+	    getAddressForm().fill(user);
+	    clickCreateAccount();
+	    return new AccountCreatedPage(driver);
+	}
 	/**/
 	/*
 	public void fillAccountInfo(
