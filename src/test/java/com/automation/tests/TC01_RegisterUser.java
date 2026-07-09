@@ -13,6 +13,7 @@ import com.automation.pages.AccountDeletedPage;
 import com.automation.pages.HomePage;
 import com.automation.pages.LoginPage;
 import com.automation.pages.SignupPage;
+import com.automation.testdata.TestDataFactory;
 
 public class TC01_RegisterUser extends BaseTest{
 	
@@ -22,13 +23,12 @@ public class TC01_RegisterUser extends BaseTest{
 	
 	@BeforeMethod
     public void setUpTest() {
-		//launchApplication();
-        homePage	= new HomePage(driver);
-       // LoginPage 	= homePage.getTopMenu().goToLoginPage();
+		homePage	= new HomePage(driver);
+       // LoginPage = homePage.getTopMenu().goToLoginPage();
         
     	user = new User();
 		user.setName("John");
-		user.setEmail("john123@testnow.com");
+		user.setEmail("john" + System.currentTimeMillis() + "@testnow.com");
     }
 	
 	@Test
@@ -47,7 +47,7 @@ public class TC01_RegisterUser extends BaseTest{
 		
 		SignupPage signupPage = loginPage.getSignupForm().signup(user);
 		Assert.assertTrue(
-				signupPage.isAccountInfoSectionDisplayed(),
+				signupPage.isDisplayed(),
 				"Account Information Section not displayed"
 				);
 		
@@ -59,11 +59,15 @@ public class TC01_RegisterUser extends BaseTest{
 	@Test
 	public void tc02_verifyUserCanCreateAccount() {
 		logger.info("**** Starting tc01_verifyUserCanSignup ****");
+		
 		SoftAssert softAssert = new SoftAssert();
+		User asr = TestDataFactory.createExitingSignupUser();
+		User usr = TestDataFactory.createValidCreateAccountUser();
 		
 		LoginPage loginPage = homePage.getTopMenu().goToLoginPage();
-		SignupPage signupPage = loginPage.getSignupForm().signup(user);
+		SignupPage signupPage = loginPage.getSignupForm().signup(asr);
 		
+		/*
 		User usr = new User();
 		usr.setTitle("Mr");
 		usr.setName("John");
@@ -83,7 +87,7 @@ public class TC01_RegisterUser extends BaseTest{
 	    usr.setCity("Mumbai");
 	    usr.setZipcode("1234");
 	    usr.setMobile("123456");
-
+		*/
 		AccountCreatedPage accCreated= signupPage.createAccount(usr);
 		Assert.assertTrue(
 				accCreated.isAccountCreatedHeadingDisplayed(),

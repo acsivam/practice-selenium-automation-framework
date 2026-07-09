@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,10 +19,12 @@ public class ElementUtils {
 	
     private WebDriver driver;
     private WebDriverWait wait;
+    private Logger logger;
 
 	public ElementUtils(WebDriver driver) {
 		this.driver = driver;
-		this.wait	= new WebDriverWait(driver, Duration.ofSeconds(10));
+		this.wait	= new WebDriverWait(driver, Duration.ofSeconds(3));
+		this.logger = LoggerUtil.getLogger(getClass());
 	}
 
 	
@@ -43,6 +46,7 @@ public class ElementUtils {
 	    try {
 	        element.click();
 	    } catch (ElementClickInterceptedException e) {
+	    	logger.error("Couldn't click " + locator, e);
 	        JavascriptExecutor js = (JavascriptExecutor) driver;
 	        js.executeScript("arguments[0].click();", element);
 	    }

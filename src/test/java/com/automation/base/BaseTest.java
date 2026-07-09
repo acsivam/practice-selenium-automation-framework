@@ -9,22 +9,23 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import com.automation.utils.LoggerUtil;
+
 public class BaseTest {
 	
-	protected Logger logger;
+	protected Logger logger = LoggerUtil.getLogger(getClass());
 	protected WebDriver driver;
 	
 	@BeforeClass
 	@Parameters({"browser"})
 	public void setup(@Optional("chrome")String browser) {
 		System.out.println(">>> SET UP RUNNING");
-		logger = LogManager.getLogger(this.getClass());
-		
 		DriverManager.initializeDriver(browser);
 	}
 	
 	@BeforeMethod
 	public void launchApplication() {
+		logger.info("Starting test execution");
 		DriverManager.getDriver();
 		DriverManager.getDriver().manage().deleteAllCookies();
 		DriverManager.getDriver().get("https://automationexercise.com/");

@@ -76,18 +76,13 @@ public class AddressForm extends BaseComponent{
 	public void fill(User user) {
 	    enterFirstName(user.getFirstName());
 	    enterLastName(user.getLastName());
-
 	    enterCompany(user.getCompany());
-
 	    enterAddress1(user.getAddress1());
 	    enterAddress2(user.getAddress2());
-
 	    selectCountry(user.getCountry());
-
 	    enterState(user.getState());
 	    enterCity(user.getCity());
 	    enterZipCode(user.getZipcode());
-
 	    enterMobileNumber(user.getMobile());
 	}
 

@@ -4,12 +4,17 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 
 public class ScreenshotUtil {
-
+	
+	private static final Logger logger =
+            LoggerUtil.getLogger(ScreenshotUtil.class);
+	
     public static String captureScreenshot(WebDriver driver, String testName) {
-
+    	
+    	logger.info("Capturing screenshot for: " + testName);
         String screenshotPath = System.getProperty("user.dir") 
         		+ "./screenshots/" 
         		+ testName 

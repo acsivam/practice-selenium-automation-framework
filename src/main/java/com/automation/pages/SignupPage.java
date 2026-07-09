@@ -19,8 +19,8 @@ public class SignupPage extends BasePage{
 		this.addressForm = new AddressForm(driver);
 	}
 	
-	private By accountInformationSection 	= By.cssSelector(".login-form");
-	private By createAccountButton 			= By.cssSelector("[data-qa='create-account']");
+	private By signupForm 			= By.cssSelector(".login-form");
+	private By createAccountButton 	= By.cssSelector("[data-qa='create-account']");
 	
 	
 	public SignupAccountForm getSignupAccountForm() {
@@ -31,8 +31,8 @@ public class SignupPage extends BasePage{
 		return addressForm;
 	}
 	
-	public boolean isAccountInfoSectionDisplayed() {
-		return eleUtil.isDisplayed(accountInformationSection);
+	public boolean isDisplayed() {
+		return eleUtil.isDisplayed(signupForm);
 	}
 	
 	public void clickCreateAccount() {

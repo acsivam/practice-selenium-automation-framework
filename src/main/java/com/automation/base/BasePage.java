@@ -1,15 +1,18 @@
 package com.automation.base;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.components.Footer;
 import com.automation.components.Header;
 import com.automation.components.TopMenu;
 import com.automation.utils.ElementUtils;
+import com.automation.utils.LoggerUtil;
 
 public class BasePage {
 	protected WebDriver driver;
 	protected ElementUtils eleUtil;
+	protected Logger logger;
 	
 	private Header header;
 	private Footer footer;
@@ -17,6 +20,7 @@ public class BasePage {
 	
 	public BasePage(WebDriver driver) {
 		this.driver 	= DriverManager.getDriver();
+		this.logger 	= LoggerUtil.getLogger(getClass());
 		this.eleUtil 	= new ElementUtils(DriverManager.getDriver());
         this.footer 	= new Footer(DriverManager.getDriver());
         this.header 	= new Header(DriverManager.getDriver());
