@@ -10,6 +10,7 @@ import com.automation.utils.ElementUtils;
 import com.automation.utils.LoggerUtil;
 
 public class BasePage {
+	
 	protected WebDriver driver;
 	protected ElementUtils eleUtil;
 	protected Logger logger;
@@ -21,6 +22,7 @@ public class BasePage {
 	public BasePage(WebDriver driver) {
 		this.driver 	= DriverManager.getDriver();
 		this.logger 	= LoggerUtil.getLogger(getClass());
+		
 		this.eleUtil 	= new ElementUtils(DriverManager.getDriver());
         this.footer 	= new Footer(DriverManager.getDriver());
         this.header 	= new Header(DriverManager.getDriver());

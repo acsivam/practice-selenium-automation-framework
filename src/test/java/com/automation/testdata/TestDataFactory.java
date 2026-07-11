@@ -19,7 +19,7 @@ public class TestDataFactory {
 	public static User createExitingSignupUser() {
 		User user = new User();
         user.setName("John");
-        user.setEmail("john" + System.currentTimeMillis() + "@test.com");
+        user.setEmail("johnwilliam@gmail.com");
         return user;
 	}
 	
@@ -34,6 +34,7 @@ public class TestDataFactory {
 		User user = new User();
 		user.setTitle("Mr");
 		user.setName("Mark");
+		user.setEmail("john" + System.currentTimeMillis() + "@test.com");
 		user.setPassword("pass1234");
 		user.setDay("19");
 		user.setMonth("August");
@@ -73,5 +74,34 @@ public class TestDataFactory {
 		return masterCard;
 	}
 
+	public static CreditCard createInsufficientFundsCard() {
+		CreditCard insufficientFundCard = new CreditCard();
+		insufficientFundCard.setName("John");
+		insufficientFundCard.setNumber("4024007194349121"); //Visa
+		insufficientFundCard.setCvc("123");
+		insufficientFundCard.setMonth("09");
+		insufficientFundCard.setYear("2035");
+		return insufficientFundCard;
+	}
 	
+	public static CreditCard createLimitExceededCard() {
+		CreditCard limitExceededCard = new CreditCard();
+		limitExceededCard.setName("John");
+		limitExceededCard.setNumber("4929119799365646"); //Visa
+		limitExceededCard.setCvc("123");
+		limitExceededCard.setMonth("09");
+		limitExceededCard.setYear("2035");
+		return limitExceededCard;
+	}
+	
+	public static CreditCard createNetworkErrorCard() {
+		CreditCard networkError = new CreditCard();
+		networkError.setNumber("4024007120869333"); //Visa
+		networkError.setCvc("123");
+		networkError.setMonth("09");
+		networkError.setYear("2035");
+		return networkError;
+	}
 }
+
+//

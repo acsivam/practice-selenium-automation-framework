@@ -13,9 +13,11 @@ public class AccountCreatedPage extends BasePage{
 		super(driver);
 	}
 	
-	private By accountCreatedHeading 	= By.xpath("//b[normalize-space()='Account Created!']");
-	private By accountSuccessMessages 	= By.xpath("//div[@id='content']//p");
-	private By continueButton			= By.xpath("//a[@class='btn btn-primary']");
+	private By accountCreatedHeading 	= By.cssSelector("[data-qa='account-created']");
+	private By accountCreatedMessages 	= By.xpath("//h2[@data-qa='account-created']/following::p"); 
+	private By accountSuccessMessage 	= By.xpath("//p[contains(text(),'Congratulations! Your new account')]"); //::p[1]
+	private By accountPrivilegeMessage 	= By.xpath("//p[contains(text(),'You can now take advantage of member privileges')]");
+	private By continueButton			= By.cssSelector("[data-qa='continue-button']");
 	
 	
 	public boolean isAccountCreatedHeadingDisplayed() {
@@ -27,11 +29,19 @@ public class AccountCreatedPage extends BasePage{
 	}
 	
 	public boolean isAccountSuccessMessageDisplayed() {
-		return eleUtil.isDisplayed(accountSuccessMessages);
+		return eleUtil.isDisplayed(accountSuccessMessage);
 	}
 	
-	public List<String> getAccountSuccessMessages() {
-	    return eleUtil.getElementsText(accountSuccessMessages);
+	public List<String> getAccountSuccessfulCreatedMessages() {
+	    return eleUtil.getElementsText(accountCreatedMessages);
+	}
+	
+	public String getAccountSuccessMessage() {
+	    return eleUtil.getText(accountSuccessMessage);
+	}
+	
+	public String getAccountPrivilegeMessage() {
+	    return eleUtil.getText(accountPrivilegeMessage);
 	}
 	
 	public HomePage clickContinue() {

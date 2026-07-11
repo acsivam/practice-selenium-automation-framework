@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.tests.TC01_RegisterUser">
+      <class name="com.automation.tests.RegisterUserTest">
         <methods>
           <include name="setup"/>
-          <include name="tc02_verifyUserCanCreateAccount"/>
           <include name="launchApplication"/>
-          <include name="setUpTest"/>
+          <include name="verifyExistingEmailError"/>
+          <include name="registerTestSetup"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.automation.tests.TC01_RegisterUser -->
+      </class> <!-- com.automation.tests.RegisterUserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

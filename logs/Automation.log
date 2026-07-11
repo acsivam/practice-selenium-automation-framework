@@ -1,25 +1,9 @@
-21:14:26.148 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:14:35.940 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:14:42.104 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
-21:14:42.109 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:14:50.690 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:15:22.818 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:15:34.484 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:15:39.595 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
-21:15:39.601 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:15:47.195 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:16:44.237 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:16:58.416 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:17:04.511 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
-21:17:04.518 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:17:19.725 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:18:49.905 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:19:12.634 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:19:17.292 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
-21:19:17.298 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:19:31.530 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:22:48.347 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:23:17.558 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
-21:23:22.867 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Finished tc01_verifyUserCanSignup ****
-21:23:22.873 [main] INFO  com.automation.tests.TC01_RegisterUser - Starting test execution
-21:23:33.901 [main] INFO  com.automation.tests.TC01_RegisterUser - **** Starting tc01_verifyUserCanSignup ****
+12:36:03.113 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+19:26:06.902 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+19:26:25.010 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+19:27:17.486 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+19:27:56.945 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+19:28:17.332 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+19:28:31.663 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+19:28:49.194 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1783778327030@test.com
+19:29:06.172 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution

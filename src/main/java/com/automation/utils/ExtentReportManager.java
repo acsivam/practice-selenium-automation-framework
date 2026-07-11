@@ -28,9 +28,9 @@ public class ExtentReportManager {
 	    		
 	            extentReport = new ExtentReports();
 	            extentReport.attachReporter(sparkReporter);
-	            extentReport.setSystemInfo("Application", "opencart");
+	            extentReport.setSystemInfo("Application", "automation");
 	            extentReport.setSystemInfo("Module", "Admin");
-	            extentReport.setSystemInfo("Submodule", "Customers");
+	            extentReport.setSystemInfo("Submodule", "eCommerce");
 	            extentReport.setSystemInfo("Username", System.getProperty("user.name"));
 	            extentReport.setSystemInfo("Environmanet", "QA");
 	            // extentReport.setSystemInfo("OS", os);	 

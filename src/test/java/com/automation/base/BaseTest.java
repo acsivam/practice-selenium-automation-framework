@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import com.automation.utils.ConfigReader;
 import com.automation.utils.LoggerUtil;
 
 public class BaseTest {
@@ -28,7 +29,7 @@ public class BaseTest {
 		logger.info("Starting test execution");
 		DriverManager.getDriver();
 		DriverManager.getDriver().manage().deleteAllCookies();
-		DriverManager.getDriver().get("https://automationexercise.com/");
+		DriverManager.getDriver().get(ConfigReader.getProperty("appUrl"));
 		DriverManager.getDriver().manage().window().maximize();
 	}
 	

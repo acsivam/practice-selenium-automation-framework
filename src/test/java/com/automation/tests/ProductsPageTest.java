@@ -11,6 +11,7 @@ import com.automation.pages.HomePage;
 import com.automation.pages.ProductDetailsPage;
 import com.automation.pages.ProductsPage;
 
+@Test
 public class ProductsPageTest extends BaseTest{
 	
 	

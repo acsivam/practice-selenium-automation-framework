@@ -14,7 +14,9 @@ public class AccountDeletedPage extends BasePage{
 	}
 	
 	private By accountDeletedHeading	= By.xpath("//b[normalize-space()='Account Deleted!']");
-	private By accountDeletedMessage 	= By.xpath("//h2[@data-qa='account-deleted']/following-sibling::p");
+	private By accountDeleteConfirm		= By.xpath("//h2[@data-qa='account-deleted']/following-sibling::p");
+	private By accountDeletedMessage 	= By.xpath("//p[contains(text(),'Your account')]");
+	private By accountPrivilegeMessage	= By.xpath("//p[contains(text(),'You can create')]");
 	private By continueButton			= By.xpath("//a[@class='btn btn-primary']");
 	
 	
@@ -22,8 +24,16 @@ public class AccountDeletedPage extends BasePage{
 		return eleUtil.getText(accountDeletedHeading);
 	}
 	
+	public List<String> getAccountDeletedConfirmationMessage(){
+		return eleUtil.getElementsText(accountDeleteConfirm);
+	}
+	
 	public List<String> getAccountDeletedMessages() {
 	    return eleUtil.getElementsText(accountDeletedMessage);
+	}
+	
+	public List<String> getAccountPrivilegeMessages() {
+	    return eleUtil.getElementsText(accountPrivilegeMessage);
 	}
 	
 	public HomePage clickContinue() {
