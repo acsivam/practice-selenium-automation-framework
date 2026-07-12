@@ -1,36 +1,26 @@
-12:36:03.113 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-19:26:06.902 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-19:26:25.010 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-19:27:17.486 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-19:27:56.945 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-19:28:17.332 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-19:28:31.663 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-19:28:49.194 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1783778327030@test.com
-19:29:06.172 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:24:28.321 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:26:22.693 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:29:45.500 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:32:08.540 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:34:53.538 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:41:37.974 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:41:38.004 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-17:41:38.005 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-17:41:49.554 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:41:57.319 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:42:04.976 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:42:13.688 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:42:23.362 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-17:42:31.242 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1783858350889@test.com
-17:42:53.997 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-18:06:54.988 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-18:06:55.013 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-18:06:55.014 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-18:06:55.017 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-18:06:55.019 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-18:07:06.359 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-18:07:13.198 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-18:07:25.134 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-18:07:35.753 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-18:07:50.611 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-18:08:02.951 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1783859881118@test.com
-18:08:15.163 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+21:36:19.254 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
+21:36:19.294 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+21:36:19.295 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+21:36:19.298 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+21:36:19.299 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+21:37:01.939 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
+21:37:02.156 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+21:37:02.165 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+21:37:02.169 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+21:37:02.170 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+21:37:24.293 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
+21:37:24.310 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+21:37:24.311 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+21:37:24.314 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+21:37:24.315 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+21:38:03.012 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
+21:38:03.029 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+21:38:03.030 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+21:38:03.033 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+21:38:03.033 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+21:38:27.309 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
+21:38:27.329 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+21:38:27.330 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+21:38:27.333 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+21:38:27.334 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+21:38:35.985 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution

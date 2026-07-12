@@ -80,7 +80,7 @@ public class ElementUtils {
 	
 	// Is displayed
 	public boolean isDisplayed(By locator) {
-		return getElement(locator).isDisplayed();
+		return waitForVisibility(locator).isDisplayed();
 	}
 	
     // Is Element Present

@@ -9,9 +9,9 @@
      	<parameter name="browser" value="chrome"/>
      	
         <classes>
-       		<class name="com.automation.tests.RegisterUserTest"/>
+       		<class name="com.automation.tests.AddToCartTest"/>
            
-            <!--
+            <!--RegisterUserT
 			<class name="com.automation.tests.TC01_RegisterUser"/>
 			<class name="com.automation.tests.ProductsPageTest"/>
             <class name="com.automation.tests.TC02_UserLoginSuccessfully"/>

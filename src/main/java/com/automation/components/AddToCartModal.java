@@ -12,11 +12,11 @@ public class AddToCartModal extends BaseComponent{
 	}
 	
 	
-	private By addedToCartModal 		= By.cssSelector(".modal-content"); 
+	private By addedToCartModal 		= By.cssSelector("#cartModal.show"); 
 	private By continueShoppingButton	= By.xpath("//button[@class='btn btn-success close-modal btn-block']"); 
 	private By viewCartLink 			= By.xpath("//u[normalize-space()='View Cart']");
-	private By addedTitle				= By.cssSelector("..modal-title.w-100");
-	private By addedMessage 			= By.cssSelector(".modal-body p.text-center");
+	private By addedTitle				= By.cssSelector("#cartModal .modal-title");
+	private By addedMessage 			= By.cssSelector("#cartModal .modal-body p");
 
 	
 	public boolean isDisplayed() {

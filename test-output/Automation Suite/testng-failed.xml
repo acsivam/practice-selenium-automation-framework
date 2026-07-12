@@ -7,21 +7,15 @@
   <test thread-count="5" name="Regression Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.automation.tests.RegisterUserTest">
+      <class name="com.automation.tests.AddToCartTest">
         <methods>
-          <include name="verifyValidEmailTakesUserToSignupPage"/>
-          <include name="verifyCreateAccountError"/>
+          <include name="verifyAddSignleProductToCart"/>
           <include name="setup"/>
-          <include name="verifyUserCanDeleteAccount"/>
-          <include name="verifySignupFormDisplayed"/>
           <include name="launchApplication"/>
-          <include name="verifyExistingEmailError"/>
-          <include name="verifyInvalidEmailError"/>
-          <include name="verifyScuccessfulCreationOfAccount"/>
+          <include name="addToCartTestSetup"/>
           <include name="teardown"/>
-          <include name="registerTestSetup"/>
         </methods>
-      </class> <!-- com.automation.tests.RegisterUserTest -->
+      </class> <!-- com.automation.tests.AddToCartTest -->
     </classes>
   </test> <!-- Regression Test(failed) -->
 </suite> <!-- Failed suite [Automation Suite] -->
