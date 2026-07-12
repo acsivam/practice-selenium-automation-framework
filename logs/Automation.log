@@ -7,3 +7,30 @@
 19:28:31.663 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
 19:28:49.194 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1783778327030@test.com
 19:29:06.172 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:24:28.321 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:26:22.693 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:29:45.500 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:32:08.540 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:34:53.538 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:41:37.974 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:41:38.004 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+17:41:38.005 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+17:41:49.554 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:41:57.319 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:42:04.976 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:42:13.688 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:42:23.362 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+17:42:31.242 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1783858350889@test.com
+17:42:53.997 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+18:06:54.988 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+18:06:55.013 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+18:06:55.014 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+18:06:55.017 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+18:06:55.019 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+18:07:06.359 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+18:07:13.198 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+18:07:25.134 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+18:07:35.753 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+18:07:50.611 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+18:08:02.951 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1783859881118@test.com
+18:08:15.163 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution

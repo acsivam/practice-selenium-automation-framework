@@ -5,9 +5,15 @@
     <classes>
       <class name="com.automation.tests.RegisterUserTest">
         <methods>
+          <include name="verifyValidEmailTakesUserToSignupPage"/>
+          <include name="verifyCreateAccountError"/>
           <include name="setup"/>
+          <include name="verifyUserCanDeleteAccount"/>
+          <include name="verifySignupFormDisplayed"/>
           <include name="launchApplication"/>
           <include name="verifyExistingEmailError"/>
+          <include name="verifyInvalidEmailError"/>
+          <include name="verifyScuccessfulCreationOfAccount"/>
           <include name="registerTestSetup"/>
           <include name="teardown"/>
         </methods>

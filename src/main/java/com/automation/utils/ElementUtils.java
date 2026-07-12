@@ -15,6 +15,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.autimation.constants.AppConstants;
+import com.automation.base.DriverManager;
+
 public class ElementUtils {
 	
     private WebDriver driver;
@@ -22,26 +25,28 @@ public class ElementUtils {
     private Logger logger;
 
 	public ElementUtils(WebDriver driver) {
-		this.driver = driver;
-		this.wait	= new WebDriverWait(driver, Duration.ofSeconds(3));
+		this.driver = DriverManager.getDriver();
+		this.wait	= new WebDriverWait(
+				driver, 
+				Duration.ofSeconds(AppConstants.DEFAULT_EXPLICIT_WAIT)
+				);
 		this.logger = LoggerUtil.getLogger(getClass());
 	}
-
 	
-	// 1. Get element (with wait)
+	// Get element (with wait)
 	public WebElement getElement(By locator) {
 		return driver.findElement(locator);
 		
 	}
 	
-	// 2. Get elements
+	// Get elements
 	public List<WebElement> getElements(By locator){
 		return driver.findElements(locator);
 	}
 	
-	// 3. Click
+	// Click
 	public void click(By locator) {
-		WebElement element = getElement(locator);
+		WebElement element = waitForClickable(locator);
 
 	    try {
 	        element.click();
@@ -52,19 +57,19 @@ public class ElementUtils {
 	    }
 	}
 	
-	// 4. Enter / Send keys
+	// Enter / Send keys
 	public void enterText(By locator, String value) {
-		WebElement e = getElement(locator);
+		WebElement e = waitForVisibility(locator);
 		e.clear();
 		e.sendKeys(value);
 	}
 	
-	// 5. Get text
+	// Get text
 	public String getText(By locator) {
-		return getElement(locator).getText();
+		return waitForVisibility(locator).getText();
 	}
 	
-	
+	// Get elements text
 	public List<String>  getElementsText(By locator) {
 		List<String>  textList = new ArrayList<>();
 		for(WebElement element : getElements(locator)) {
@@ -73,48 +78,50 @@ public class ElementUtils {
 		return textList;
 	}
 	
-	// 6. Is displayed
+	// Is displayed
 	public boolean isDisplayed(By locator) {
 		return getElement(locator).isDisplayed();
 	}
 	
-    // 7. Is Element Present
+    // Is Element Present
     public boolean isPresent(By locator) {
         return !driver.findElements(locator).isEmpty();
     }
     
     
-	// 8. Get attribute
+	// Get attribute
     public String getAttribute(By locator, String attr) {
-        return getElement(locator).getAttribute(attr);
+        return waitForVisibility(locator).getAttribute(attr);
     }
     
-    // 9. Count elements
+    // Count elements
     public int getCount(By locator) {
         return getElements(locator).size();
     }
     
-    // 10. Wait for presence (not visible)
+    // Wait for presence (not visible)
     public WebElement waitForPresence(By locator) {
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    // 11. Wait for visibility
+    // Wait for visibility
     public WebElement waitForVisibility(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
     
+    // Wait for clickable
     public WebElement waitForClickable(By locator) {
     	return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
     
+    // upload file
     public void uploadFile(By locator, String filePath) {
     	WebElement e = waitForPresence(locator);
     	e.sendKeys(filePath);
     }
     
     public void selectByVisibleText(By locator, String value) {
-        Select select = new Select(driver.findElement(locator));
+        Select select = new Select(waitForVisibility(locator));
         select.selectByVisibleText(value);
     }
     
@@ -131,12 +138,11 @@ public class ElementUtils {
     
     public void moveToElement(By locator) {
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(locator)).perform();
+        actions.moveToElement(waitForVisibility(locator)).perform();
     }
     
     public void scrollToElement(By locator) {
-        WebElement element = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(locator));
+        WebElement element = waitForVisibility(locator);
 
         ((JavascriptExecutor) driver).executeScript(
                 "arguments[0].scrollIntoView({block:'center'});", element);

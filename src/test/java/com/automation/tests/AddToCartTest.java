@@ -1,6 +1,7 @@
 package com.automation.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.automation.components.AddToCartModal;
@@ -20,7 +21,7 @@ public class AddToCartTest {
 	public void addToCartTestSetup() {
 		
 	}
-	
+	@Test
 	public void verifyAddSignleProductToCart() {
 		SoftAssert  softAssert = new SoftAssert();
 				

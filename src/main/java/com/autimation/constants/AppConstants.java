@@ -6,6 +6,7 @@ public class AppConstants {
 
 	// ******** Framework Constants // ********
 	public static final int DEFAULT_TIMEOUT = 5; 
+	public static final int DEFAULT_EXPLICIT_WAIT = 1;
 	
 	// ********PAGE CONSTANTS********************
 	public static final String ACCOUNT_CREATED_PAGE_TITLE = "Automation Exercise - Account Created" ; 

@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-11T19:26:00 IST" name="Automation Suite" finished-at="2026-07-11T19:29:41 IST" duration-ms="221581">
+  <suite started-at="2026-07-12T18:06:51 IST" name="Automation Suite" finished-at="2026-07-12T18:08:45 IST" duration-ms="113946">
     <groups>
       <group name="Registration">
         <method signature="RegisterUserTest.verifySignupFormDisplayed()[pri:1, instance:com.automation.tests.RegisterUserTest@44e3760b]" name="verifySignupFormDisplayed" class="com.automation.tests.RegisterUserTest"/>
@@ -14,9 +14,9 @@
         <method signature="RegisterUserTest.verifyUserCanDeleteAccount()[pri:7, instance:com.automation.tests.RegisterUserTest@44e3760b]" name="verifyUserCanDeleteAccount" class="com.automation.tests.RegisterUserTest"/>
       </group> <!-- Registration -->
     </groups>
-    <test started-at="2026-07-11T19:26:00 IST" name="Regression Test" finished-at="2026-07-11T19:29:41 IST" duration-ms="221581">
+    <test started-at="2026-07-12T18:06:51 IST" name="Regression Test" finished-at="2026-07-12T18:08:45 IST" duration-ms="113946">
       <class name="com.automation.tests.RegisterUserTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:26:00 IST" name="setup" finished-at="2026-07-11T19:26:06 IST" duration-ms="6582" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:06:51 IST" name="setup" finished-at="2026-07-12T18:06:54 IST" duration-ms="3873" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,91 +27,91 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:26:06 IST" name="launchApplication" finished-at="2026-07-11T19:26:21 IST" duration-ms="14455" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:06:54 IST" name="launchApplication" finished-at="2026-07-12T18:07:03 IST" duration-ms="8673" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:26:21 IST" name="registerTestSetup" finished-at="2026-07-11T19:26:24 IST" duration-ms="3287" status="PASS">
+        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:03 IST" name="registerTestSetup" finished-at="2026-07-12T18:07:06 IST" duration-ms="2373" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerTestSetup -->
-        <test-method signature="verifySignupFormDisplayed()[pri:1, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:26:24 IST" name="verifySignupFormDisplayed" finished-at="2026-07-11T19:26:24 IST" duration-ms="354" status="PASS">
+        <test-method signature="verifySignupFormDisplayed()[pri:1, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:06 IST" name="verifySignupFormDisplayed" finished-at="2026-07-12T18:07:06 IST" duration-ms="322" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySignupFormDisplayed -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:26:25 IST" name="launchApplication" finished-at="2026-07-11T19:27:11 IST" duration-ms="46684" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:06 IST" name="launchApplication" finished-at="2026-07-12T18:07:10 IST" duration-ms="4008" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:27:11 IST" name="registerTestSetup" finished-at="2026-07-11T19:27:16 IST" duration-ms="5218" status="PASS">
+        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:10 IST" name="registerTestSetup" finished-at="2026-07-12T18:07:12 IST" duration-ms="2237" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerTestSetup -->
-        <test-method signature="verifyInvalidEmailError()[pri:2, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:27:16 IST" name="verifyInvalidEmailError" finished-at="2026-07-11T19:27:17 IST" duration-ms="569" status="PASS">
+        <test-method signature="verifyInvalidEmailError()[pri:2, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:12 IST" name="verifyInvalidEmailError" finished-at="2026-07-12T18:07:13 IST" duration-ms="587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyInvalidEmailError -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:27:17 IST" name="launchApplication" finished-at="2026-07-11T19:27:47 IST" duration-ms="30500" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:13 IST" name="launchApplication" finished-at="2026-07-12T18:07:20 IST" duration-ms="7311" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:27:47 IST" name="registerTestSetup" finished-at="2026-07-11T19:27:51 IST" duration-ms="3984" status="PASS">
+        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:20 IST" name="registerTestSetup" finished-at="2026-07-12T18:07:22 IST" duration-ms="2406" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerTestSetup -->
-        <test-method signature="verifyExistingEmailError()[pri:3, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:27:51 IST" name="verifyExistingEmailError" finished-at="2026-07-11T19:27:56 IST" duration-ms="4970" status="PASS">
+        <test-method signature="verifyExistingEmailError()[pri:3, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:22 IST" name="verifyExistingEmailError" finished-at="2026-07-12T18:07:25 IST" duration-ms="2216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyExistingEmailError -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:27:56 IST" name="launchApplication" finished-at="2026-07-11T19:28:13 IST" duration-ms="16573" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:25 IST" name="launchApplication" finished-at="2026-07-12T18:07:31 IST" duration-ms="6266" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:28:13 IST" name="registerTestSetup" finished-at="2026-07-11T19:28:15 IST" duration-ms="2165" status="PASS">
+        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:31 IST" name="registerTestSetup" finished-at="2026-07-12T18:07:33 IST" duration-ms="2522" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerTestSetup -->
-        <test-method signature="verifyValidEmailTakesUserToSignupPage()[pri:4, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:28:15 IST" name="verifyValidEmailTakesUserToSignupPage" finished-at="2026-07-11T19:28:17 IST" duration-ms="1646" status="PASS">
+        <test-method signature="verifyValidEmailTakesUserToSignupPage()[pri:4, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:33 IST" name="verifyValidEmailTakesUserToSignupPage" finished-at="2026-07-12T18:07:35 IST" duration-ms="1829" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyValidEmailTakesUserToSignupPage -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:28:17 IST" name="launchApplication" finished-at="2026-07-11T19:28:25 IST" duration-ms="8359" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:35 IST" name="launchApplication" finished-at="2026-07-12T18:07:43 IST" duration-ms="7908" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:28:25 IST" name="registerTestSetup" finished-at="2026-07-11T19:28:27 IST" duration-ms="2105" status="PASS">
+        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:43 IST" name="registerTestSetup" finished-at="2026-07-12T18:07:45 IST" duration-ms="1783" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerTestSetup -->
-        <test-method signature="verifyCreateAccountError()[pri:5, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:28:27 IST" name="verifyCreateAccountError" finished-at="2026-07-11T19:28:31 IST" duration-ms="3863" status="PASS">
+        <test-method signature="verifyCreateAccountError()[pri:5, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:45 IST" name="verifyCreateAccountError" finished-at="2026-07-12T18:07:50 IST" duration-ms="5160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreateAccountError -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:28:31 IST" name="launchApplication" finished-at="2026-07-11T19:28:43 IST" duration-ms="12289" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:50 IST" name="launchApplication" finished-at="2026-07-12T18:07:59 IST" duration-ms="8948" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:28:43 IST" name="registerTestSetup" finished-at="2026-07-11T19:28:47 IST" duration-ms="3072" status="PASS">
+        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:07:59 IST" name="registerTestSetup" finished-at="2026-07-12T18:08:01 IST" duration-ms="1554" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerTestSetup -->
-        <test-method signature="verifyScuccessfulCreationOfAccount()[pri:6, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:28:47 IST" name="verifyScuccessfulCreationOfAccount" finished-at="2026-07-11T19:29:06 IST" duration-ms="19141" status="PASS">
+        <test-method signature="verifyScuccessfulCreationOfAccount()[pri:6, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:08:01 IST" name="verifyScuccessfulCreationOfAccount" finished-at="2026-07-12T18:08:15 IST" duration-ms="14048" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyScuccessfulCreationOfAccount -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:29:06 IST" name="launchApplication" finished-at="2026-07-11T19:29:20 IST" duration-ms="14450" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:08:15 IST" name="launchApplication" finished-at="2026-07-12T18:08:19 IST" duration-ms="4450" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:29:20 IST" name="registerTestSetup" finished-at="2026-07-11T19:29:23 IST" duration-ms="2844" status="PASS">
+        <test-method is-config="true" signature="registerTestSetup()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:08:19 IST" name="registerTestSetup" finished-at="2026-07-12T18:08:21 IST" duration-ms="1463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerTestSetup -->
-        <test-method signature="verifyUserCanDeleteAccount()[pri:7, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:29:23 IST" name="verifyUserCanDeleteAccount" finished-at="2026-07-11T19:29:41 IST" duration-ms="18059" status="PASS">
+        <test-method signature="verifyUserCanDeleteAccount()[pri:7, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:08:21 IST" name="verifyUserCanDeleteAccount" finished-at="2026-07-12T18:08:44 IST" duration-ms="23601" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserCanDeleteAccount -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-11T19:29:41 IST" name="teardown" finished-at="2026-07-11T19:29:41 IST" duration-ms="317" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.automation.tests.RegisterUserTest@44e3760b]" started-at="2026-07-12T18:08:44 IST" name="teardown" finished-at="2026-07-12T18:08:45 IST" duration-ms="333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
