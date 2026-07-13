@@ -1,6 +1,10 @@
 package com.automation.models;
 
 public class User {
+	
+//	public User(String email, String password){
+		
+//	}
 
     private String title;
     private String name;

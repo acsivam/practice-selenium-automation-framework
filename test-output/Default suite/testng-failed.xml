@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.tests.AddToCartTest">
+      <class name="com.automation.tests.LoginDDT">
         <methods>
-          <include name="verifyAddSignleProductToCart"/>
+          <include name="verifyLogin"/>
+          <include name="verifyLoginPojo" invocation-numbers="0"/>
           <include name="setup"/>
           <include name="launchApplication"/>
-          <include name="verifyAddMultipleProductToCard"/>
-          <include name="addToCartTestSetup"/>
+          <include name="loginTestSetup"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.automation.tests.AddToCartTest -->
+      </class> <!-- com.automation.tests.LoginDDT -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

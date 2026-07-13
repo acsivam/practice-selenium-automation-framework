@@ -5,8 +5,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.autimation.constants.AppConstants;
 import com.automation.base.BaseTest;
+import com.automation.constants.AppConstants;
 import com.automation.models.User;
 import com.automation.pages.AccountCreatedPage;
 import com.automation.pages.AccountDeletedPage;

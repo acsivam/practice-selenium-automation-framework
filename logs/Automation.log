@@ -1,26 +1,14 @@
-21:36:19.254 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
-21:36:19.294 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-21:36:19.295 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-21:36:19.298 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-21:36:19.299 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-21:37:01.939 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
-21:37:02.156 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-21:37:02.165 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-21:37:02.169 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-21:37:02.170 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-21:37:24.293 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
-21:37:24.310 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-21:37:24.311 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-21:37:24.314 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-21:37:24.315 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-21:38:03.012 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
-21:38:03.029 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-21:38:03.030 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-21:38:03.033 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-21:38:03.033 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-21:38:27.309 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
-21:38:27.329 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-21:38:27.330 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-21:38:27.333 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-21:38:27.334 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-21:38:35.985 [main] INFO  com.automation.tests.AddToCartTest - Starting test execution
+17:30:42.712 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+17:30:42.715 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+17:30:42.740 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+17:30:42.741 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+17:30:42.742 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+17:30:42.771 [main] INFO  com.automation.tests.LoginDDT - Starting test execution
+17:30:42.797 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+17:30:42.798 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+17:30:42.798 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+17:30:42.799 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+17:30:59.033 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
+17:31:06.681 [main] INFO  com.automation.tests.LoginDDT - Starting test execution
+17:31:33.388 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
+17:31:43.158 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.cssSelector: [data-qa='login-button']

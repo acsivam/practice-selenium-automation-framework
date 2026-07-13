@@ -15,8 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.autimation.constants.AppConstants;
 import com.automation.base.DriverManager;
+import com.automation.constants.AppConstants;
 
 public class ElementUtils {
 	
@@ -46,17 +46,24 @@ public class ElementUtils {
 	
 	// Click
 	public void click(By locator) {
-		WebElement element = waitForClickable(locator);
-
-	    try {
-	        element.click();
-	    } catch (ElementClickInterceptedException e) {
-	    	logger.error("Couldn't click " + locator, e);
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	        js.executeScript("arguments[0].click();", element);
-	    }
+		// WebElement element = waitForClickable(locator);
+		for (int i = 0; i < 3; i++) {
+		    try {
+		        getElement(locator).click();
+		    } catch (ElementClickInterceptedException e) {
+		    	waitForClickable(locator);
+		    }
+		}
+		logger.error("Couldn't click " + locator);
+    	jsClick(locator);
 	}
 	
+	private void jsClick(By locator) {
+		WebElement element = getElement(locator);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].click();", element);	
+	}
+
 	// Enter / Send keys
 	public void enterText(By locator, String value) {
 		WebElement e = waitForVisibility(locator);

@@ -11,7 +11,9 @@
         <methods>
           <include name="verifyAddSignleProductToCart"/>
           <include name="setup"/>
+          <include name="verifyAddToCartModalIsShouwn"/>
           <include name="launchApplication"/>
+          <include name="verifyAddMultipleProductToCard"/>
           <include name="addToCartTestSetup"/>
           <include name="teardown"/>
         </methods>

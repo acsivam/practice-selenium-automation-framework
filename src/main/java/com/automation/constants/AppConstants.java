@@ -1,4 +1,4 @@
-package com.autimation.constants;
+package com.automation.constants;
 
 public class AppConstants {
 	
