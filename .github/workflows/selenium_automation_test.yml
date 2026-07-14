@@ -20,3 +20,6 @@ jobs:
 
       - name: Check Java version
         run: java -version
+
+      - name: Run tests
+        run: mvn clean test
