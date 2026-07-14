@@ -67,9 +67,8 @@ public class RegisterUserTest extends BaseTest{
 	public void verifyValidEmailTakesUserToSignupPage() {
 		User user = TestDataFactory.createValidSignupUser();
 		
-		loginPage.getSignupForm().signup(user);
-		
 		SignupPage signupPage = new SignupPage(driver);
+		signupPage = loginPage.getSignupForm().signup(user);
 		
 		Assert.assertTrue(
 				signupPage.isDisplayed(),
