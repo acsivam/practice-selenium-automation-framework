@@ -11,10 +11,10 @@
         <classes>
       		<class name="com.automation.tests.RegisterUserTest"/>
 	      		<methods>
-	    			<exclude name="verifyValidEmailTakesUserToSignupPage()"/>
-	    			<exclude name="verifyCreateAccountError()"/>
-	    			<exclude name="verifyScuccessfulCreationOfAccount()"/>
-	    			<exclude name="verifyUserCanDeleteAccount()"/>
+	    			<!--exclude name="verifyValidEmailTakesUserToSignupPage()"/-->
+	    			<!--exclude name="verifyCreateAccountError()"/-->
+	    			<!--exclude name="verifyScuccessfulCreationOfAccount()"/-->
+	    			<!--exclude name="verifyUserCanDeleteAccount()"/-->
 				</methods>
        		
            

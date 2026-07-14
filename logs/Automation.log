@@ -1,16 +1,14 @@
-12:51:11.559 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.cssSelector: [data-qa='signup-button']
-12:51:11.618 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-12:51:18.541 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
-12:51:23.080 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyExistingEmailError
-12:52:43.479 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-12:52:43.504 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-12:52:43.505 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-12:52:43.508 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-12:52:43.509 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-12:52:54.048 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
-12:52:56.123 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-12:53:04.563 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
-12:53:06.596 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.cssSelector: [data-qa='signup-button']
-12:53:06.647 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-12:53:14.093 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
-12:53:18.804 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.cssSelector: [data-qa='signup-button']
+13:58:25.541 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+13:58:37.557 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+13:58:49.667 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+13:58:59.147 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+13:59:13.454 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+13:59:22.354 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1784017761503@test.com
+13:59:35.627 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:00:21.582 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:00:21.598 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+14:00:21.599 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+14:00:21.602 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+14:00:21.602 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+14:00:46.155 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifySignupFormDisplayed
+14:00:46.775 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
