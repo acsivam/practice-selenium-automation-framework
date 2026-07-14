@@ -1,6 +1,7 @@
 package com.automation.components;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -39,7 +40,7 @@ public class AddressCard extends BaseComponent {
                 .findElements(addressLines)
                 .stream()
                 .map(WebElement::getText)
-                .toList();
+                .collect(Collectors.toList());;
     }
 
 
