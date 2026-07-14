@@ -50,8 +50,10 @@ public class ElementUtils {
 		for (int i = 0; i < 3; i++) {
 		    try {
 		        getElement(locator).click();
+		        return;
 		    } catch (ElementClickInterceptedException e) {
 		    	waitForClickable(locator);
+		    	return;
 		    }
 		}
 		logger.error("Couldn't click " + locator);
