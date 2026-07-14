@@ -15,8 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.automation.base.DriverManager;
 import com.automation.constants.AppConstants;
+import com.automation.driver.DriverManager;
 
 public class ElementUtils {
 	

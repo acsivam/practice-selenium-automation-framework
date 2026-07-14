@@ -1,5 +1,6 @@
 package com.automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
@@ -7,6 +8,7 @@ import com.automation.components.CategoryBrandSidebar;
 import com.automation.components.ProductImage;
 import com.automation.components.ProductInformation;
 import com.automation.components.ReviewForm;
+import com.automation.constants.AppConstants;
 
 public class ProductDetailsPage extends BasePage{
 
@@ -24,6 +26,10 @@ public class ProductDetailsPage extends BasePage{
         this.reviewForm = new ReviewForm(driver);
 	}
 	
+	
+	private By productDetailsContainer = By.cssSelector(".product-details");
+	
+	
 	public CategoryBrandSidebar getSidebar() {
 		return sidebar;
 	}
@@ -40,6 +46,15 @@ public class ProductDetailsPage extends BasePage{
         return reviewForm;
     }
     
+    
+    public boolean isProductDetailsContainerDisplayed() {
+    	return eleUtil.isDisplayed(productDetailsContainer);
+    }
+    
+    public boolean isLoaded() {
+    	return getCurrentUrl().contains(AppConstants.PRODUCT_DETAILS_PAGE_PATH)
+    			&& isProductDetailsContainerDisplayed();
+    }
     /*
 	private By productName		= By.xpath("//h2[normalize-space()='Blue Top']");
 	private By categoryName		= By.xpath("//p[normalize-space()='Category: Women > Tops']");

@@ -1,11 +1,14 @@
-package com.automation.components;
+	package com.automation.components;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import com.automation.base.BaseComponent;
 
 public class ProductGrid extends BaseComponent{
 
@@ -20,16 +23,31 @@ public class ProductGrid extends BaseComponent{
 	private By productNames 	= By.cssSelector(".productinfo p");
 	
 	
+	@Override
 	public boolean isDisplayed(){
         return eleUtil.isDisplayed(productGrid);
     }
 
+	public boolean isHeadingDisplayed() {
+		return eleUtil.isDisplayed(productHeading);
+	}
+	
     public String getHeading(){
         return eleUtil.getText(productHeading);
     }
 
     public int getProductCount(){
         return eleUtil.getCount(products);
+    }
+    
+    public List<ProductCard> getProducts() {
+        List<ProductCard> productCards = new ArrayList<>();
+        List<WebElement> elements = driver.findElements(products);
+        for (WebElement element : elements) {
+            productCards.add(new ProductCard(driver, element));
+        }
+
+        return productCards;
     }
     
     public boolean isProductDisplayed(String expectedProductName) {

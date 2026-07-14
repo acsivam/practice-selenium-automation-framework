@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import com.automation.base.BasePage;
 import com.automation.components.ContactForm;
 import com.automation.components.FeedbackInfo;
+import com.automation.constants.AppConstants;
 
 public class ContactUsPage extends BasePage{
 	
@@ -20,9 +21,9 @@ public class ContactUsPage extends BasePage{
         this.feedbackInfo	= new FeedbackInfo(driver);
 	}
 	
-	private By contactPage 		= By.id("contact-page");
-	private By pageHeading 		= By.cssSelector("#contact-page > .bg h2.title");
-	private By homeButton  		= By.xpath("//span[normalize-space()='Home']");
+	private By contactUsContainer 	= By.id("contact-page");
+	private By pageHeading 			= By.cssSelector("#contact-page > .bg h2.title");
+	private By homeButton  			= By.xpath("//span[normalize-space()='Home']");
 
 	
 	public ContactForm getContactForm() {
@@ -33,18 +34,25 @@ public class ContactUsPage extends BasePage{
 		return feedbackInfo;
 	}
 	
-	public boolean isDisplayed() {
-	    return eleUtil.isDisplayed(contactPage);
+	private boolean isContactUsContainerDisplayed() {
+	    return eleUtil.isDisplayed(contactUsContainer);
 	}
 
 	public String getHeading() {
 	    return eleUtil.getText(pageHeading);
 	}
-	
+	 
 	public HomePage ClickContinue() {
 		eleUtil.click(homeButton);
 		return new HomePage(driver);
 	}
+	
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.CONTACT_US_PAGE_PATH)
+				&& isContactUsContainerDisplayed();
+				
+	}
+	
 	
 	/*
 	

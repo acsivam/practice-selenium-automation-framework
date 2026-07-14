@@ -3,9 +3,8 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.models.User;
-import com.automation.pages.AccountCreatedPage;
-import com.automation.pages.LoginPage;
 import com.automation.pages.SignupPage;
 
 public class SignupForm extends BaseComponent {
@@ -22,6 +21,7 @@ public class SignupForm extends BaseComponent {
     private By errorEmail		= By.xpath("//p[normalize-space()='Email Address already exist!']");
 
 
+	@Override
     public boolean isDisplayed() {
     	return eleUtil.isDisplayed(signupForm);
     }
@@ -60,13 +60,5 @@ public class SignupForm extends BaseComponent {
     	clickSignup();
     	
     	return new SignupPage(driver);
-    }
-    
-    public LoginPage signupError(User user) {
-    	enterName(user.getName());
-    	enterEmail(user.getEmail());
-    	clickSignup();
-    	
-    	return new LoginPage(driver);
     }
 }

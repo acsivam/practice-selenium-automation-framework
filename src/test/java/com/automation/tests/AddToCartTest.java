@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.automation.base.BaseTest;
-import com.automation.components.AddToCartModal;
+import com.automation.components.CartModal;
 import com.automation.components.CartRow;
 import com.automation.components.CartTable;
 import com.automation.components.ProductCard;
@@ -33,7 +33,7 @@ public class AddToCartTest extends BaseTest {
 	public void verifyAddToCartModalIsShouwn() {
 		SoftAssert  softAssert = new SoftAssert();
 		
-		AddToCartModal addToCartModal = productsPage
+		CartModal addToCartModal = productsPage
 				.getProductGrid()
 				.getProductByName("Blue Top")
 				.clickAddToCart();		
@@ -72,7 +72,7 @@ public class AddToCartTest extends BaseTest {
 	            addToCartModal.viewCart();
 		*/
 		
-		AddToCartModal addToCartModal= productsPage
+		CartModal addToCartModal= productsPage
 				.getProductGrid()
 				.getProductByName("Blue Top")
 				.clickAddToCart();		

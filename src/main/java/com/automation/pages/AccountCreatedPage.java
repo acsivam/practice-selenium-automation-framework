@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
+import com.automation.constants.AppConstants;
 
 public class AccountCreatedPage extends BasePage{
 	
@@ -19,6 +20,12 @@ public class AccountCreatedPage extends BasePage{
 	private By accountPrivilegeMessage 	= By.xpath("//p[contains(text(),'You can now take advantage of member privileges')]");
 	private By continueButton			= By.cssSelector("[data-qa='continue-button']");
 	
+	
+	
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.ACCOUNT_CREATED_PAGE_PATH)
+				&& isAccountCreatedHeadingDisplayed();
+	}
 	
 	public boolean isAccountCreatedHeadingDisplayed() {
 		return eleUtil.isDisplayed(accountCreatedHeading);
@@ -48,5 +55,4 @@ public class AccountCreatedPage extends BasePage{
 		eleUtil.click(continueButton);
 		return new HomePage(driver);
 	}
-
 }

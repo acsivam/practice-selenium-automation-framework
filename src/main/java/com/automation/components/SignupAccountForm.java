@@ -3,6 +3,7 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.models.User;
 
 public class SignupAccountForm extends BaseComponent{
@@ -11,6 +12,7 @@ public class SignupAccountForm extends BaseComponent{
 		super(driver);
 	}
 	
+	private By accountForm		= By.cssSelector(".login-form");
 	private By heading 			= By.xpath("//h2[.='Enter Account Information']");
 
 	private By titleMrField    	= By.id("id_gender1");
@@ -28,6 +30,11 @@ public class SignupAccountForm extends BaseComponent{
 	private By specialOffers	= By.id("optin");
 	
 	
+	@Override
+	public boolean isDisplayed() {
+		return eleUtil.isDisplayed(accountForm);
+	}
+	
 	public boolean isHeadingDisplayed() {
 		return eleUtil.isDisplayed(heading);
 	}
@@ -44,12 +51,20 @@ public class SignupAccountForm extends BaseComponent{
 		}
 	}
 	
+	public String getName() {
+		return eleUtil.getText(nameField);
+	}
+	
 	public void enterName(String name) {
 		eleUtil.enterText(nameField, name);
 	}
 	
 	public void enterPassword(String password) {
 		eleUtil.enterText(passwordField, password);
+	}
+	
+	public String getEmail() {
+		return eleUtil.getText(emailField);
 	}
 	
 	private void selectDay(String day) {
@@ -89,7 +104,6 @@ public class SignupAccountForm extends BaseComponent{
 	    selectDay(user.getDay());
 	    selectMonth(user.getMonth());
 	    selectYear(user.getYear());
-	    //selectDateOfBirth(user.getDay(),user.getMonth(),user.getYear());
 
 	    subscribeToNewsletter(user.isNewsletter());
 	    receiveSpecialOffers(user.isSpecialOffers());

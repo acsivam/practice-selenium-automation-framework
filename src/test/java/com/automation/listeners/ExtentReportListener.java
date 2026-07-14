@@ -1,24 +1,16 @@
 package com.automation.listeners;
 
-import java.awt.Desktop;
 import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.automation.base.BaseTest;
-import com.automation.base.DriverFactory;
-import com.automation.base.DriverManager;
+import com.automation.driver.DriverManager;
 import com.automation.utils.ExtentReportManager;
 import com.automation.utils.ScreenshotUtil;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportListener implements ITestListener {
 

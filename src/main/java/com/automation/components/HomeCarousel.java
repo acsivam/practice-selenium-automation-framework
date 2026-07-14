@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.automation.base.BaseComponent;
 import com.automation.pages.TestCasesPage;
 
 public class HomeCarousel extends BaseComponent{
@@ -12,19 +13,25 @@ public class HomeCarousel extends BaseComponent{
 		super(driver);
 	}
 	
-	private By carousel 			= By.cssSelector(".carousel-inner");
+	private By container 			= By.id("slider");
+	//private By carousel 			= By.cssSelector(".carousel-inner");
 	private By carouselSlides 		= By.cssSelector(".carousel-inner .item");
 	private By activeSlide			= By.cssSelector(".carousel-inner .item.active");
-	private By heading 				= By.tagName("h1"); //By.cssSelector(".carousel-inner .item.active h1");
-	private By subHeading 			= By.tagName("h2");
-	private By description 			= By.tagName("p");
-	private By nextButton 			= By.cssSelector(".left-control");
-	private By previousButton 		= By.cssSelector(".right-control");
+	
+	private By heading 				= By.cssSelector(".carousel-inner .item.active h1"); // By.tagName("h1")
+	private By subHeading 			= By.cssSelector(".carousel-inner .item.active h2");
+	private By description 			= By.cssSelector(".carousel-inner .item.active p"); //By.tagName("p");
+	
+	private By nextButton 			= By.cssSelector(".right-control"); 
+	private By previousButton 		= By.cssSelector(".left-control");
+	
 	private By testCasesButton 		= By.cssSelector(".test_cases_list");
 	private By apiListButton 		= By.cssSelector(".apis_list");
 
+	
+	@Override
 	public boolean isDisplayed() {
-		return eleUtil.isDisplayed(carousel);
+		return eleUtil.isDisplayed(container);
 	}
 
 	public int getCarouselSlideCount() {

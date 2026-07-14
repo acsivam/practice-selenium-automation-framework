@@ -3,6 +3,7 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.pages.AccountDeletedPage;
 import com.automation.pages.CartPage;
 import com.automation.pages.ContactUsPage;
@@ -15,6 +16,7 @@ public class TopMenuComponent extends BaseComponent{
 	public TopMenuComponent(WebDriver driver) {
 		super(driver);
 	}
+	
 	
 	private By topMenu				= By.cssSelector(".nav.navbar-nav");
 	private By homeMenu				= By.xpath("//a[normalize-space()='Home']'");
@@ -30,6 +32,7 @@ public class TopMenuComponent extends BaseComponent{
 	private By deleteAccountMenu	= By.xpath("//a[normalize-space()='Delete Account']");
 
 	
+	@Override
 	public boolean isDisplayed() {
 		return eleUtil.isDisplayed(topMenu);
 	}

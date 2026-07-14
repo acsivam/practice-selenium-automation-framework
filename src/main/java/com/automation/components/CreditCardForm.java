@@ -3,11 +3,17 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.models.CreditCard;
 
 
 public class CreditCardForm extends BaseComponent {
 
+    public CreditCardForm(WebDriver driver) {
+        super(driver);
+    }
+
+    private By container 	= By.cssSelector(".payment-information");
     private By nameOnCard 	= By.cssSelector("[data-qa='name-on-card']");
     private By cardNumber 	= By.cssSelector("[data-qa='card-number']");
     private By cvc 			= By.cssSelector("[data-qa='cvc']");
@@ -16,10 +22,11 @@ public class CreditCardForm extends BaseComponent {
     private By payButton 	= By.cssSelector("[data-qa='pay-button']");
 
     
-    public CreditCardForm(WebDriver driver) {
-        super(driver);
+    @Override
+    public boolean isDisplayed() {
+    	return eleUtil.isDisplayed(container);
     }
-
+    
     public void enterName(String name) {
     	eleUtil.enterText(nameOnCard, name);
     }

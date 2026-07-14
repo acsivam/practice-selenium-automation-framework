@@ -3,20 +3,30 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.automation.base.BasePage;
+import com.automation.base.BaseComponent;
 
-public class ProductInformation extends BasePage {
+public class ProductInformation extends BaseComponent {
 
     public ProductInformation(WebDriver driver) {
         super(driver);
     }
 
+    
+    private By container        = By.cssSelector(".product-information");
     private By productName 		= By.cssSelector(".product-information h2");
     private By category 		= By.cssSelector(".product-information p:nth-of-type(1)");
     private By price 			= By.cssSelector(".product-information span span");
     private By quantity 		= By.id("quantity");
     private By addToCartButton 	= By.cssSelector("button.cart");
+    private By availability     = By.xpath(".//p[contains(text(),'Availability')]");
+    private By condition        = By.xpath(".//p[contains(text(),'Condition')]");
+    private By brand            = By.xpath(".//p[contains(text(),'Brand')]");
 
+    
+	@Override
+    public boolean isDisplayed() {
+    	return eleUtil.isDisplayed(container);
+    }
     
     public String getProductName() {
         return eleUtil.getText(productName);
@@ -39,4 +49,15 @@ public class ProductInformation extends BasePage {
     	eleUtil.click(addToCartButton);
     }
 
+    public String getAvailability() {
+    	return eleUtil.getText(availability);
+    }
+    
+    public String getCondition() {
+    	return eleUtil.getText(condition);
+    }
+    
+    public String getBrand() {
+    	return eleUtil.getText(brand);
+    }
 }

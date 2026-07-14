@@ -11,7 +11,14 @@ public class TestCasesPage extends BasePage {
 		super(driver);
 	}
 	
+	private By testCasesSection 	= By.id("form");
 	private By testCasesHeading		= By.xpath("//b[normalize-space()='Test Cases']");
+	
+	
+	
+	public boolean isLoaded() {
+	    return eleUtil.isDisplayed(testCasesSection);
+	}
 	
 	
 	public String getTestCasesHeading() {

@@ -3,11 +3,12 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.pages.CartPage;
 
-public class AddToCartModal extends BaseComponent{
+public class CartModal extends BaseComponent{
 	
-	public AddToCartModal(WebDriver driver) {
+	public CartModal(WebDriver driver) {
 		super(driver);
 	}
 	
@@ -19,7 +20,8 @@ public class AddToCartModal extends BaseComponent{
 	private By addedMessage 			= By.cssSelector("#cartModal .modal-body p");
 
 	
-	public boolean isDisplayed() {
+	@Override
+	public boolean isDisplayed() { //container itself uniquely identifies the component
 		return eleUtil.isDisplayed(addedToCartModal);
 	}
 	

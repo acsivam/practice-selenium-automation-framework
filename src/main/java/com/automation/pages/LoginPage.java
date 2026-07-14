@@ -1,9 +1,11 @@
 package com.automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import com.automation.base.BasePage;
 import com.automation.components.LoginForm;
 import com.automation.components.SignupForm;
+import com.automation.constants.AppConstants;
 
 public class LoginPage extends BasePage {
 
@@ -17,6 +19,10 @@ public class LoginPage extends BasePage {
         this.signupForm = new SignupForm(driver);
     }
 
+    private By loginPageContainer = By.id("form");
+    
+    
+    
     public LoginForm getLoginForm() {
         return loginForm;
     }
@@ -25,6 +31,15 @@ public class LoginPage extends BasePage {
         return signupForm;
     }
 
+    private boolean isFormContainerDisplayed() {
+    	return eleUtil.isDisplayed(loginPageContainer);
+    }
+    
+    public boolean isLoaded() {
+    	return getCurrentUrl().contains(AppConstants.LOGIN_PAGE_PATH)
+    			&& isFormContainerDisplayed();
+    }
+    
 	/*
 	public boolean isEmailInvalid() {
 		

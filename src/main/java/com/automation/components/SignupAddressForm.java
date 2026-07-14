@@ -3,16 +3,16 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.models.User;
 
-public class AddressForm extends BaseComponent{
+public class SignupAddressForm extends BaseComponent{
 
-	public AddressForm(WebDriver driver) {
+	public SignupAddressForm(WebDriver driver) {
 		super(driver);
 	}
 	
-	private By heading 		= By.xpath("//h2[.='Address Information']");
-	
+	private By heading 			 = By.xpath("//h2[.='Address Information']");	
 	private By firstNameField    = By.cssSelector("[data-qa='first_name']");
 	private By lastNameField     = By.cssSelector("[data-qa='last_name']");
 	private By companyField      = By.cssSelector("[data-qa='company']");
@@ -24,6 +24,11 @@ public class AddressForm extends BaseComponent{
 	private By zipcodeField      = By.cssSelector("[data-qa='zipcode']");
 	private By mobileNumberField = By.cssSelector("[data-qa='mobile_number']");
 	
+	
+	@Override
+	public boolean isDisplayed() {
+		return isHeadingDisplayed();
+	}
 	
 	public boolean isHeadingDisplayed() {
 		return eleUtil.isDisplayed(heading);

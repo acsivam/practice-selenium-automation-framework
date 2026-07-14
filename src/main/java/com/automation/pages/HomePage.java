@@ -6,6 +6,7 @@ import com.automation.base.BasePage;
 import com.automation.components.CategoryBrandSidebar;
 import com.automation.components.HomeCarousel;
 import com.automation.components.ProductGrid;
+import com.automation.constants.AppConstants;
 
 public class HomePage extends BasePage{
 
@@ -32,6 +33,12 @@ public class HomePage extends BasePage{
 	public ProductGrid getProductGrid() {
 		return productGrid;
 	}
+	
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.HOME_PAGE_PATH)
+	            && getCarousel().isDisplayed();
+	}
+	
 	
 	/*
 	private By productHeading			= By.xpath("//h2[@class='title text-center']");

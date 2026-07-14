@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import com.automation.base.BasePage;
 import com.automation.components.CategoryBrandSidebar;
 import com.automation.components.ProductGrid;
+import com.automation.constants.AppConstants;
 
 public class CategoryProductsPage extends BasePage{
 	
@@ -25,5 +26,11 @@ public class CategoryProductsPage extends BasePage{
 	public ProductGrid getProductGrid() {
 		return productGrid;
 	}
+	
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.CATEGORY_PRODUCTS_PAGE_PATH)
+				&& getProductGrid().isDisplayed();
+	}
+
 
 }

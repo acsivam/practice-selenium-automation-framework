@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.automation.base.BaseComponent;
+
 public class CartTable extends BaseComponent{
 
 	public CartTable(WebDriver driver) {
@@ -20,6 +22,7 @@ public class CartTable extends BaseComponent{
 	private By emptyCart    = By.id("empty_cart");
 	
 	
+	@Override
     public boolean isDisplayed() {
     	return eleUtil.isDisplayed(table);
     }

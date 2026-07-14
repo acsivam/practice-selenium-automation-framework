@@ -5,8 +5,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.automation.base.BaseTest;
-import com.automation.base.DriverFactory;
-import com.automation.base.DriverManager;
+import com.automation.driver.DriverManager;
 import com.automation.pages.HomePage;
 import com.automation.pages.ProductDetailsPage;
 import com.automation.pages.ProductsPage;

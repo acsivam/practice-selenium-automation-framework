@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.pages.BrandProductsPage;
 import com.automation.pages.CategoryProductsPage;
 
@@ -14,11 +15,17 @@ public class CategoryBrandSidebar extends BaseComponent{
 		super(driver);
 	}
 
+	private By container 				= By.cssSelector(".left-sidebar");
 	private By categoryHeading			= By.xpath("//h2[normalize-space()='Category']");
 	private By categoryNames 			= By.cssSelector("#accordian .panel-title a");
 	private By brandHeading				= By.xpath("//h2[normalize-space()='Brands']");
 	private By brandNames				= By.cssSelector(".brands-name");
 	
+	
+	@Override
+	public boolean isDisplayed() {
+		return eleUtil.isDisplayed(container);
+	}
 	
 	public boolean isCategoryHeadingDisplayed() {
 		return eleUtil.isDisplayed(categoryHeading);
@@ -78,4 +85,17 @@ public class CategoryBrandSidebar extends BaseComponent{
 	private By brand(String brandName) {
 		return By.xpath("//a[href='/brand_products/" + brandName + "']");
 	}
+	
+	/*
+	 * ├── SidebarComponent
+│       container = .left-sidebar
+│
+├── CategoryComponent
+│       container = #accordian
+│
+└── BrandComponent
+        container = .brands_products
+        
+        *
+	 */
 }

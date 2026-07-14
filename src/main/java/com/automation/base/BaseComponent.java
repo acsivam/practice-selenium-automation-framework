@@ -1,4 +1,4 @@
-package com.automation.components;
+package com.automation.base;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import com.automation.utils.ElementUtils;
 import com.automation.utils.LoggerUtil;
 
-public class BaseComponent {
+public abstract class BaseComponent {
 
 	protected WebDriver driver;
 	protected ElementUtils eleUtil;
@@ -18,4 +18,6 @@ public class BaseComponent {
 		this.logger		= LoggerUtil.getLogger(getClass());
 	}
 
+	
+	public abstract boolean isDisplayed();
 }

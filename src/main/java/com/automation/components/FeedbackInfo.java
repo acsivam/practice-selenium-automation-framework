@@ -5,6 +5,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
+
 public class FeedbackInfo extends BaseComponent {
 
     public FeedbackInfo(WebDriver driver) {
@@ -17,6 +19,7 @@ public class FeedbackInfo extends BaseComponent {
     private By email 			= By.cssSelector(".contact-info address a[href^='mailto:']");
 
 
+    @Override
     public boolean isDisplayed() {
         return eleUtil.isDisplayed(feedbackSection);
     }

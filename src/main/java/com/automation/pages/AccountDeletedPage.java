@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
+import com.automation.constants.AppConstants;
 
 public class AccountDeletedPage extends BasePage{
 	
@@ -19,6 +20,15 @@ public class AccountDeletedPage extends BasePage{
 	private By accountPrivilegeMessage	= By.xpath("//p[contains(text(),'You can create')]");
 	private By continueButton			= By.xpath("//a[@class='btn btn-primary']");
 	
+	
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.ACCOUNT_DELETED_PAGE_PATH)
+				&& isAccountDeletedHeadingDisplayed();
+	}
+	
+	public boolean isAccountDeletedHeadingDisplayed() {
+		return eleUtil.isDisplayed(accountDeletedHeading);
+	}
 	
 	public String getAccountDeletedHeading() {
 		return eleUtil.getText(accountDeletedHeading);
@@ -40,4 +50,5 @@ public class AccountDeletedPage extends BasePage{
 		eleUtil.click(continueButton);
 		return new HomePage(driver);
 	}
+
 }

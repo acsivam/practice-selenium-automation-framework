@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.automation.base.BaseComponent;
+
 public class CartRow extends BaseComponent {
 
 	private WebElement row;
@@ -20,6 +22,11 @@ public class CartRow extends BaseComponent {
 	private By total 		= By.cssSelector(".cart_total_price");
 	private By removeButton	= By.cssSelector(".cart_quantity_delete");
 	
+	
+	@Override
+	public boolean isDisplayed() {
+	    return row.isDisplayed();
+	}
 	
 	public String getName() {
 		return row.findElement(name).getText();

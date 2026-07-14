@@ -3,6 +3,7 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.pages.HomePage;
 
 public class HeaderComponent extends BaseComponent{
@@ -11,10 +12,11 @@ public class HeaderComponent extends BaseComponent{
 		super(driver);
 	}
 	
-	private By header 	= By.cssSelector("div.header-middle");
+	private By header 	= By.id("header");
 	private By logo		= By.xpath("//img[@alt='Website for automation practice']");
 	
 	
+	@Override
 	public boolean isDisplayed() {
 		return eleUtil.isDisplayed(header);
 	}

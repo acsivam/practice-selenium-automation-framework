@@ -3,6 +3,7 @@ package com.automation.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.base.BaseComponent;
 import com.automation.pages.CartPage;
 import com.automation.pages.LoginPage;
 
@@ -18,7 +19,9 @@ public class CheckoutModal extends BaseComponent{
 	private By registerLoginLink		= By.xpath("//u[normalize-space()='Register / Login']");
 	private By continueOnCartButton		= By.xpath("//button[@class='btn btn-success close-checkout-modal btn-block']");
 	
-	public boolean isDiplayed() {
+	
+	@Override
+	public boolean isDisplayed() {
 		return eleUtil.isDisplayed(checkoutModal);
 	}
 	

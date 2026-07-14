@@ -4,41 +4,44 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
-import com.automation.components.AddressForm;
+import com.automation.components.SignupAddressForm;
 import com.automation.components.SignupAccountForm;
+import com.automation.constants.AppConstants;
 import com.automation.models.User;
 
 public class SignupPage extends BasePage{
 	
 	private SignupAccountForm signupAccountForm;
-	private AddressForm addressForm;
+	private SignupAddressForm addressForm;
 	
 	public SignupPage(WebDriver driver) {
 		super(driver);
 		this.signupAccountForm = new SignupAccountForm(driver);
-		this.addressForm = new AddressForm(driver);
+		this.addressForm = new SignupAddressForm(driver);
 	}
 	
-	private By signupForm 			= By.cssSelector(".login-form");
-	private By createAccountButton 	= By.cssSelector("[data-qa='create-account']");
+	
+	
+	private By createAccountButton 		= By.cssSelector("[data-qa='create-account']");
 	
 	
 	public SignupAccountForm getSignupAccountForm() {
 		return signupAccountForm;
 	}
 	
-	public AddressForm getAddressForm() {
+	public SignupAddressForm getAddressForm() {
 		return addressForm;
-	}
-	
-	public boolean isDisplayed() {
-		return eleUtil.isDisplayed(signupForm);
 	}
 	
 	public void clickCreateAccount() {
 		eleUtil.click(createAccountButton);
 	}
 	
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.SIGNUP_PAGE_PATH)
+				&& getSignupAccountForm().isDisplayed();
+	}
+			
 	public AccountCreatedPage createAccount(User user) {
 		getSignupAccountForm().fill(user);
 	    getAddressForm().fill(user);

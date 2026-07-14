@@ -1,4 +1,4 @@
-package com.automation.base;
+package com.automation.driver;
 
 import org.openqa.selenium.WebDriver;
 

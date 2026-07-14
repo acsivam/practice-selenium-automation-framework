@@ -6,11 +6,14 @@ import org.openqa.selenium.WebDriver;
 import com.automation.base.BasePage;
 import com.automation.components.CartTable;
 import com.automation.components.CheckoutInformation;
+import com.automation.components.OrderCommentComponent;
+import com.automation.constants.AppConstants;
 
 public class CheckoutPage extends BasePage{
 	
 	private CartTable cartTable;
 	private CheckoutInformation checkoutInfo;
+    private OrderCommentComponent orderComment;
 	
 	public CheckoutPage(WebDriver driver) {
 		super(driver);
@@ -18,12 +21,8 @@ public class CheckoutPage extends BasePage{
 		this.checkoutInfo 	= new CheckoutInformation(driver);
 	}
 	
-	private By addressHeading 		= By.xpath("//h2[normalize-space()='Address Details']");
-	//private By deliveryAddressBox	= By.id("address_delivery");
-	//private By deliveryAddressLines = By.cssSelector("#address_delivery li:not(.address_title)");
 	
-	private By reviewOrderHeading	= By.xpath("//h2[normalize-space()='Review Your Order']");
-	private By messageField			= By.xpath("//textarea[@name='message']");
+	//private By reviewOrderHeading	= By.xpath("//h2[normalize-space()='Review Your Order']");
 	private By placeOderButton		= By.xpath("//a[@class='btn btn-default check_out']");
 	
 	
@@ -36,29 +35,18 @@ public class CheckoutPage extends BasePage{
 		return checkoutInfo;
 	}
 	
-	public boolean isAddresseadingDisplayed() {
-		return eleUtil.isDisplayed(addressHeading);
-	}
-	
-	public String getAddressHeading() {
-		return eleUtil.getText(addressHeading);
-	}
-	
-	public boolean isReviewOrderHeadingDisplayed() {
-		return eleUtil.isDisplayed(reviewOrderHeading);
-	}
-	
-	public String getReviewOrderHeading() {
-		return eleUtil.getText(reviewOrderHeading);
-	}
-	
-	public void enterMessage(String message) {
-		eleUtil.getElement(messageField).sendKeys(message);
+	public OrderCommentComponent getOrderCommentSection() {
+		return orderComment;
 	}
 	
 	public PaymentPage placeOder() {
 		eleUtil.getElement(placeOderButton).click();
 		return new PaymentPage(driver);
+	}
+	
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.CHECKOUT_PAGE_PATH)
+				&& getCheckoutInformation().isDisplayed();
 	}
 	
 	/*

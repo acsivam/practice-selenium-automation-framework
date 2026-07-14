@@ -6,23 +6,22 @@ import org.openqa.selenium.WebDriver;
 import com.automation.base.BasePage;
 import com.automation.components.CartTable;
 import com.automation.components.CheckoutModal;
+import com.automation.components.EmptyCartMessage;
+import com.automation.constants.AppConstants;
 
 public class CartPage extends BasePage{
 	
 	private CartTable cartTable;
+	private EmptyCartMessage emptyCartMessage;
 
 	public CartPage(WebDriver driver) {
 		super(driver);
 		this.cartTable 	= new CartTable(driver);
+		this.emptyCartMessage = new EmptyCartMessage(driver);
 	}
 	
-	/*
-	private By cartRows 				= By.cssSelector("tr[id^='product-']");
-    private By productNameLinks 		= By.xpath("//td[@class='cart_description']/h4/a");
-    private By productPrice				= By.xpath(".//td[@class='cart_price']/p");
-    private By productQuantity			= By.xpath(".//td[@class='cart_quantity']/button");
-    private By productTotalPrice 		= By.xpath(".//td[@class='cart_total']/p");
-    */
+	
+    private By cartInfo 				= By.id("cart_info");
     private By proceedToCheckoutButton 	= By.xpath("//a[@class='btn btn-default check_out']");
 
     
@@ -31,6 +30,23 @@ public class CartPage extends BasePage{
     	return cartTable;
     }
     
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.CART_PAGE_PATH)
+				&& isCartInfoDisplayed();
+	}
+    
+    public boolean isCartInfoDisplayed() {
+    	return eleUtil.isDisplayed(cartInfo);
+    }
+    
+	public boolean isCartEmpty() {
+        return emptyCartMessage.isDisplayed();
+	}
+
+	public boolean hasProducts() {
+	        return cartTable.isDisplayed();
+	}
+	
 	public CheckoutPage proceedToCheckoutAsLoggedInUser() {
 	    eleUtil.click(proceedToCheckoutButton);
 	    return new CheckoutPage(driver);
@@ -40,7 +56,6 @@ public class CartPage extends BasePage{
 	    eleUtil.click(proceedToCheckoutButton);
 	    return new CheckoutModal(driver);
 	}
-    
     /*
 	public int getCartItemCount() {
 		List<WebElement> cartItems = eleUtil.getElements(cartRows);

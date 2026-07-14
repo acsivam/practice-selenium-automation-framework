@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.automation.base.BaseTest;
-import com.automation.components.AddToCartModal;
+import com.automation.components.CartModal;
 import com.automation.components.CheckoutModal;
 import com.automation.pages.AccountCreatedPage;
 import com.automation.pages.AccountDeletedPage;

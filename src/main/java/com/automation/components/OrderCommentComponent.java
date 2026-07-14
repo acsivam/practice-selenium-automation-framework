@@ -1,0 +1,37 @@
+package com.automation.components;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.automation.base.BaseComponent;
+
+public class OrderCommentComponent extends BaseComponent{	
+	
+	public OrderCommentComponent(WebDriver driver) {
+		super(driver);
+	}
+
+
+	private By container 	= By.id("ordermsg");
+	private By label    	= By.tagName("label");
+	private By commentField = By.name("message");
+	// or By.cssSelector("textarea[name='message']");
+	
+	
+	@Override
+	public boolean isDisplayed() {
+		return eleUtil.isDisplayed(container);
+	}
+
+	public String getLabel() {
+		return eleUtil.getText(label);
+	}
+
+	public void enterComment(String comment) {
+		eleUtil.enterText(commentField, comment);
+	}
+
+	public String getComment() {
+		return eleUtil.getText(commentField);
+	}
+}

@@ -1,44 +1,48 @@
 package com.automation.base;
 
+import org.apache.hc.client5.http.entity.mime.Header;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.Footer;
 import org.openqa.selenium.WebDriver;
 
-import com.automation.components.Footer;
-import com.automation.components.Header;
-import com.automation.components.TopMenu;
+import com.automation.components.FooterComponent;
+import com.automation.components.HeaderComponent;
+import com.automation.components.TopMenuComponent;
+import com.automation.driver.DriverManager;
 import com.automation.utils.ElementUtils;
 import com.automation.utils.LoggerUtil;
 
-public class BasePage {
+public abstract class BasePage {
 	
 	protected WebDriver driver;
 	protected ElementUtils eleUtil;
 	protected Logger logger;
 	
-	private Header header;
-	private Footer footer;
-	private TopMenu topMenu;
+	private HeaderComponent header;
+	private FooterComponent footer;
+	private TopMenuComponent topMenu;
 	
 	public BasePage(WebDriver driver) {
 		this.driver 	= DriverManager.getDriver();
 		this.logger 	= LoggerUtil.getLogger(getClass());
 		
 		this.eleUtil 	= new ElementUtils(DriverManager.getDriver());
-        this.footer 	= new Footer(DriverManager.getDriver());
-        this.header 	= new Header(DriverManager.getDriver());
-        this.topMenu	= new TopMenu(DriverManager.getDriver());
+        this.footer 	= new FooterComponent(DriverManager.getDriver());
+        this.header 	= new HeaderComponent(DriverManager.getDriver());
+        this.topMenu	= new TopMenuComponent(DriverManager.getDriver());
 	}
 	
+	public abstract boolean isLoaded();
 	
-	public Header getHeader() {
+	public HeaderComponent getHeader() {
         return header;
     }
 
-    public Footer getFooter() {
+    public FooterComponent getFooter() {
         return footer;
     }
     
-    public TopMenu getTopMenu() {
+    public TopMenuComponent getTopMenu() {
     	return topMenu;
     }
 
@@ -47,7 +51,7 @@ public class BasePage {
         return driver.getTitle();
     }
 
-    public String getPageUrl() {
+    public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
 }

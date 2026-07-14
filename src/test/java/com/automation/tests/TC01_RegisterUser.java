@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.automation.base.BaseTest;
-import com.automation.base.DriverFactory;
 import com.automation.models.User;
 import com.automation.pages.AccountCreatedPage;
 import com.automation.pages.AccountDeletedPage;
@@ -47,7 +46,7 @@ public class TC01_RegisterUser extends BaseTest{
 		
 		SignupPage signupPage = loginPage.getSignupForm().signup(user);
 		Assert.assertTrue(
-				signupPage.isDisplayed(),
+				signupPage.isLoaded(),
 				"Account Information Section not displayed"
 				);
 		

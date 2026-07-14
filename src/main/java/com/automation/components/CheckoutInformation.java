@@ -2,27 +2,34 @@ package com.automation.components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import com.automation.base.BaseComponent;
 
 public class CheckoutInformation extends BaseComponent {
 
+	private DeliveryAddressComponent deliveryAddress;
+	private BillingAddressComponent billingAddress;
+	
     public CheckoutInformation(WebDriver driver) {
         super(driver);
+        
+        this.deliveryAddress = new DeliveryAddressComponent(driver);
+        this.billingAddress  = new BillingAddressComponent(driver);
+    }
+
+    private By checkoutInfoContainer	= By.cssSelector("[data-qa='checkout-info']");
+
+    @Override
+    public boolean isDisplayed() {
+    	return eleUtil.isDisplayed(checkoutInfoContainer);
+    }
+    
+    public DeliveryAddressComponent getDeliveryAddress() {
+        return deliveryAddress;
     }
 
 
-    private By deliveryAddress 	= By.id("address_delivery");
-    private By billingAddress 	= By.id("address_invoice");
-
-
-    public AddressCard getDeliveryAddress() {
-        WebElement element = eleUtil.getElement(deliveryAddress);
-        return new AddressCard(driver, element);
-    }
-
-
-    public AddressCard getBillingAddress() {
-        WebElement element = eleUtil.getElement(billingAddress);
-        return new AddressCard(driver, element);
+    public BillingAddressComponent getBillingAddress() {
+        return billingAddress;
     }
 }

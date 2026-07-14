@@ -39,10 +39,10 @@ public class RegisterUserTest extends BaseTest{
 
 	@Test(priority = 2)
 	public void verifyInvalidEmailError() {
-		User user = TestDataFactory.createValidSignupUser();
-		user.setEmail("1234.com");
+		User invalidUser = TestDataFactory.createValidSignupUser();
+		invalidUser.setEmail("1234.com");
 		
-		loginPage = loginPage.getSignupForm().signupError(user);
+		loginPage.getSignupForm().signup(invalidUser);
 		
 		Assert.assertTrue(
 				loginPage.getSignupForm().isDisplayed(),
@@ -51,9 +51,9 @@ public class RegisterUserTest extends BaseTest{
 	
 	@Test(priority = 3)
 	public void verifyExistingEmailError() {
-		User user = TestDataFactory.createExitingSignupUser();
+		User existingU = TestDataFactory.createExitingSignupUser();
 		
-		loginPage.getSignupForm().signup(user);
+		loginPage.getSignupForm().signup(existingU);
 		
 		Assert.assertTrue(
 				loginPage.getSignupForm().isErrorMessageDisplayed(),
@@ -67,11 +67,10 @@ public class RegisterUserTest extends BaseTest{
 	public void verifyValidEmailTakesUserToSignupPage() {
 		User user = TestDataFactory.createValidSignupUser();
 		
-		SignupPage signupPage = new SignupPage(driver);
-		signupPage = loginPage.getSignupForm().signup(user);
+		SignupPage signupPage = loginPage.getSignupForm().signup(user);
 		
 		Assert.assertTrue(
-				signupPage.isDisplayed(),
+				signupPage.isLoaded(),
 				"Signup Page should be displayed.");
 	}
 	
@@ -80,12 +79,11 @@ public class RegisterUserTest extends BaseTest{
 		User user = TestDataFactory.createValidCreateAccountUser();
 		user.setPassword("");
 		
-		SignupPage signupPage = 
-				loginPage.getSignupForm().signup(user);
+		SignupPage signupPage = loginPage.getSignupForm().signup(user);
 		signupPage.createAccount(user);
 		
 		Assert.assertTrue(
-				signupPage.isDisplayed(),
+				signupPage.isLoaded(),
 				"Signup page should remain displayed after invalid registration.");
 	}
 	
@@ -93,21 +91,18 @@ public class RegisterUserTest extends BaseTest{
 	public void verifyScuccessfulCreationOfAccount() {
 		
 		SoftAssert softAssert = new SoftAssert();
-		
 		User user = TestDataFactory.createValidCreateAccountUser();
+		
 		SignupPage signupPage = 
 				loginPage.getSignupForm().signup(user);
 		logger.info("User created: {}", user.getEmail());
 		email = user.getEmail();
 		
-		signupPage.createAccount(user);
-		
-		
-		AccountCreatedPage accountCreatedPage =
-				new AccountCreatedPage(driver);
+		AccountCreatedPage accountCreatedPage = 
+				signupPage.createAccount(user);
 		
 		Assert.assertTrue(
-				accountCreatedPage.isAccountCreatedHeadingDisplayed(),
+				accountCreatedPage.isLoaded(),
 				"Account Created Page should be displayed.");
 		softAssert.assertEquals(
 				accountCreatedPage.getAccountCreatedHeading(),
@@ -126,16 +121,17 @@ public class RegisterUserTest extends BaseTest{
 		homePage = accountCreatedPage.clickContinue();
 		
 		softAssert.assertTrue(
-				homePage.getCarousel().isDisplayed(),
+				homePage.isLoaded(),
 				"Home page should be displayed");
 		softAssert.assertTrue(
 				homePage.getTopMenu().isLoginAsDisplayed(),
 				"Logged in as should be displayed");
 		
+		
 		loginPage = homePage.getTopMenu().logout();
 		
 		softAssert.assertTrue(
-				loginPage.getSignupForm().isDisplayed(),
+				loginPage.isLoaded(),
 				"Login Page should be displayed after logging out"
 				);
 		
@@ -150,6 +146,7 @@ public class RegisterUserTest extends BaseTest{
 		
 		AccountDeletedPage accountDeletedPage = 
 				homePage.getTopMenu().deleteAccount();
+		
 		softAssert.assertEquals(
 				accountDeletedPage.getAccountDeletedHeading(),
 				AppConstants.ACCOUNT_DELETED_PAGE_HEADING);
@@ -167,7 +164,7 @@ public class RegisterUserTest extends BaseTest{
 		
 		homePage = accountDeletedPage.clickContinue();
 		softAssert.assertTrue(
-				homePage.getCarousel().isDisplayed(),
+				homePage.isLoaded(),
 				"Home page should be displayed");
 		/**/
 		
