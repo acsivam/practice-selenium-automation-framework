@@ -78,10 +78,12 @@ public class ExtentReportListener implements ITestListener {
 		String pathOfExtentReport = ExtentReportManager.getReportPath();
 		File extentReport = new File(pathOfExtentReport);
 		
+		/*
 		try {
 			Desktop.getDesktop().browse(extentReport.toURI());
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
+		/*/
     }
 }
