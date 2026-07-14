@@ -42,11 +42,11 @@ public class RegisterUserTest extends BaseTest{
 		User user = TestDataFactory.createValidSignupUser();
 		user.setEmail("1234.com");
 		
-		loginPage.getSignupForm().signup(user);
+		loginPage = loginPage.getSignupForm().signupError(user);
 		
 		Assert.assertTrue(
 				loginPage.getSignupForm().isDisplayed(),
-				"User should remain on the Signup form (login page) after invalid registration.");
+				"User should remain on the login page after invalid registration.");
 	}
 	
 	@Test(priority = 3)

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.automation.models.User;
 import com.automation.pages.AccountCreatedPage;
+import com.automation.pages.LoginPage;
 import com.automation.pages.SignupPage;
 
 public class SignupForm extends BaseComponent {
@@ -59,5 +60,13 @@ public class SignupForm extends BaseComponent {
     	clickSignup();
     	
     	return new SignupPage(driver);
+    }
+    
+    public LoginPage signupError(User user) {
+    	enterName(user.getName());
+    	enterEmail(user.getEmail());
+    	clickSignup();
+    	
+    	return new LoginPage(driver);
     }
 }

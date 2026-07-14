@@ -1,25 +1,48 @@
-13:58:25.541 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-13:58:37.557 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-13:58:49.667 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-13:58:59.147 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-13:59:13.454 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-13:59:22.354 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1784017761503@test.com
-13:59:35.627 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-14:00:21.582 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-14:00:21.598 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-14:00:21.599 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-14:00:21.602 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-14:00:21.602 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-14:00:46.155 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifySignupFormDisplayed
-14:00:46.775 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-14:01:07.163 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyInvalidEmailError
-14:01:07.740 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-14:01:31.774 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyExistingEmailError
-14:01:32.356 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-14:01:58.351 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyValidEmailTakesUserToSignupPage
-14:01:58.936 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-14:02:16.130 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyCreateAccountError
-14:02:16.721 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-14:02:32.870 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyScuccessfulCreationOfAccount
-14:02:33.450 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
-14:02:49.470 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyUserCanDeleteAccount
+14:25:07.464 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:25:27.979 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyExistingEmailError
+14:25:28.568 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:25:50.202 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyValidEmailTakesUserToSignupPage
+14:25:50.778 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:26:10.496 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyCreateAccountError
+14:26:11.078 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:26:30.477 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyScuccessfulCreationOfAccount
+14:26:31.060 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:26:46.565 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyUserCanDeleteAccount
+14:28:05.601 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:28:05.632 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+14:28:05.633 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+14:28:05.636 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+14:28:05.637 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+14:28:17.603 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:28:25.152 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyInvalidEmailError
+14:28:25.797 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:28:33.282 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:28:40.946 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:28:51.930 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:29:00.159 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1784019539340@test.com
+14:29:31.642 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:33:18.086 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:33:18.121 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+14:33:18.122 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+14:33:18.126 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+14:33:18.127 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+14:33:26.528 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:33:31.311 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyInvalidEmailError
+14:33:31.970 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:33:39.187 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:33:50.296 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:34:04.973 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:34:14.153 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1784019851843@test.com
+14:34:24.796 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:49:54.880 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:49:54.908 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+14:49:54.908 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+14:49:54.912 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+14:49:54.913 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+14:50:16.039 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:50:39.056 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:50:53.446 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:51:04.239 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:51:17.931 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:51:29.666 [main] INFO  com.automation.tests.RegisterUserTest - User created: john1784020887426@test.com
+14:51:42.800 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution

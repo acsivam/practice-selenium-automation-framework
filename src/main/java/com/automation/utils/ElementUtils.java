@@ -49,16 +49,15 @@ public class ElementUtils {
 		// WebElement element = waitForClickable(locator);
 		for (int i = 0; i < 3; i++) {
 		    try {
-		    	//getElement(locator).click();
-		        waitForClickable(locator);
+		        getElement(locator).click();
 		        return;
 		    } catch (ElementClickInterceptedException e) {
-		    	//waitForClickable(locator);
-		    	logger.error("Couldn't click " + locator);
-		    	jsClick(locator);
+		    	waitForClickable(locator);
 		    	return;
 		    }
 		}
+		logger.error("Couldn't click " + locator);
+    	jsClick(locator);
 	}
 	
 	private void jsClick(By locator) {

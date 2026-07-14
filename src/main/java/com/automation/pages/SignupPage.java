@@ -45,6 +45,7 @@ public class SignupPage extends BasePage{
 	    clickCreateAccount();
 	    return new AccountCreatedPage(driver);
 	}
+	
 	/**/
 	/*
 	public void fillAccountInfo(

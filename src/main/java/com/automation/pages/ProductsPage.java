@@ -77,7 +77,7 @@ public class ProductsPage extends BasePage{
 	public ProductsPage searchProduct(String product) {
 		enterProduct(product);
 		clickSearch();
-		return new ProductsPage(driver);
+		return this; //newProductsPage(driver);
 	}
 	
 	/*
