@@ -25,7 +25,7 @@ public class RegisterUserTest extends BaseTest{
 	
 	@BeforeMethod(dependsOnMethods = "launchApplication")
 	public void registerTestSetup() {
-		HomePage homePage = new HomePage(driver);
+		homePage = new HomePage(driver);
 		loginPage = homePage.getTopMenu().goToLoginPage();
 	}
 	
