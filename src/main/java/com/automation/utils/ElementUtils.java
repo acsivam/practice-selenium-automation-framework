@@ -47,6 +47,7 @@ public class ElementUtils {
 	// Click
 	public void click(By locator) {
 		// WebElement element = waitForClickable(locator);
+		for (int i = 0; i < 3; i++) {
 		    try {
 		    	//getElement(locator).click();
 		        waitForClickable(locator);
@@ -57,7 +58,7 @@ public class ElementUtils {
 		    	jsClick(locator);
 		    	return;
 		    }
-		
+		}
 	}
 	
 	private void jsClick(By locator) {

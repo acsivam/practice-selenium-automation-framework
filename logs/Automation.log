@@ -12,3 +12,14 @@
 14:00:21.602 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
 14:00:46.155 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifySignupFormDisplayed
 14:00:46.775 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:01:07.163 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyInvalidEmailError
+14:01:07.740 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:01:31.774 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyExistingEmailError
+14:01:32.356 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:01:58.351 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyValidEmailTakesUserToSignupPage
+14:01:58.936 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:02:16.130 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyCreateAccountError
+14:02:16.721 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:02:32.870 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyScuccessfulCreationOfAccount
+14:02:33.450 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+14:02:49.470 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyUserCanDeleteAccount
