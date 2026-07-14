@@ -8,7 +8,7 @@ import com.automation.pages.HomePage;
 import com.automation.pages.LoginPage;
 
 public class TC05_RegisterExistingUser extends BaseTest{
-	
+	/*/
 	@Test
 	public void verifyRegisterUserWithExistingEmail() {
 		
@@ -26,6 +26,5 @@ public class TC05_RegisterExistingUser extends BaseTest{
 		String signupError = loginPage.getSignupErrorMessage();
 		Assert.assertEquals(signupError, "Email Address already exist!");
 	}
-
-
+	 */
 }

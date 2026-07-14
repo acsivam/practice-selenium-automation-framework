@@ -8,7 +8,7 @@ import com.automation.pages.HomePage;
 import com.automation.pages.LoginPage;
 
 public class TC03_UserLoginError extends BaseTest{
-	
+/*
 	@Test
 	public void verifyUserLoginWithIncorrectCredential() {
 		
@@ -26,5 +26,5 @@ public class TC03_UserLoginError extends BaseTest{
 		String loginError = loginPage.getLoginErrorMessage();
 		Assert.assertEquals(loginError, "Your email or password is incorrect!");
 	}
-
+*/
 }

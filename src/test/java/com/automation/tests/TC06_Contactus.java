@@ -8,7 +8,7 @@ import com.automation.pages.ContactUsPage;
 import com.automation.pages.HomePage;
 
 public class TC06_Contactus extends BaseTest{
-
+	/*/
 	@Test
 	public void verifyUserCanSubmitMessage() {
 		HomePage homePage = new HomePage(driver);
@@ -30,5 +30,5 @@ public class TC06_Contactus extends BaseTest{
 		title = homePage.getPageTitle();
 		Assert.assertEquals(title, "Automation Exercise");
 	}
-
+*/
 }

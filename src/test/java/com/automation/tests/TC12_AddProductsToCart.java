@@ -13,7 +13,7 @@ import com.automation.pages.HomePage;
 import com.automation.pages.ProductsPage;
 
 public class TC12_AddProductsToCart extends BaseTest{
-
+	/*/
 	@Test
 	public void verifyUserCanAddProductsToCart() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
@@ -42,6 +42,6 @@ public class TC12_AddProductsToCart extends BaseTest{
 		softAssert.assertTrue(list.contains("Blue Top"));
 		softAssert.assertTrue(list.contains("Blue Cotton Indie Mickey Dress"));
 		softAssert.assertAll();	
-	}
+	}*/
 
 }

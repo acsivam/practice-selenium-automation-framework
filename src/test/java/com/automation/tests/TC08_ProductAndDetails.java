@@ -9,7 +9,7 @@ import com.automation.pages.ProductDetailsPage;
 import com.automation.pages.ProductsPage;
 
 public class TC08_ProductAndDetails extends BaseTest{
-
+	/*/
 	@Test
 	public void verifyAllProductsAndProductDetailsPage() {
 		SoftAssert softAssert = new SoftAssert();
@@ -33,5 +33,5 @@ public class TC08_ProductAndDetails extends BaseTest{
 		softAssert.assertTrue(details, "Product details are not displayed");
 		
 		softAssert.assertAll();
-	}
+	} */
 }

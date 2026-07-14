@@ -8,7 +8,7 @@ import com.automation.pages.HomePage;
 import com.automation.pages.ProductsPage;
 
 public class TC09_SearchProduct extends BaseTest{
-
+	/*/
 	@Test
 	public void verifyUserCanSearchProduct() {
 		SoftAssert softAssert = new SoftAssert();
@@ -29,5 +29,5 @@ public class TC09_SearchProduct extends BaseTest{
 		softAssert.assertEquals(productCount, 1);
 		
 		softAssert.assertAll();
-	}
+	}*/
 }

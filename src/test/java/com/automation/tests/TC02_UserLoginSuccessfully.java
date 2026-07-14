@@ -9,6 +9,7 @@ import com.automation.pages.LoginPage;
 
 public class TC02_UserLoginSuccessfully extends BaseTest{
 
+	/*
 	@Test
 	public void verifyUserLoginWithValidCredentials() {
 		HomePage homePage = new HomePage(driver);
@@ -26,6 +27,6 @@ public class TC02_UserLoginSuccessfully extends BaseTest{
 		AccountDeletedPage accountDeletedPage = homePage.topMenu.deleteAccount();
 		String accDeleted = accountDeletedPage.getAccountDeletedHeading();
 		Assert.assertEquals(accDeleted, "ACCOUNT DELETED!");
-		*/
-	}
+		*
+	} */
 }

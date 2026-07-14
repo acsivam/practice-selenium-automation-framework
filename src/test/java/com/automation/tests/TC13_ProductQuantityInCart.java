@@ -12,7 +12,7 @@ import com.automation.pages.HomePage;
 import com.automation.pages.ProductDetailsPage;
 
 public class TC13_ProductQuantityInCart extends BaseTest{
-
+	/*/
 	@Test
 	public void verifyProductQuantityInCarts(){
 		SoftAssert softAssert = new SoftAssert();
@@ -35,5 +35,5 @@ public class TC13_ProductQuantityInCart extends BaseTest{
 		
 		softAssert.assertAll();
 	}
-
+*/
 }

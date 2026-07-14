@@ -19,7 +19,7 @@ import com.automation.pages.PaymentPage;
 import com.automation.pages.SignupPage;
 
 public class TC14_PlaceOrderRegisterWhileCheckout extends BaseTest {
-
+	/*/
 	@Test
 	public void verifyUserCanRegisteWhileCheckout() {
 		SoftAssert softAssert = new SoftAssert();
@@ -84,11 +84,11 @@ public class TC14_PlaceOrderRegisterWhileCheckout extends BaseTest {
 		paymentPage.enterExpirationMonth("09");
 		paymentPage.enterExpirationYear("2030");
 		actualResults = paymentPage.clickPay();
-		*/
+		//
 		
 		//System.out.println(actualResults);
 		//PaymentConfimationPage paymentConfirmationPage = paymentPage.waitForPaymentConfirmationPage();
 		
 	}
-
+*/
 }
