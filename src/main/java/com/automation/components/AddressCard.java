@@ -40,7 +40,7 @@ public class AddressCard extends BaseComponent {
                 .findElements(addressLines)
                 .stream()
                 .map(WebElement::getText)
-                .collect(Collectors.toList());;
+                .collect(Collectors.toList());
     }
 
 
