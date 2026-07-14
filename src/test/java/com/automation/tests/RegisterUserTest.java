@@ -23,7 +23,7 @@ public class RegisterUserTest extends BaseTest{
 	private String email;
 	
 	
-	@BeforeMethod
+	@BeforeMethod(dependsOnMethods = "launchApplication")
 	public void registerTestSetup() {
 		HomePage homePage = new HomePage(driver);
 		loginPage = homePage.getTopMenu().goToLoginPage();

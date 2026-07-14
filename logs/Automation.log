@@ -1,14 +1,16 @@
-17:30:42.712 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
-17:30:42.715 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
-17:30:42.740 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
-17:30:42.741 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
-17:30:42.742 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
-17:30:42.771 [main] INFO  com.automation.tests.LoginDDT - Starting test execution
-17:30:42.797 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
-17:30:42.798 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
-17:30:42.798 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
-17:30:42.799 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
-17:30:59.033 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
-17:31:06.681 [main] INFO  com.automation.tests.LoginDDT - Starting test execution
-17:31:33.388 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
-17:31:43.158 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.cssSelector: [data-qa='login-button']
+12:51:11.559 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.cssSelector: [data-qa='signup-button']
+12:51:11.618 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+12:51:18.541 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
+12:51:23.080 [main] INFO  com.automation.utils.ScreenshotUtil - Capturing screenshot for: verifyExistingEmailError
+12:52:43.479 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+12:52:43.504 [main] INFO  com.automation.utils.ConfigReader - Loading configuration from config.properties
+12:52:43.505 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully
+12:52:43.508 [main] INFO  com.automation.utils.ConfigReader - Environment : qa
+12:52:43.509 [main] INFO  com.automation.utils.ConfigReader - Configuration loaded successfully.
+12:52:54.048 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
+12:52:56.123 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+12:53:04.563 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
+12:53:06.596 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.cssSelector: [data-qa='signup-button']
+12:53:06.647 [main] INFO  com.automation.tests.RegisterUserTest - Starting test execution
+12:53:14.093 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.xpath: //a[normalize-space()='Signup / Login']
+12:53:18.804 [main] ERROR com.automation.utils.ElementUtils - Couldn't click By.cssSelector: [data-qa='signup-button']
