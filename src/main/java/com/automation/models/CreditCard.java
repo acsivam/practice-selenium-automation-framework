@@ -2,6 +2,10 @@ package com.automation.models;
 
 public class CreditCard {
 	
+	public CreditCard() {
+	}
+	
+	
 	private String name;
 	private String number;
 	private String cvc;

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BaseComponent;
+import com.automation.models.User;
 import com.automation.pages.HomePage;
 
 public class LoginForm extends BaseComponent {
@@ -24,11 +25,11 @@ public class LoginForm extends BaseComponent {
     	return eleUtil.isDisplayed(loginFormContainer);
     }
     
-    public boolean isHeaderDisplayed() {
+    public boolean isHeadingDisplayed() {
     	return eleUtil.isDisplayed(loginFormHeader);
     }
     
-    public String getHeader() {
+    public String getHeading() {
     	return eleUtil.getText(loginFormHeader);
     }
     
@@ -43,9 +44,9 @@ public class LoginForm extends BaseComponent {
     public void clickLogin() {
     	eleUtil.click(loginButton);
     }
-    public HomePage login(String email, String password) {
-        enterEmail(email);
-        enterPassword(password);
+    public HomePage login(User user) {
+        enterEmail(user.getEmail());
+        enterPassword(user.getPassword());
         clickLogin();
         return new HomePage(driver);
     }

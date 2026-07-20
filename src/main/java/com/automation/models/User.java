@@ -2,10 +2,56 @@ package com.automation.models;
 
 public class User {
 	
-//	public User(String email, String password){
-		
-//	}
+	public User(){
+	}
 
+	public User(
+	        String title,
+	        String name,
+	        String email,
+	        String password,
+	        String day,
+	        String month,
+	        String year,
+	        boolean newsletter,
+	        boolean specialOffers,
+	        String firstName,
+	        String lastName,
+	        String company,
+	        String address1,
+	        String address2,
+	        String country,
+	        String state,
+	        String city,
+	        String zipcode,
+	        String mobile) {
+
+	    this.title = title;
+	    this.name = name;
+	    this.email = email;
+	    this.password = password;
+
+	    this.day = day;
+	    this.month = month;
+	    this.year = year;
+
+	    this.newsletter = newsletter;
+	    this.specialOffers = specialOffers;
+
+	    this.firstName = firstName;
+	    this.lastName = lastName;
+	    this.company = company;
+
+	    this.address1 = address1;
+	    this.address2 = address2;
+	    this.country = country;
+
+	    this.state = state;
+	    this.city = city;
+	    this.zipcode = zipcode;
+	    this.mobile = mobile;
+	}
+	
     private String title;
     private String name;
     private String email;

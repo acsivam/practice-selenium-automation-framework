@@ -19,6 +19,8 @@ public class ContactForm extends BaseComponent {
 
     
     private By container 		= By.cssSelector(".contact-form");
+    private By note 			= By.cssSelector(".contact-form > div:first-child");
+    private By heading			= By.cssSelector(".contact-form h2");
     private By name 			= By.cssSelector("[data-qa='name']");
     private By email 			= By.cssSelector("[data-qa='email']");
     private By subject 			= By.cssSelector("[data-qa='subject']");
@@ -32,6 +34,14 @@ public class ContactForm extends BaseComponent {
     @Override
     public boolean isDisplayed() {
         return eleUtil.isDisplayed(container);
+    }
+    
+    public String getNote() {
+    	return eleUtil.getText(note);
+    }
+    
+    public String getHeading() {
+    	return eleUtil.getText(heading);
     }
     
     public void enterName(String value) {

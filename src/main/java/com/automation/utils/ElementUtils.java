@@ -46,19 +46,25 @@ public class ElementUtils {
 	
 	// Click
 	public void click(By locator) {
-		// WebElement element = waitForClickable(locator);
 		for (int i = 0; i < 3; i++) {
 		    try {
-		        getElement(locator).click();
+		    	getElement(locator).click();
 		        return;
 		    } catch (ElementClickInterceptedException e) {
-		    	waitForClickable(locator);
-		    	return;
+		    	logger.warn("Click intercepted. Retrying...");
+		    	continue;
 		    }
 		}
-		logger.error("Couldn't click " + locator);
-    	jsClick(locator);
+		logger.error("Click faile. Trying js click " + locator);
+		jsClick(locator);
 	}
+	
+	
+	public void click(WebElement element) {
+	    wait.until(ExpectedConditions.elementToBeClickable(element))
+	        .click();
+	}
+	
 	
 	private void jsClick(By locator) {
 		WebElement element = getElement(locator);
@@ -89,12 +95,12 @@ public class ElementUtils {
 	
 	// Is displayed
 	public boolean isDisplayed(By locator) {
-		return waitForVisibility(locator).isDisplayed();
+		return isPresent(locator) && getElement(locator).isDisplayed();
 	}
 	
     // Is Element Present
     public boolean isPresent(By locator) {
-        return !driver.findElements(locator).isEmpty();
+        return !getElements(locator).isEmpty();
     }
     
     
@@ -133,7 +139,7 @@ public class ElementUtils {
         Select select = new Select(waitForVisibility(locator));
         select.selectByVisibleText(value);
     }
-    
+   
   
     public void scrollToBottom() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -159,6 +165,13 @@ public class ElementUtils {
     
     public boolean isSelected(By locator) {
         return getElement(locator).isSelected();
+    }
+    
+    public WebElement waitForVisibility(WebElement parent, By locator) {
+        return wait.until(driver -> {
+            WebElement element = parent.findElement(locator);
+            return element.isDisplayed() ? element : null;
+        });
     }
 
 }

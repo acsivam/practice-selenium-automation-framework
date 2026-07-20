@@ -1,17 +1,20 @@
 	package com.automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
 import com.automation.components.Advertisement;
 import com.automation.components.CategoryBrandSidebar;
 import com.automation.components.ProductGrid;
+import com.automation.components.ProductSearch;
 import com.automation.constants.AppConstants;
 
 public class ProductsPage extends BasePage{
 	
 	private Advertisement advertisement;
 	private CategoryBrandSidebar sidebar;
+	private ProductSearch searchBox;
 	private ProductGrid productGrid;
 	
 	public ProductsPage(WebDriver driver) {
@@ -19,19 +22,26 @@ public class ProductsPage extends BasePage{
 		
 		this.sidebar = new CategoryBrandSidebar(driver);
 		this.productGrid = new ProductGrid(driver);
+		this.searchBox = new ProductSearch(driver);
 	}
 	
+	private By productGridLocator = By.cssSelector(".features_items");
+
 	
 	public Advertisement getAdvertisement() {
 		return advertisement;
 	}
 	
-	public CategoryBrandSidebar getSidebar() {
+	public CategoryBrandSidebar getCategoryBrandSidebar() {
 		return sidebar;
 	}
 	
 	public ProductGrid getProductGrid() {
 		return productGrid;
+	}
+	
+	public ProductSearch getProductSearch() {
+		return searchBox;
 	}
 	
 	public boolean isLoaded() {

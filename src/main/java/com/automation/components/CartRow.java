@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.automation.base.BaseComponent;
+import com.automation.models.CartItem;
+import com.automation.models.Product;
 
 public class CartRow extends BaseComponent {
 
@@ -12,15 +14,19 @@ public class CartRow extends BaseComponent {
 	
 	public CartRow(WebDriver driver, WebElement row) {
 		super(driver);
+		
+		if (row == null) {
+	        throw new IllegalArgumentException("Cart row cannot be null");
+	    }
 		this.row = row;
 	}
 	
-	private By name 		= By.cssSelector(".cart_description h4");
-	private By category 	= By.cssSelector(".cart_description p");
-	private By price 		= By.cssSelector(".cart_price p");
-	private By quantity 	= By.cssSelector(".cart_quantity button");
-	private By total 		= By.cssSelector(".cart_total_price");
-	private By removeButton	= By.cssSelector(".cart_quantity_delete");
+	private final By name 			= By.cssSelector(".cart_description h4");
+	private final By category 		= By.cssSelector(".cart_description p");
+	private final By price 			= By.cssSelector(".cart_price p");
+	private final By quantity 		= By.cssSelector(".cart_quantity button");
+	private final By total 			= By.cssSelector(".cart_total_price");
+	private final By removeButton	= By.cssSelector(".cart_quantity_delete");
 	
 	
 	@Override
@@ -57,6 +63,31 @@ public class CartRow extends BaseComponent {
             throw new IllegalStateException(
                 "Remove button is not available.");
         }
-        row.findElement(removeButton).click();
+        eleUtil.click(row.findElement(removeButton));
+    }
+
+    private int toInteger(String rupeeString) {
+    	int numericValue = Integer.parseInt(rupeeString.replaceAll("[^\\d]", ""));
+    	return numericValue;
+    }
+    
+    public Product toProduct() {
+    	Product product = new Product();
+    	product.setName(getName());
+    	product.setCategory(getCategory());
+    	product.setPrice(toInteger(getPrice()));
+    	//product.setQuantity(getQuantity());
+    	//product.setTotal(getTotal());
+    	return product;
+    }
+    
+    public CartItem toCartItem() {
+    	Product product = new Product();
+    	
+    	product.setName(getName());
+    	product.setCategory(getCategory());
+    	product.setPrice(toInteger(getPrice()));
+  
+    	return  new CartItem(product, toInteger(getQuantity()));
     }
 }

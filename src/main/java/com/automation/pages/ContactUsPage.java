@@ -41,7 +41,7 @@ public class ContactUsPage extends BasePage{
 	public String getHeading() {
 	    return eleUtil.getText(pageHeading);
 	}
-	 
+    
 	public HomePage ClickContinue() {
 		eleUtil.click(homeButton);
 		return new HomePage(driver);

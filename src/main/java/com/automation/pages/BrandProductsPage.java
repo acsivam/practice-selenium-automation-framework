@@ -1,5 +1,6 @@
 package com.automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
@@ -17,6 +18,9 @@ public class BrandProductsPage extends BasePage{
 		sidebar = new CategoryBrandSidebar(driver);
 		productGrid = new ProductGrid(driver);
 	}
+	
+	private By productGridLocator 	= By.cssSelector(".features_items");
+
 	
 	public CategoryBrandSidebar getSidebar() {
 		return sidebar;

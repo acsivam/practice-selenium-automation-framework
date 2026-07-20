@@ -1,6 +1,7 @@
 package com.automation.driver;
 
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,28 +19,19 @@ public class DriverFactory {
 
     public static WebDriver createDriver(String browser) {
 
+    	
         switch(browser.trim().toLowerCase()) {
 
         case "chrome":
             WebDriverManager.chromedriver().setup();
-
-            ChromeOptions options = new ChromeOptions();
-
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--window-size=1920,1080");
-
-            return new ChromeDriver(options);
-
-        case "firefox":
+            return new ChromeDriver(BrowserOptionsFactory.getChromeOptions());
+		case "firefox":
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
 
         case "safari":
             WebDriverManager.safaridriver().setup();
-            return new SafariDriver();
+            return new SafariDriver(BrowserOptionsFactory.getSafariOptions());
 
         default:
             throw new IllegalArgumentException(

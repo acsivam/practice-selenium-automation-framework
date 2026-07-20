@@ -11,6 +11,8 @@ import com.automation.pages.CategoryProductsPage;
 
 public class CategoryBrandSidebar extends BaseComponent{
 
+	private String expandedCategory;
+	
 	public CategoryBrandSidebar(WebDriver driver) {
 		super(driver);
 	}
@@ -38,33 +40,51 @@ public class CategoryBrandSidebar extends BaseComponent{
 	public List<String> getCategoryNames(){
 		return eleUtil.getElementsText(categoryNames);
 	}
-		
-	public void expandCategory(String categotyName) {
-	    eleUtil.click(category(categotyName));
+	
+	private boolean isExpanded(String categoryName) {
+		return categoryName.equals(expandedCategory);
+	}
+	
+	public CategoryBrandSidebar expandCategory(String categoryName) {
+		if (!isExpanded(categoryName)) {
+			// if another category is open, close it first
+		     if (expandedCategory != null) {
+		    	 eleUtil.click(category(expandedCategory));
+		     }
+		     eleUtil.click(category(categoryName));
+		     expandedCategory = categoryName;
+		     }
+	    return this; 
 	}
 
 	private By category(String categoryName) {
 	    return By.cssSelector("a[href='#" + categoryName + "']");
 	}
 	
-	public List<String> getSubCategoryNames(String categoryName) {
-	    return eleUtil.getElementsText(subCategory(categoryName));
+	public List<String> getSubCategoryNames() {
+		By subCategories = subCategory(expandedCategory);
+		eleUtil.waitForVisibility(subCategories);
+	    return eleUtil.getElementsText(subCategories);
 	}
 	
 	private By subCategory(String categoryName) {
 	    return By.xpath("//div[@id='" + categoryName + "']//li/a");
 	}
 	
-	public CategoryProductsPage selectSubCategory(String categoryName, String subCategotyName) {
-		expandCategory(categoryName);
-		eleUtil.click(subCategory(categoryName, subCategotyName));
+	public CategoryProductsPage selectSubCategory(String subCategoryName) {
+		if (expandedCategory == null) {
+	        throw new IllegalStateException(
+	            "No category is expanded. Expand a category before selecting subcategory."
+	        );
+	    }
+		eleUtil.click(subCategory(expandedCategory, subCategoryName));
 		return new CategoryProductsPage(driver);
 	}
 	
 	private By subCategory(String categoryName, String subCategotyName) {
 		return By.xpath("//div[@id='" + categoryName + "']//a[normalize-space()='" + subCategotyName + "']");
 	}
-	
+	 
 	public boolean isBrandHeadingDisplayed() {
 		return eleUtil.isDisplayed(brandHeading);
 	}
@@ -83,7 +103,7 @@ public class CategoryBrandSidebar extends BaseComponent{
 	}
 	
 	private By brand(String brandName) {
-		return By.xpath("//a[href='/brand_products/" + brandName + "']");
+		return By.xpath("//a[@href='/brand_products/" + brandName + "']");
 	}
 	
 	/*

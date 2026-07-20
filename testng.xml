@@ -9,6 +9,7 @@
      	<parameter name="browser" value="chrome"/>
      	
         <classes>
+            <class name="com.automation.tests.AuthenticationTests"/>
       		<class name="com.automation.tests.RegisterUserTest"/>
 	      		<methods>
 	      			<!--exclude name="verifyValidEmailTakesUserToSignupPage()"/-->

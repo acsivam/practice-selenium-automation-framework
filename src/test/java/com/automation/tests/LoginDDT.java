@@ -25,9 +25,9 @@ public class LoginDDT extends BaseTest{
 	
 	@Test(dataProvider = "registerData", dataProviderClass = TestDataProvider.class)
 	public void verifyLogin(String email, String password) {
-		//User user = TestDataFactory
+		User user = TestDataFactory.existingUser();
 		
-		loginPage.getLoginForm().login(email, password);
+		loginPage.getLoginForm().login(user);
 		
 	}
 	
@@ -36,7 +36,7 @@ public class LoginDDT extends BaseTest{
 	public void verifyLoginPojo(User user) {
 		//User user = TestDataFactory
 		
-		loginPage.getLoginForm().login(user.getEmail(), user.getPassword());
+		loginPage.getLoginForm().login(user);
 		
 	}
 }

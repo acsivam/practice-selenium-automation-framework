@@ -1,4 +1,4 @@
-package com.automation.tests;
+		package com.automation.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -20,17 +20,26 @@ public class RegisterUserTest extends BaseTest{
 
 	private HomePage homePage;
 	private LoginPage loginPage;
-	private String email;
+	private User user;
 	
 	
 	@BeforeMethod(dependsOnMethods = "launchApplication")
 	public void registerTestSetup() {
+		//System.out.println("Before HomePage");
+		long start = System.currentTimeMillis();
 		homePage = new HomePage(driver);
+		System.out.println("HomePage init: "
+	            + (System.currentTimeMillis() - start) + " ms");
+		//System.out.println("After HomePage");
+		start = System.currentTimeMillis();
 		loginPage = homePage.getTopMenu().goToLoginPage();
+		System.out.println("goToLoginPage: "
+	            + (System.currentTimeMillis() - start) + " ms");
 	}
 	
 	@Test(priority = 1)
 	public void verifySignupFormDisplayed() {
+		System.out.println("test strted");
 		Assert.assertTrue(
 				loginPage.getSignupForm().isDisplayed(),
 				"Signup form should be displayed."
@@ -39,9 +48,10 @@ public class RegisterUserTest extends BaseTest{
 
 	@Test(priority = 2)
 	public void verifyInvalidEmailError() {
-		User invalidUser = TestDataFactory.createValidSignupUser();
+		User invalidUser = TestDataFactory.validSignupUser();
 		invalidUser.setEmail("1234.com");
 		
+		System.out.println("test strted");
 		loginPage.getSignupForm().signup(invalidUser);
 		
 		Assert.assertTrue(
@@ -51,7 +61,7 @@ public class RegisterUserTest extends BaseTest{
 	
 	@Test(priority = 3)
 	public void verifyExistingEmailError() {
-		User existingU = TestDataFactory.createExitingSignupUser();
+		User existingU = TestDataFactory.exitingSignupUser();
 		
 		loginPage.getSignupForm().signup(existingU);
 		
@@ -65,7 +75,7 @@ public class RegisterUserTest extends BaseTest{
 	
 	@Test(priority = 4)
 	public void verifyValidEmailTakesUserToSignupPage() {
-		User user = TestDataFactory.createValidSignupUser();
+		User user = TestDataFactory.validSignupUser();
 		
 		SignupPage signupPage = loginPage.getSignupForm().signup(user);
 		
@@ -76,7 +86,7 @@ public class RegisterUserTest extends BaseTest{
 	
 	@Test(priority = 5)
 	public void verifyCreateAccountError() {
-		User user = TestDataFactory.createValidCreateAccountUser();
+		User user = TestDataFactory.validCreateAccountUser();
 		user.setPassword("");
 		
 		SignupPage signupPage = loginPage.getSignupForm().signup(user);
@@ -91,12 +101,11 @@ public class RegisterUserTest extends BaseTest{
 	public void verifyScuccessfulCreationOfAccount() {
 		
 		SoftAssert softAssert = new SoftAssert();
-		User user = TestDataFactory.createValidCreateAccountUser();
+		User user = TestDataFactory.validCreateAccountUser();
 		
 		SignupPage signupPage = 
 				loginPage.getSignupForm().signup(user);
-		logger.info("User created: {}", user.getEmail());
-		email = user.getEmail();
+		logger.info("User created: {} {} ", user.getEmail(), user.getPassword());
 		
 		AccountCreatedPage accountCreatedPage = 
 				signupPage.createAccount(user);
@@ -124,7 +133,7 @@ public class RegisterUserTest extends BaseTest{
 				homePage.isLoaded(),
 				"Home page should be displayed");
 		softAssert.assertTrue(
-				homePage.getTopMenu().isLoginAsDisplayed(),
+				homePage.getTopMenu().isLoggedInAsDisplayed(),
 				"Logged in as should be displayed");
 		
 		
@@ -142,7 +151,7 @@ public class RegisterUserTest extends BaseTest{
 	public void verifyUserCanDeleteAccount() {
 		SoftAssert softAssert = new SoftAssert();
 		
-		homePage = loginPage.getLoginForm().login(email, "pass1234");
+		loginPage.getLoginForm().login(user);
 		
 		AccountDeletedPage accountDeletedPage = 
 				homePage.getTopMenu().deleteAccount();
@@ -170,4 +179,7 @@ public class RegisterUserTest extends BaseTest{
 		
 		softAssert.assertAll();
 	}
-}
+	
+
+	public void cleanup() {
+}}

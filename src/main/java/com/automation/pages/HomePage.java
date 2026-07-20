@@ -1,11 +1,13 @@
 package com.automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
 import com.automation.components.CategoryBrandSidebar;
 import com.automation.components.HomeCarousel;
 import com.automation.components.ProductGrid;
+import com.automation.components.RecommendedItems;
 import com.automation.constants.AppConstants;
 
 public class HomePage extends BasePage{
@@ -13,14 +15,18 @@ public class HomePage extends BasePage{
 	private HomeCarousel carousel;
 	private CategoryBrandSidebar sidebar;
 	private ProductGrid productGrid;
+	private RecommendedItems recommededGrid;
 	
 	public HomePage(WebDriver driver) {
 		super(driver);	
 		this.carousel   	= new HomeCarousel(driver);
 		this.sidebar		= new CategoryBrandSidebar(driver);
 		this.productGrid 	= new ProductGrid(driver);
-	}
+		this.recommededGrid	= new RecommendedItems(driver);
+	}// //
 
+	private By productGridLocator 	= By.cssSelector(".features_items");
+	private By recommededItemsGrid	= By.cssSelector(".recommended_items");
 	
 	public HomeCarousel getCarousel() {
 		return carousel;
@@ -34,12 +40,17 @@ public class HomePage extends BasePage{
 		return productGrid;
 	}
 	
+	public RecommendedItems getRecommendedItems() {
+		return recommededGrid;
+	}
+	
+	@Override
 	public boolean isLoaded() {
 		return getCurrentUrl().contains(AppConstants.HOME_PAGE_PATH)
 	            && getCarousel().isDisplayed();
 	}
 	
-	
+	/*
 	/*
 	private By productHeading			= By.xpath("//h2[@class='title text-center']");
 	private By products 				= By.cssSelector(".product-image-wrapper");
@@ -76,5 +87,13 @@ public class HomePage extends BasePage{
 	public boolean isProductsListDisplayed() {
 	    return eleUtil.isDisplayed(productsGrid);
 	}
+	
+		@Override
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.HOME_PAGE_PATH)
+	            && getCarousel().isDisplayed();
+	}
 	*/
+
+
 }

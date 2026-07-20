@@ -26,10 +26,10 @@ public abstract class BasePage {
 		this.driver 	= DriverManager.getDriver();
 		this.logger 	= LoggerUtil.getLogger(getClass());
 		
-		this.eleUtil 	= new ElementUtils(DriverManager.getDriver());
-        this.footer 	= new FooterComponent(DriverManager.getDriver());
-        this.header 	= new HeaderComponent(DriverManager.getDriver());
-        this.topMenu	= new TopMenuComponent(DriverManager.getDriver());
+		this.eleUtil 	= new ElementUtils(driver);
+        this.footer 	= new FooterComponent(driver);
+        this.header 	= new HeaderComponent(driver);
+        this.topMenu	= new TopMenuComponent(driver);
 	}
 	
 	public abstract boolean isLoaded();

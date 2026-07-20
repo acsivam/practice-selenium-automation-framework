@@ -60,8 +60,8 @@ public class TC01_RegisterUser extends BaseTest{
 		logger.info("**** Starting tc01_verifyUserCanSignup ****");
 		
 		SoftAssert softAssert = new SoftAssert();
-		User asr = TestDataFactory.createExitingSignupUser();
-		User usr = TestDataFactory.createValidCreateAccountUser();
+		User asr = TestDataFactory.exitingSignupUser();
+		User usr = TestDataFactory.validCreateAccountUser();
 		
 		LoginPage loginPage = homePage.getTopMenu().goToLoginPage();
 		SignupPage signupPage = loginPage.getSignupForm().signup(asr);
@@ -93,7 +93,7 @@ public class TC01_RegisterUser extends BaseTest{
 				"Account Created");
 		homePage = accCreated.clickContinue();
 		softAssert.assertTrue(
-				homePage.getTopMenu().isLoginAsDisplayed(),
+				homePage.getTopMenu().isLoggedInAsDisplayed(),
 				"Login As not displayed");
 		AccountDeletedPage accDel = homePage.getTopMenu().deleteAccount();
 		softAssert.assertEquals(

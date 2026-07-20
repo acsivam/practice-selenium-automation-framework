@@ -18,9 +18,9 @@ public class ProductInformation extends BaseComponent {
     private By price 			= By.cssSelector(".product-information span span");
     private By quantity 		= By.id("quantity");
     private By addToCartButton 	= By.cssSelector("button.cart");
-    private By availability     = By.xpath(".//p[contains(text(),'Availability')]");
-    private By condition        = By.xpath(".//p[contains(text(),'Condition')]");
-    private By brand            = By.xpath(".//p[contains(text(),'Brand')]");
+    private By availability     = By.xpath("//p[b[text()='Availability:']]");
+    private By condition        = By.xpath("//p[b[text()='Condition:']]");
+    private By brand            = By.xpath("//p[b[text()='Brand:']]");
 
     
 	@Override
@@ -40,13 +40,22 @@ public class ProductInformation extends BaseComponent {
         return eleUtil.getText(price);
     }
 
+    public boolean isQuantityinputDisplayed() {
+    	return eleUtil.isDisplayed(quantity);
+    }
+    
     public void enterQuantity(String qty) {
     	eleUtil.getElement(quantity).clear();
     	eleUtil.enterText(quantity, qty);
     }
 
-    public void clickAddToCart() {
+    public boolean isAddToCartuttonDisplayed() {
+    	return eleUtil.isDisplayed(addToCartButton);
+    }
+    
+    public CartModal clickAddToCart() {
     	eleUtil.click(addToCartButton);
+    	return new CartModal(driver);
     }
 
     public String getAvailability() {

@@ -28,7 +28,7 @@ public class TopMenuComponent extends BaseComponent{
 	private By videoTutorialsMenu	= By.xpath("//a[normalize-space()='Video Tutorials']");
 	private By contactUsMenu		= By.xpath("//a[normalize-space()='Contact us']");
 	private By logoutMenu			= By.xpath("//a[normalize-space()='Logout']");
-	private By loginAs				= By.xpath("//li[10]//a[1]");
+	private By loggedInAs			= By.xpath("//li[10]//a[1]");
 	private By deleteAccountMenu	= By.xpath("//a[normalize-space()='Delete Account']");
 
 	
@@ -52,7 +52,6 @@ public class TopMenuComponent extends BaseComponent{
 	}
 	
 	public LoginPage goToLoginPage() {
-		//driver.findElement(loginMenu).click();
 		eleUtil.click(loginMenu);
 		return new LoginPage(driver);
 	}
@@ -80,12 +79,16 @@ public class TopMenuComponent extends BaseComponent{
 		return new LoginPage(driver);
 	}
 	
-	public boolean isLoginAsDisplayed() {
-		return eleUtil.isDisplayed(loginAs);
+	public boolean isLoggedInAsDisplayed() {
+		return eleUtil.isDisplayed(loggedInAs);
+	}
+	
+	public String getLoggedInAs() {
+		return eleUtil.getText(loggedInAs);
 	}
 	
 	public String loggedInAs() {
-		return eleUtil.getText(loginAs);
+		return eleUtil.getText(loggedInAs);
 	}
 	
 	public AccountDeletedPage deleteAccount() {

@@ -16,8 +16,8 @@ public class CartPage extends BasePage{
 
 	public CartPage(WebDriver driver) {
 		super(driver);
-		this.cartTable 	= new CartTable(driver);
-		this.emptyCartMessage = new EmptyCartMessage(driver);
+		this.cartTable 			= new CartTable(driver);
+		this.emptyCartMessage 	= new EmptyCartMessage(driver);
 	}
 	
 	

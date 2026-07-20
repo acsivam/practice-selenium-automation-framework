@@ -12,7 +12,7 @@ public class ReviewForm extends BaseComponent {
         super(driver);
     }
 
-    private By container     	= By.cssSelector(".replay-box");
+    private By container     	= By.cssSelector(".replay-box");  //#review-form
     private By heading      	= By.tagName("h2");
     private By nameField 		= By.id("name");
     private By emailField 		= By.id("email");

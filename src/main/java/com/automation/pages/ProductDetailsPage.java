@@ -46,7 +46,6 @@ public class ProductDetailsPage extends BasePage{
         return reviewForm;
     }
     
-    
     public boolean isProductDetailsContainerDisplayed() {
     	return eleUtil.isDisplayed(productDetailsContainer);
     }

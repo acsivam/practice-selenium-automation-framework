@@ -31,7 +31,7 @@ public class HomeCarousel extends BaseComponent{
 	
 	@Override
 	public boolean isDisplayed() {
-		return eleUtil.isDisplayed(container);
+		return eleUtil.waitForVisibility(container).isDisplayed();
 	}
 
 	public int getCarouselSlideCount() {

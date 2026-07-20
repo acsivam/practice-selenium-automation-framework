@@ -75,9 +75,9 @@ public class AppConstants {
 	public static final String CATEGORY_PANEL_HEADING = "CATEGORY" ;
 	
 	public static final String ALL_PRODUCTS_HEADING = "ALL PRODUCTS";
-	public static final String BRAND_PRODUCTS_PREFIX = "BRANDS - ";
+	public static final String BRAND_PRODUCTS_PREFIX = "BRAND - %s PRODUCTS";
 	public static final String BRAND_CATEGOTY_PRODUCTS_SUFFIX = " PRODUCTS";
-	public static final String CATEGORY_PRODUCTS_HEADING = "%s - %s - PRODUCTS" ;
+	public static final String CATEGORY_PRODUCTS_HEADING = "%s - %s PRODUCTS" ;//"%s - %s - PRODUCTS"
 	public static final String FEATURED_ITEMS_HEADING = "FEATURED ITEMS";
 
 	
@@ -90,6 +90,10 @@ public class AppConstants {
 	*/
 	
 	public static String getBrandProductsHeading(String brandName) {
-        return String.format(CATEGORY_PRODUCTS_HEADING, brandName.toUpperCase());
+        return String.format(BRAND_PRODUCTS_PREFIX, brandName.toUpperCase());
+	}
+	
+	public static String getCategoryProductsHeading(String category, String subCategory) {
+        return String.format(CATEGORY_PRODUCTS_HEADING, category.toUpperCase(), subCategory.toUpperCase());
 	}
 }

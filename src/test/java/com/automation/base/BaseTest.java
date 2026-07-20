@@ -22,13 +22,15 @@ public class BaseTest {
 	public void setup(@Optional("chrome")String browser) {
 		System.out.println(">>> SET UP RUNNING");
 		DriverManager.initializeDriver(browser);
+		driver = DriverManager.getDriver();
 	}
 	
 	@BeforeMethod
 	public void launchApplication() {
-		logger.info("Starting test execution");
-		DriverManager.getDriver();
+		logger.info("Preparing browser. Deleting cookies....");
 		DriverManager.getDriver().manage().deleteAllCookies();
+
+	    logger.info("Lauching application....");
 		DriverManager.getDriver().get(ConfigReader.getProperty("appUrl"));
 		DriverManager.getDriver().manage().window().maximize();
 	}
