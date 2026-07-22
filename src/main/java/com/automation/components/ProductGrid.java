@@ -29,9 +29,9 @@ public class ProductGrid extends BaseComponent implements ProductContainer{
 	
 	@Override
 	public boolean isDisplayed(){
-        return eleUtil.isDisplayed(productGrid);
-    }
-	
+        return eleUtil.waitForVisibility(productGrid).isDisplayed();
+    } 
+	 
 	private WebElement getProductGrid(){
         return eleUtil.getElement(productGrid);
     }

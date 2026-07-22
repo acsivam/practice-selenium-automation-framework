@@ -19,9 +19,9 @@ public class CheckoutInformation extends BaseComponent {
 
     private By checkoutInfoContainer	= By.cssSelector("[data-qa='checkout-info']");
 
-    @Override
+    @Override 
     public boolean isDisplayed() {
-    	return eleUtil.isDisplayed(checkoutInfoContainer);
+    	return eleUtil.waitForVisibility(checkoutInfoContainer).isDisplayed();
     }
     
     public DeliveryAddressComponent getDeliveryAddress() {

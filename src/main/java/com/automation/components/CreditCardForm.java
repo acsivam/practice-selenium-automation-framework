@@ -24,7 +24,7 @@ public class CreditCardForm extends BaseComponent {
     
     @Override
     public boolean isDisplayed() {
-    	return eleUtil.isDisplayed(container);
+    	return eleUtil.waitForVisibility(container).isDisplayed();
     }
     
     public void enterName(String name) {

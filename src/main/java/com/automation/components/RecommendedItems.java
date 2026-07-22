@@ -27,7 +27,7 @@ public class RecommendedItems extends BaseComponent implements ProductContainer{
     
     @Override
     public boolean isDisplayed() {
-        return eleUtil.isDisplayed(recommendedItems);
+        return eleUtil.waitForVisibility(recommendedItems).isDisplayed();
     }
     
     

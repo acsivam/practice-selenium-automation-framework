@@ -21,7 +21,7 @@ public class PaymentConfimationPage extends BasePage{
 	
 	
 	public boolean isPaymentConfirmationContainerDisplayed() {
-		return eleUtil.isDisplayed(paymentConfirmationContainer);
+		return eleUtil.waitForVisibility(paymentConfirmationContainer).isDisplayed();
 	}
 	
 	public boolean isOrderPlacedHeadingDisplayed() {
@@ -44,6 +44,6 @@ public class PaymentConfimationPage extends BasePage{
 	public boolean isLoaded() {
 		return getCurrentUrl().contains(AppConstants.PAYMENT_CONFIRMATION_PAGE_PATH)
 				&& isPaymentConfirmationContainerDisplayed();
-	}
+	} 
 
 }

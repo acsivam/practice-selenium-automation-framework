@@ -26,7 +26,7 @@ public class DeliveryAddressComponent extends BaseComponent {
     
     @Override
     public boolean isDisplayed() {
-    	return eleUtil.isDisplayed(deliveryAddressContainer);
+    	return eleUtil.waitForVisibility(deliveryAddressContainer).isDisplayed();
     }
     
     public String getTitle() {

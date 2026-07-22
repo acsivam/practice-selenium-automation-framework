@@ -30,8 +30,8 @@ import com.automation.pages.ProductDetailsPage;
 import com.automation.pages.ProductsPage;
 import com.automation.testdata.TestDataFactory;
 
-@Test(groups = {"Producs"})
-public class ProductsTest extends BaseTest{
+@Test(groups = {"Product"})
+public class ProductTests extends BaseTest{
 	
 	private HomePage homePage;
 	private BrandProductsPage brandsPage;
@@ -52,7 +52,6 @@ public class ProductsTest extends BaseTest{
 		ProductGrid featuredItems = homePage.getProductGrid();		
 		RecommendedItems recommededItems = homePage.getRecommendedItems();
 		
-		Thread.sleep(100);
 		ProductAssertions.assertThat(featuredItems)
 			.isDisplayed()
 			.hasProductsDisplayed()			

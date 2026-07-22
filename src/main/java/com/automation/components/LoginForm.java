@@ -22,11 +22,11 @@ public class LoginForm extends BaseComponent {
 
 	@Override
     public boolean isDisplayed() {
-    	return eleUtil.isDisplayed(loginFormContainer);
+    	return eleUtil.waitForVisibility(loginFormContainer).isDisplayed();
     }
     
     public boolean isHeadingDisplayed() {
-    	return eleUtil.isDisplayed(loginFormHeader);
+    	return eleUtil.waitForVisibility(loginFormHeader).isDisplayed();
     }
     
     public String getHeading() {
@@ -48,6 +48,7 @@ public class LoginForm extends BaseComponent {
         enterEmail(user.getEmail());
         enterPassword(user.getPassword());
         clickLogin();
+        logger.info("Logged in as user {}", user.getEmail(), user.getPassword());
         return new HomePage(driver);
     }
 }

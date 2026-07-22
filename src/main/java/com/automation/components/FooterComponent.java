@@ -20,7 +20,7 @@ public class FooterComponent extends BaseComponent{
 	
 	@Override
 	public boolean isDisplayed() {
-		return eleUtil.isDisplayed(footer);
+		return eleUtil.waitForVisibility(footer).isDisplayed();
 	}
 	
 	public String getSubscriptionHeading() {

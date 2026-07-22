@@ -52,7 +52,7 @@ public class AuthenticationTests extends BaseTest {
 		AuthenticationAssertions  assertAuth = new AuthenticationAssertions(loginPage);
 		assertAuth.hasExisitingEmailError();
 	}
-	
+	 
 	
 	public void shouldNavigateToAccountInformationPageForNewUser() {
 		User user = TestDataFactory.newUser();
@@ -75,7 +75,7 @@ public class AuthenticationTests extends BaseTest {
 	public void  shouldSuccessfullyRegisterNewUser() {
 		User user = TestDataFactory.newUser();
 		this.user = user; 
-		logger.info("User created: {} {} ", user.getEmail(), user.getPassword());
+		logger.info("User to be created: {} {} ", user.getEmail(), user.getPassword());
 		
 		AccountCreatedPage accCreatedPage = loginPage
 				.getSignupForm()
@@ -85,7 +85,7 @@ public class AuthenticationTests extends BaseTest {
 		AuthenticationAssertions  assertAuth = new AuthenticationAssertions(accCreatedPage);
 		assertAuth.hasAccountCreated();
 	}
-	
+	 
 	
 	public void shouldDisplayLoginForm() {
 		
@@ -94,10 +94,9 @@ public class AuthenticationTests extends BaseTest {
 	}
 	
 	
-	
 	public void shouldSuccessfullyLogin() {
 		User user = TestDataFactory.existingUser();
-		this.user = user;
+		user = user;
 		
 		homePage = loginPage.getLoginForm().login(user);
 		
@@ -136,6 +135,7 @@ public class AuthenticationTests extends BaseTest {
 	
 	private void deleteAccount() {
 		if (user == null) {
+			logger.info("No user found!");
 			return;
 		}
 		

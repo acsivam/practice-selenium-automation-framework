@@ -10,7 +10,9 @@
      	
         <classes>
             <class name="com.automation.tests.AuthenticationTests"/>
+   			<class name="com.automation.tests.CartTests"/>
       		<class name="com.automation.tests.RegisterUserTest"/>
+      		<class name="com.automation.tests.ProductTests"/>
 	      		<methods>
 	      			<!--exclude name="verifyValidEmailTakesUserToSignupPage()"/-->
 	    			<!--exclude name="verifyCreateAccountError()"/-->

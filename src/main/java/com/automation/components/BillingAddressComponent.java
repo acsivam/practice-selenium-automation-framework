@@ -25,7 +25,7 @@ public class BillingAddressComponent extends BaseComponent {
 
     @Override
     public boolean isDisplayed() {
-    	return eleUtil.isDisplayed(billingAddressContainer);
+    	return eleUtil.waitForVisibility(billingAddressContainer).isDisplayed();
     }
     
     public boolean isBillingAddressHeadingDispalyed() {

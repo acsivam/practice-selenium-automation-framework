@@ -23,7 +23,7 @@ public abstract class BasePage {
 	private TopMenuComponent topMenu;
 	
 	public BasePage(WebDriver driver) {
-		this.driver 	= DriverManager.getDriver();
+		this.driver 	= driver;
 		this.logger 	= LoggerUtil.getLogger(getClass());
 		
 		this.eleUtil 	= new ElementUtils(driver);

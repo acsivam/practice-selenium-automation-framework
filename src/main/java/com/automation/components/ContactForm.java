@@ -33,7 +33,7 @@ public class ContactForm extends BaseComponent {
 
     @Override
     public boolean isDisplayed() {
-        return eleUtil.isDisplayed(container);
+        return eleUtil.waitForVisibility(container).isDisplayed();
     }
     
     public String getNote() {

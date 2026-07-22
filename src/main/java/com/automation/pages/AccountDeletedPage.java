@@ -19,7 +19,7 @@ public class AccountDeletedPage extends BasePage{
 	private By accountDeletedMessage 	= By.xpath("//p[contains(text(),'Your account')]");
 	private By accountPrivilegeMessage	= By.xpath("//p[contains(text(),'You can create')]");
 	private By continueButton			= By.xpath("//a[@class='btn btn-primary']");
-	
+	 
 	
 	public boolean isLoaded() {
 		return getCurrentUrl().contains(AppConstants.ACCOUNT_DELETED_PAGE_PATH)
@@ -27,7 +27,7 @@ public class AccountDeletedPage extends BasePage{
 	}
 	
 	public boolean isAccountDeletedHeadingDisplayed() {
-		return eleUtil.isDisplayed(accountDeletedHeading);
+		return eleUtil.waitForClickable(accountDeletedHeading).isDisplayed();
 	}
 	
 	public String getAccountDeletedHeading() {

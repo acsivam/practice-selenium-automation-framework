@@ -16,10 +16,10 @@ public class Advertisement extends BaseComponent{
 
     @Override
     public boolean isDisplayed() {
-    	return eleUtil.isDisplayed(container);
+    	return eleUtil.waitForVisibility(container).isDisplayed();
     }
     
     public boolean isAdvertisementDisplayed() {
-        return eleUtil.isDisplayed(saleImage);
+        return eleUtil.waitForVisibility(saleImage).isDisplayed();
     }
 }

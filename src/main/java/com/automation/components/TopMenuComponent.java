@@ -34,7 +34,7 @@ public class TopMenuComponent extends BaseComponent{
 	
 	@Override
 	public boolean isDisplayed() {
-		return eleUtil.isDisplayed(topMenu);
+		return eleUtil.waitForVisibility(topMenu).isDisplayed();
 	}
 	
 	public void goToHomePage() {
@@ -76,6 +76,7 @@ public class TopMenuComponent extends BaseComponent{
 	
 	public LoginPage logout() {
 		eleUtil.click(logoutMenu);
+		logger.info("User logging out....}" );
 		return new LoginPage(driver);
 	}
 	

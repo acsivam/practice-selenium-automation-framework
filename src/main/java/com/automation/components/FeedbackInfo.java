@@ -21,7 +21,7 @@ public class FeedbackInfo extends BaseComponent {
 
     @Override
     public boolean isDisplayed() {
-        return eleUtil.isDisplayed(feedbackSection);
+        return eleUtil.waitForVisibility(feedbackSection).isDisplayed();
     }
 
 

@@ -90,7 +90,7 @@ public class AuthenticationAssertions {
 				"User should be navigated to Accounts Created Page"
 				);
 		return this;
-	}
+	} 
 	
 	public AuthenticationAssertions hasAccountCreatedMessage(){
 		SoftAssert softly = new SoftAssert();
@@ -101,27 +101,37 @@ public class AuthenticationAssertions {
 				"Account created page heading should be \"Account Created!\""
 				);
 		softly.assertTrue(
-				accCreatedPage.isAccountSuccessMessageDisplayed(),
+				accCreatedPage.isAccountSuccessMessagesDisplayed(),
 				"Account creation success mesage should be displayed"
-				);
+				); 
 		softly.assertEquals(
-				accCreatedPage.getAccountSuccessfulCreatedMessages(),
+				accCreatedPage.getAccountSuccessMessage(),
 				"Congratulations! Your new account has been successfully created!",
 				"Account created message mismatch"
 				);
 		softly.assertEquals(
-				accCreatedPage.getAccountPrivilegeMessage(),
-				"You can now take advantage of member privileges to "
-				+ "enhance your online shopping experience with us.",
-				"Member prvileage mesage mismatch"
+				normalizeText(accCreatedPage.getAccountPrivilegeMessage()),
+				normalizeText("You can now take advantage of member privileges to "
+						+ "enhance your online shopping experience with us."),
+				"Member prvileage message mismatch"
 				);
-		softly.assertAll();
+		softly.assertAll(); 
 		return this;
 	}
 	
+	private String normalizeText(String text) {
+	    return text.replaceAll("\\s+", " ").trim();
+	}
+	 
 	public AuthenticationAssertions hasAccountCreated() {
-		hasAccountCreatedPageDisplayed();
+		SoftAssert softly = new SoftAssert();
+		
+		softly.assertTrue(
+				accCreatedPage.isLoaded(),
+				"User should be navigated to Accounts Created Page"
+				);
 		hasAccountCreatedMessage();
+		softly.assertAll();
 		return this;
 	}
 	

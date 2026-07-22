@@ -46,6 +46,7 @@ public class SignupPage extends BasePage{
 		getSignupAccountForm().fill(user);
 	    getAddressForm().fill(user);
 	    clickCreateAccount();
+	    logger.info("User created : {}, naviagating ", user.getEmail());
 	    return new AccountCreatedPage(driver);
 	}
 	

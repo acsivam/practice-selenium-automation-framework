@@ -49,7 +49,7 @@ public class AddToCartTest extends BaseTest {
 	}
 	
 	
-	public void shouldAddSingleProductToCartFromProductsPage() {
+	public void shouldAddSingleProductToCartFromProductsPage() throws InterruptedException {
 		// Test data
 		Product blueTop = TestDataFactory.bluetop();
 		CartItem expectedItem = new CartItem (blueTop,1);//

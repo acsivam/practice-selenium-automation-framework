@@ -129,7 +129,7 @@ public class ProductAssertions {
 				);
 		return this;
 	}
-	
+	 
 	public ProductAssertions hasProductPrice(Product expectedProduct) {
 		
 		Assert.assertTrue(
@@ -228,17 +228,22 @@ public class ProductAssertions {
 				this.productInfo.isAddToCartuttonDisplayed(),
 				"Add To Cart button is missing");
 		softly.assertEquals(
-				this.productInfo.getAvailability(),
-				"Availability: " +expected.getAvailability(),
+				normalizeText(this.productInfo.getAvailability()),
+				normalizeText("Availability: " +expected.getAvailability()),
 				"Product availability mismatch" + this.productInfo.getAvailability());
 		softly.assertEquals(
-				this.productInfo.getCondition(),
-				"Condition: " + expected.getCondition(),
+				normalizeText(this.productInfo.getCondition()),
+				normalizeText("Condition: " + expected.getCondition()),
 				"Product cndition mismatch");
-		softly.assertEquals(this.productInfo.getBrand(),
-				"Brand: " + expected.getBrand(),
+		softly.assertEquals(
+				normalizeText(this.productInfo.getBrand()),
+				normalizeText("Brand: " + expected.getBrand()),
 				"Produc brand mismatch");
 		softly.assertAll();
 		return this;
+	}
+	
+	private String normalizeText(String text) {
+	    return text.replaceAll("\\s+", " ").trim();
 	}
 }

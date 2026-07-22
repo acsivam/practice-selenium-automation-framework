@@ -1,34 +1,38 @@
 package com.automation.components;
 
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.automation.base.BaseComponent;
+import com.automation.constants.AppConstants;
 import com.automation.models.CartItem;
 import com.automation.models.Product;
 
 public class CartTable extends BaseComponent{
 
-	
 	public CartTable(WebDriver driver) {
 		super(driver);
 	}
 
 	private By table 		= By.id("cart_info");
 	private By headers 		= By.cssSelector("thead th");
-	private By rows 		= By.cssSelector("tbody tr[id^='product-']");
+	private By rows 		= By.cssSelector("#cart_info_table tbody tr"); //By.cssSelector("tbody tr[id^='product-']");
 	private By grandTotal 	= By.xpath("//h4/b[text()='Total Amount']/../../following-sibling::td//p");
 	private By emptyCart    = By.id("empty_cart");
 	
 	
 	@Override
-    public boolean isDisplayed() {
-    	return eleUtil.isDisplayed(table);
+    public boolean isDisplayed() { 
+    	return eleUtil.waitForVisibility(table).isDisplayed();
     }
 
 	public boolean isHeaderDisplayed() {
@@ -66,14 +70,23 @@ public class CartTable extends BaseComponent{
     }
     */
     
+  
+    
     public List<CartRow> getCartRows(){//getProducts ... this is getting product rows only, not grand total.
-        List<CartRow> products = new ArrayList<>();
+    	/*/
+    	if (isEmpty()) {
+    	  logger.info("Cart is empty");
+    	 return Collections.emptyList();
+    	 }
+    	 */
+    	 List<CartRow> cartRows = new ArrayList<>();
+    	 
+    	 for (WebElement row : eleUtil.getElements(rows)) {
+    	        cartRows.add(new CartRow(driver, row));
+    	    }
 
-        for (WebElement row : eleUtil.getElements(rows)) {
-            products.add(new CartRow(driver, row));
-        }
 
-        return products;
+        return cartRows;
     }
     
     public CartRow getProductByName(String name) {

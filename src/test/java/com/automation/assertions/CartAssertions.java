@@ -13,6 +13,7 @@ import com.automation.components.CartRow;
 import com.automation.components.CartTable;
 import com.automation.models.CartItem;
 import com.automation.models.Product;
+import com.automation.pages.CartPage;
 import com.automation.utils.LoggerUtil;
 
 public class CartAssertions { 
@@ -20,15 +21,41 @@ public class CartAssertions {
 	//public static void  	public CartAssertions hasProducts
 	private Logger logger = LoggerUtil.getLogger(getClass());
 	private CartTable cartTable;
+	private CartPage cartPage;
 	
     public CartAssertions(CartTable cartTable) {
         this.cartTable = cartTable;
+    }
+	
+    public CartAssertions(CartPage cartPage) {
+        this.cartPage = cartPage;
     }
     
     public static CartAssertions verifyThat (CartTable cartTable) {
     	return new CartAssertions (cartTable);
     }
 	
+    public static CartAssertions verifyThat (CartPage cartPage) {
+    	return new CartAssertions (cartPage);
+    }
+    public CartAssertions isCartTableDisplayed() {
+    	Assert.assertTrue(cartTable.isDisplayed(), 
+    			"Cart table shoudl be dispaleyd");
+    	return this;
+    }
+    
+    public CartAssertions isCartEmpty() {
+    	Assert.assertTrue(cartPage.isCartEmpty(),
+    			"Cart should be empty");
+    	return this;
+    }
+    
+    public CartAssertions hasEmptyMessage() {
+    	Assert.assertEquals(cartTable.getEmptyMessage(),
+    			"Cart is empty! Click here to buy products.");
+    	return this;
+    }
+    
 	public CartAssertions hasTableHeaders(List<String> expectedHeaders) {
 		Assertions.assertThat(cartTable.getHeaders())
 	            .containsExactlyElementsOf(expectedHeaders);
@@ -44,8 +71,10 @@ public class CartAssertions {
 		
 		List<CartRow> actualRows = cartTable.getCartRows();
 	
-		Assert.assertTrue(
-			   actualRows.size() == expectedItems.size(),
+		logger.info("Actual count: {}, expected count: {} ",actualRows.size(), expectedItems.size());
+		
+
+		Assert.assertEquals(actualRows.size(), expectedItems.size(),
 			   "Cart item count does not match"
 	   			);
 	  
@@ -93,17 +122,19 @@ public class CartAssertions {
 	   return this;
 	}
 
-	
 	public CartAssertions hasProductCount(int expectedCount) {
-		Assertions.assertThat(cartTable.getProductCount())
-	            .isEqualTo(expectedCount);
+	    Assert.assertEquals(cartTable.getProductCount(),
+	    		expectedCount );
 	    return this;
 	}
 
-	
 	public CartAssertions hasGrandTotal(String expectedGrandTotal) {
+	    Assert.assertEquals(cartTable.getGrandTotal(),
+	    		expectedGrandTotal );
+	    /*
 		Assertions.assertThat(cartTable.getGrandTotal())
-	            .isEqualTo(expectedGrandTotal);
+	            .isEqualTo(expectedGrandTotal); 
+	    */
 	    return this;
 	}
 	

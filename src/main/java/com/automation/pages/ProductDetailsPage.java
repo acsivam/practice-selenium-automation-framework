@@ -47,7 +47,7 @@ public class ProductDetailsPage extends BasePage{
     }
     
     public boolean isProductDetailsContainerDisplayed() {
-    	return eleUtil.isDisplayed(productDetailsContainer);
+    	return eleUtil.waitForVisibility(productDetailsContainer).isDisplayed();
     }
     
     public boolean isLoaded() {

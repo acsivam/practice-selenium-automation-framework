@@ -36,7 +36,7 @@ public class RegisterUserTest extends BaseTest{
 		System.out.println("goToLoginPage: "
 	            + (System.currentTimeMillis() - start) + " ms");
 	}
-	
+	  
 	@Test(priority = 1)
 	public void verifySignupFormDisplayed() {
 		System.out.println("test strted");
@@ -101,7 +101,7 @@ public class RegisterUserTest extends BaseTest{
 	public void verifyScuccessfulCreationOfAccount() {
 		
 		SoftAssert softAssert = new SoftAssert();
-		User user = TestDataFactory.validCreateAccountUser();
+		this.user = TestDataFactory.validCreateAccountUser();
 		
 		SignupPage signupPage = 
 				loginPage.getSignupForm().signup(user);
@@ -110,12 +110,13 @@ public class RegisterUserTest extends BaseTest{
 		AccountCreatedPage accountCreatedPage = 
 				signupPage.createAccount(user);
 		
-		Assert.assertTrue(
+		softAssert.assertTrue(
 				accountCreatedPage.isLoaded(),
 				"Account Created Page should be displayed.");
 		softAssert.assertEquals(
 				accountCreatedPage.getAccountCreatedHeading(),
 				AppConstants.ACCOUNT_CREATED_PAGE_HEADING);
+		
 		/*
 		softAssert.assertEquals(
 				accountCreatedPage.getAccountSuccessMessage(),
@@ -181,5 +182,4 @@ public class RegisterUserTest extends BaseTest{
 	}
 	
 
-	public void cleanup() {
-}}
+}

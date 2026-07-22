@@ -23,7 +23,7 @@ public class SignupForm extends BaseComponent {
 
 	@Override
     public boolean isDisplayed() {
-    	return eleUtil.isDisplayed(signupForm);
+    	return eleUtil.waitForVisibility(signupForm).isDisplayed();
     }
     
     public boolean isHeaderDisplayed() {
@@ -42,12 +42,12 @@ public class SignupForm extends BaseComponent {
     	eleUtil.enterText(email, userEmail);
     }
     
-    public void clickSignup() {
+    public void clickSignup() {     
     	eleUtil.click(signupButton);
     }
     
     public boolean isErrorMessageDisplayed() {
-    	return eleUtil.isDisplayed(errorEmail);
+    	return eleUtil.waitForVisibility(errorEmail).isDisplayed();
     }
     
     public String getErrorMessage() {

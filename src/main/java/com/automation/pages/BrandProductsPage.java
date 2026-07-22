@@ -21,7 +21,7 @@ public class BrandProductsPage extends BasePage{
 	
 	private By productGridLocator 	= By.cssSelector(".features_items");
 
-	
+	  
 	public CategoryBrandSidebar getSidebar() {
 		return sidebar;
 	}

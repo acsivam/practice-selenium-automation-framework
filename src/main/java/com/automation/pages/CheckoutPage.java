@@ -25,7 +25,7 @@ public class CheckoutPage extends BasePage{
 	//private By reviewOrderHeading	= By.xpath("//h2[normalize-space()='Review Your Order']");
 	private By placeOderButton		= By.xpath("//a[@class='btn btn-default check_out']");
 	
-	
+	 
 	
 	public CartTable getCartTable() {
 		return cartTable;

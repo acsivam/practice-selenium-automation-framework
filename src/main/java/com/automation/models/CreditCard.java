@@ -5,6 +5,20 @@ public class CreditCard {
 	public CreditCard() {
 	}
 	
+	public CreditCard(
+			String name,
+			String number,
+			String cvc,
+			String month,
+			String year
+			) {
+		this.name = name;
+		this.number = number;
+		this.cvc = cvc;
+		this.month = month;
+		this.year = year;
+		
+	}
 	
 	private String name;
 	private String number;

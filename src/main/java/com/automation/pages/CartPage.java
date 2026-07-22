@@ -6,18 +6,18 @@ import org.openqa.selenium.WebDriver;
 import com.automation.base.BasePage;
 import com.automation.components.CartTable;
 import com.automation.components.CheckoutModal;
-import com.automation.components.EmptyCartMessage;
+import com.automation.components.EmptyCart;
 import com.automation.constants.AppConstants;
 
 public class CartPage extends BasePage{
 	
 	private CartTable cartTable;
-	private EmptyCartMessage emptyCartMessage;
+	private EmptyCart emptyCart;
 
 	public CartPage(WebDriver driver) {
 		super(driver);
-		this.cartTable 			= new CartTable(driver);
-		this.emptyCartMessage 	= new EmptyCartMessage(driver);
+		this.cartTable 	= new CartTable(driver);
+		this.emptyCart 	= new EmptyCart(driver);
 	}
 	
 	
@@ -25,26 +25,22 @@ public class CartPage extends BasePage{
     private By proceedToCheckoutButton 	= By.xpath("//a[@class='btn btn-default check_out']");
 
     
-	
+	 
     public CartTable getCartTable() {
     	return cartTable;
     }
     
-	public boolean isLoaded() {
-		return getCurrentUrl().contains(AppConstants.CART_PAGE_PATH)
-				&& isCartInfoDisplayed();
-	}
-    
-    public boolean isCartInfoDisplayed() {
-    	return eleUtil.isDisplayed(cartInfo);
+    public EmptyCart getEmptyCart() {
+    	return emptyCart;
     }
     
-	public boolean isCartEmpty() {
-        return emptyCartMessage.isDisplayed();
+	public boolean isLoaded() {
+		return getCurrentUrl().contains(AppConstants.CART_PAGE_PATH)
+				&& cartTable.isDisplayed() || isCartEmpty();
 	}
-
-	public boolean hasProducts() {
-	        return cartTable.isDisplayed();
+    
+	public boolean isCartEmpty() {
+        return emptyCart.isDisplayed();
 	}
 	
 	public CheckoutPage proceedToCheckoutAsLoggedInUser() {
@@ -57,6 +53,11 @@ public class CartPage extends BasePage{
 	    return new CheckoutModal(driver);
 	}
     /*
+    
+    public boolean isCartTableDisplayed() {
+	        return eleUtil.isDisplayed(cartInfo);
+	}
+	
 	public int getCartItemCount() {
 		List<WebElement> cartItems = eleUtil.getElements(cartRows);
 	    return cartItems.size();

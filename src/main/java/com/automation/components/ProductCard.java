@@ -75,7 +75,10 @@ public class ProductCard extends BaseComponent{
     }
     
     public CartModal clickAddToCart() {
-    	productCard.findElement(addToCart).click();
+    	eleUtil
+		 .waitForVisibility(productCard,addToCart)
+		 .click();
+    	//productCard.findElement(addToCart).click();
         return new CartModal(driver);
     }
 
@@ -84,7 +87,10 @@ public class ProductCard extends BaseComponent{
     }
     
     public ProductDetailsPage clickViewProduct() {
-    	productCard.findElement(viewProduct).click();
+    	eleUtil
+		 .waitForVisibility(productCard,viewProduct)
+		 .click();
+    	//productCard.findElement(viewProduct).click();
         return new ProductDetailsPage(driver);
     }
    

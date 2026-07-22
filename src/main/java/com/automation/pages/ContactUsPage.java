@@ -28,14 +28,14 @@ public class ContactUsPage extends BasePage{
 	
 	public ContactForm getContactForm() {
 		return contactForm;
-	}
+	} 
 	
 	public FeedbackInfo getFeedbackInfo() {
 		return feedbackInfo;
 	}
 	
 	private boolean isContactUsContainerDisplayed() {
-	    return eleUtil.isDisplayed(contactUsContainer);
+	    return eleUtil.waitForVisibility(contactUsContainer).isDisplayed();
 	}
 
 	public String getHeading() {

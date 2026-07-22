@@ -10,6 +10,7 @@ public class SignupAccountForm extends BaseComponent{
 
 	public SignupAccountForm(WebDriver driver) {
 		super(driver);
+		// eleUtil.waitForVisibility(titleMrField);
 	}
 	
 	private By accountForm		= By.cssSelector(".login-form");
@@ -32,18 +33,24 @@ public class SignupAccountForm extends BaseComponent{
 	
 	@Override
 	public boolean isDisplayed() {
-		return eleUtil.isDisplayed(accountForm);
+		return eleUtil.waitForVisibility(accountForm).isDisplayed()
+				&& isHeadingDisplayed();
 	}
 	
 	public boolean isHeadingDisplayed() {
-		return eleUtil.isDisplayed(heading);
+		return eleUtil.waitForVisibility(heading).isDisplayed();
 	}
 	
 	public String getHeading() {
 		return eleUtil.getText(heading);
 	}
 	
-	public void selectTitle(String title) {
+	public void selectTitle(String title) { 
+	    System.out.println("Current URL: " + driver.getCurrentUrl());
+	    System.out.println("Page source contains gender: " 
+	        + driver.getPageSource().contains("id_gender1"));
+		
+		
 		if(title.equalsIgnoreCase("mr")) {
 			eleUtil.click(titleMrField);
 		}else {
@@ -98,6 +105,7 @@ public class SignupAccountForm extends BaseComponent{
 	}
 	
 	public void fill(User user) {
+		logger.info("Now going to fill up account information section");
 	    selectTitle(user.getTitle());
 	    enterName(user.getName());
 	    enterPassword(user.getPassword());

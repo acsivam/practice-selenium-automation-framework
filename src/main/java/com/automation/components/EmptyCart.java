@@ -6,27 +6,27 @@ import org.openqa.selenium.WebDriver;
 import com.automation.base.BaseComponent;
 import com.automation.pages.ProductsPage;
 
-public class EmptyCartMessage extends BaseComponent{
+public class EmptyCart extends BaseComponent{
 
-    public EmptyCartMessage(WebDriver driver) {
+    public EmptyCart(WebDriver driver) {
 		super(driver);
 	}
 
 	private By emptyCart 			= By.id("empty_cart");
-	private By continueShoppingLink = By.cssSelector("#empty_cart a");
+	private By clickBuyProducts 	= By.cssSelector("#empty_cart a");
 
 	
 	@Override
     public boolean isDisplayed() {
-        return eleUtil.isDisplayed(emptyCart);
+        return eleUtil.waitForVisibility(emptyCart).isDisplayed();
     }
     
     public String getEmptyCartMessage() {
     	return eleUtil.getText(emptyCart);
     }
     
-    public ProductsPage clickContinueShopping() {
-        eleUtil.click(continueShoppingLink);
+    public ProductsPage clickBuyProducts() {
+        eleUtil.click(clickBuyProducts);
         return new ProductsPage(driver);
     }
 }

@@ -31,7 +31,7 @@ public class SignupAddressForm extends BaseComponent{
 	}
 	
 	public boolean isHeadingDisplayed() {
-		return eleUtil.isDisplayed(heading);
+		return eleUtil.waitForVisibility(heading).isDisplayed();
 	}
 	
 	public String getAddressInfoHeading() {
@@ -79,6 +79,7 @@ public class SignupAddressForm extends BaseComponent{
 	}
 	
 	public void fill(User user) {
+		logger.info("Now going to fill up address information section");
 	    enterFirstName(user.getFirstName());
 	    enterLastName(user.getLastName());
 	    enterCompany(user.getCompany());

@@ -17,7 +17,7 @@ public class TestCasesPage extends BasePage {
 	
 	
 	public boolean isLoaded() {
-	    return eleUtil.isDisplayed(testCasesSection);
+	    return eleUtil.waitForClickable(testCasesSection).isDisplayed();
 	}
 	
 	

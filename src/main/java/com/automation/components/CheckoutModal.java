@@ -22,7 +22,7 @@ public class CheckoutModal extends BaseComponent{
 	
 	@Override
 	public boolean isDisplayed() {
-		return eleUtil.isDisplayed(checkoutModal);
+		return eleUtil.waitForVisibility(checkoutModal).isDisplayed();
 	}
 	
 	public String getCheckoutHeading() {

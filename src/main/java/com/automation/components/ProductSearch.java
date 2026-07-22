@@ -19,8 +19,8 @@ public class ProductSearch extends BaseComponent{
     
 	@Override
     public boolean isDisplayed() {
-    	return  eleUtil.isDisplayed(searchBox)
-    			&& eleUtil.isDisplayed(searchButton);
+    	return  eleUtil.waitForVisibility(searchBox).isDisplayed()
+    			&& eleUtil.waitForVisibility(searchButton).isDisplayed();
     }
 	
 	public void enterProduct(String product) {

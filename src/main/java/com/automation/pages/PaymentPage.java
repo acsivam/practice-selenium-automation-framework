@@ -24,12 +24,12 @@ public class PaymentPage extends BasePage {
     }
     
     public boolean isPaymentContainerDisplayed() {
-    	return eleUtil.isDisplayed(paymentContainer);
+    	return eleUtil.waitForVisibility(paymentContainer).isDisplayed();
     }
     
     public boolean isLoaded() {
     	return getCurrentUrl().contains(AppConstants.PAYMENT_PAGE_PATH)
     			&& isPaymentContainerDisplayed();
     }
-}
+} 
 

@@ -18,7 +18,7 @@ public class HeaderComponent extends BaseComponent{
 	
 	@Override
 	public boolean isDisplayed() {
-		return eleUtil.isDisplayed(header);
+		return eleUtil.waitForVisibility(header).isDisplayed();
 	}
 	
 	public boolean isLogoDisplayed() {

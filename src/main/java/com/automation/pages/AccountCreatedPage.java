@@ -15,28 +15,47 @@ public class AccountCreatedPage extends BasePage{
 	}
 	
 	private By accountCreatedHeading 	= By.cssSelector("[data-qa='account-created']");
-	private By accountCreatedMessages 	= By.xpath("//h2[@data-qa='account-created']/following::p"); 
+	private By accountCreatedMessages 	= By.xpath("//h2[@data-qa='account-created']/following-sibling::p"); 
 	private By accountSuccessMessage 	= By.xpath("//p[contains(text(),'Congratulations! Your new account')]"); //::p[1]
 	private By accountPrivilegeMessage 	= By.xpath("//p[contains(text(),'You can now take advantage of member privileges')]");
 	private By continueButton			= By.cssSelector("[data-qa='continue-button']");
 	
-	
+	  
 	
 	public boolean isLoaded() {
+		/*
+		boolean urlCheck = getCurrentUrl()
+	            .contains(AppConstants.ACCOUNT_CREATED_PAGE_PATH);
+
+	    boolean headingCheck = isAccountCreatedHeadingDisplayed();
+
+	    System.out.println("Current URL: " + getCurrentUrl());
+	    System.out.println("Expected path: " + AppConstants.ACCOUNT_CREATED_PAGE_PATH);
+	    System.out.println("URL check: " + urlCheck);
+	    System.out.println("Heading check: " + headingCheck);
+
+	    return urlCheck && headingCheck;
+	    */
+		System.out.println(getCurrentUrl().contains(AppConstants.ACCOUNT_CREATED_PAGE_PATH));
+		System.out.println(isAccountCreatedHeadingDisplayed());
+		System.out.println(isAccountSuccessMessagesDisplayed());
+		System.out.println();
+		
 		return getCurrentUrl().contains(AppConstants.ACCOUNT_CREATED_PAGE_PATH)
-				&& isAccountCreatedHeadingDisplayed();
-	}
+				&& isAccountCreatedHeadingDisplayed()
+				&& isAccountSuccessMessagesDisplayed(); 
+	} 
 	
 	public boolean isAccountCreatedHeadingDisplayed() {
-		return eleUtil.isDisplayed(accountCreatedHeading);
+		return eleUtil.waitForVisibility(accountCreatedHeading).isDisplayed();
 	}
-	
+	 
 	public String getAccountCreatedHeading() {
-		return eleUtil.getText(accountCreatedHeading);
+		return eleUtil.waitForVisibility(accountCreatedHeading).getText();
 	}
 	
-	public boolean isAccountSuccessMessageDisplayed() {
-		return eleUtil.isDisplayed(accountSuccessMessage);
+	public boolean isAccountSuccessMessagesDisplayed() {
+		return eleUtil.isDisplayed(accountCreatedMessages);
 	}
 	
 	public List<String> getAccountSuccessfulCreatedMessages() {

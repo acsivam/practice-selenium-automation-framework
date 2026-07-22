@@ -17,8 +17,8 @@ public class CartModal extends BaseComponent{
 	
 	
 	private By addedToCartModal 		= By.cssSelector("#cartModal.show"); 
-	private By continueShoppingButton	= By.xpath("//button[@class='btn btn-success close-modal btn-block']"); 
-	private By viewCartLink 			= By.xpath("//u[normalize-space()='View Cart']"); // By.linkText("View Cart"); 
+	private By continueShoppingButton	= By.xpath("//button[@class='btn btn-success close-modal btn-block']");// By.xpath("//button[contains(@class,'close-modal')]"); 
+	private By viewCartLink 			= By.xpath("//a[contains(@href,'view_cart')]"); // By.linkText("View Cart"); 
 	private By addedTitle				= By.cssSelector("#cartModal .modal-title");
 	private By addedMessage 			= By.cssSelector("#cartModal .modal-body p");
 
@@ -37,7 +37,7 @@ public class CartModal extends BaseComponent{
 	}
 	
 	public boolean isViewCartDisplayed() {
-		return eleUtil.isDisplayed(viewCartLink);
+		return eleUtil.waitForVisibility(viewCartLink).isDisplayed();
 	}
 	
 	public CartPage viewCart() {

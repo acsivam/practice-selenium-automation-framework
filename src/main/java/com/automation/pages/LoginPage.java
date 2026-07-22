@@ -32,7 +32,7 @@ public class LoginPage extends BasePage {
     }
 
     private boolean isFormContainerDisplayed() {
-    	return eleUtil.isDisplayed(loginPageContainer);
+    	return eleUtil.waitForVisibility(loginPageContainer).isDisplayed();
     }
     
     public boolean isLoaded() {

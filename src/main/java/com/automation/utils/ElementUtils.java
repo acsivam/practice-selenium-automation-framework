@@ -25,7 +25,7 @@ public class ElementUtils {
     private Logger logger;
 
 	public ElementUtils(WebDriver driver) {
-		this.driver = DriverManager.getDriver();
+		this.driver = driver;
 		this.wait	= new WebDriverWait(
 				driver, 
 				Duration.ofSeconds(AppConstants.DEFAULT_EXPLICIT_WAIT)
@@ -51,11 +51,11 @@ public class ElementUtils {
 		    	getElement(locator).click();
 		        return;
 		    } catch (ElementClickInterceptedException e) {
-		    	logger.warn("Click intercepted. Retrying...");
+		    	logger.warn("Click intercepted. Retrying...  Attempt {}/3");
 		    	continue;
 		    }
 		}
-		logger.error("Click faile. Trying js click " + locator);
+		logger.error("Click failed. Using JS click fallback: {} " + locator);
 		jsClick(locator);
 	}
 	
@@ -87,15 +87,15 @@ public class ElementUtils {
 	// Get elements text
 	public List<String>  getElementsText(By locator) {
 		List<String>  textList = new ArrayList<>();
-		for(WebElement element : getElements(locator)) {
+		for(WebElement element : waitForVisibilityOfAll(locator)) {
 			textList.add(element.getText());
 		}
 		return textList;
-	}
+	} 
 	
 	// Is displayed
 	public boolean isDisplayed(By locator) {
-		return isPresent(locator) && getElement(locator).isDisplayed();
+		return isPresent(locator) && waitForVisibility(locator).isDisplayed();
 	}
 	
     // Is Element Present
@@ -111,7 +111,7 @@ public class ElementUtils {
     
     // Count elements
     public int getCount(By locator) {
-        return getElements(locator).size();
+        return getElements(locator).size(); 
     }
     
     // Wait for presence (not visible)
@@ -122,6 +122,12 @@ public class ElementUtils {
     // Wait for visibility
     public WebElement waitForVisibility(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    
+    public List<WebElement> waitForVisibilityOfAll(By locator) {
+        return wait.until(
+            ExpectedConditions.visibilityOfAllElementsLocatedBy(locator)
+        );
     }
     
     // Wait for clickable
