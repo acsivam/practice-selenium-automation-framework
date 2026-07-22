@@ -51,7 +51,7 @@ public class ElementUtils {
 		    	waitForClickable(locator).click();
 		        return;
 		    } catch (ElementClickInterceptedException e) {
-		    	logger.warn("Click intercepted. Retrying...  Attempt {}/3", i);
+		    	logger.warn("Click intercepted. Retrying...  Attempt {}/3");
 		    	continue;
 		    }
 		}
