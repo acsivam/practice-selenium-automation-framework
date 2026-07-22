@@ -7,6 +7,7 @@ import com.automation.base.BaseComponent;
 import com.automation.pages.AccountDeletedPage;
 import com.automation.pages.CartPage;
 import com.automation.pages.ContactUsPage;
+import com.automation.pages.HomePage;
 import com.automation.pages.LoginPage;
 import com.automation.pages.ProductsPage;
 import com.automation.pages.TestCasesPage;
@@ -19,7 +20,7 @@ public class TopMenuComponent extends BaseComponent{
 	
 	
 	private By topMenu				= By.cssSelector(".nav.navbar-nav");
-	private By homeMenu				= By.xpath("//a[normalize-space()='Home']'");
+	private By homeMenu				= By.xpath("//a[normalize-space()='Home']");
 	private By productsMenu			= By.xpath("//a[@href='/products']");
 	private By cartMenu				= By.xpath("/html[1]/body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]");
 	private By loginMenu			= By.xpath("//a[normalize-space()='Signup / Login']");
@@ -37,8 +38,9 @@ public class TopMenuComponent extends BaseComponent{
 		return eleUtil.waitForVisibility(topMenu).isDisplayed();
 	}
 	
-	public void goToHomePage() {
+	public HomePage goToHomePage() {
 		eleUtil.click(homeMenu);
+		return new HomePage(driver);
 	}
 	
 	public ProductsPage goToProductsPage() {

@@ -19,4 +19,11 @@ OrderAssertions
     hasSuccessMessage()
     hasOrderNumber()
     hasTotalAmount()
+ *
+ * 
+✓ Should display payment page
+✓ Should allow entering dummy payment details
+✓ Should complete payment successfully
+ * 
+ * 
  * */

@@ -231,9 +231,58 @@ public class TestDataFactory {
 		return new User("Mr", "John", "johnwilliam@gmail.com", "Test1234", 
 				"8", "August", "1999", 
 				true, false, "John", "William", "Boring & Company", 
-				"120 Main Road", "Galaxy Gateway", "India", 
+				"120 Main Road", "Galaxy Gateway", "Australia", 
 				"ABC State", "C City", "AB 1234", "777123456");
-		}
+
+	}
+	
+	public static User checkoutUser() {
+		
+		return new User("Mr", "Mark", "mark.william@gmail.com", "Test1234", 
+				"8", "August", "1999", 
+				true, false, "Mark", "William", "Boring & Company", 
+				"120 Main Road", "Galaxy Gateway", "Australia", 
+				"ABC State", "C City", "AB 1234", "777123456");
+
+	}
+	
+	public static User paymentUser() {
+		
+		return new User("Mr", "Nathan", "nathan.william@gmail.com", "Test1234", 
+				"8", "August", "1999", 
+				true, false, "Nathan", "William", "Boring & Company", 
+				"120 Main Road", "Galaxy Gateway", "Australia", 
+				"ABC State", "C City", "AB 1234", "777123456");
+
+	}
+	
+	
+	public static User checoutUser01() {
+		
+		return new User("Mr", "George", "george.william@gmail.com", "Test1234", 
+				"8", "August", "1999", 
+				true, false, "George", "William", "Boring & Company", 
+				"120 Main Road", "Galaxy Gateway", "Australia", 
+				"ABC State", "C City", "AB 1234", "777123456");
+
+	}
+	
+	public static User checoutUser02() {
+		
+		return new User("Mr", "Louise", "louise.william@gmail.com", "Test1234", 
+				"8", "August", "1999", 
+				true, false, "Louise", "William", "Boring & Company", 
+				"120 Main Road", "Galaxy Gateway", "Australia", 
+				"ABC State", "C City", "AB 1234", "777123456");
+
+	}
+	/*
+			return new User("Mr", "John", "johnwilliam@yahoo.com", "Test1234", 
+				"8", "August", "1999", 
+				true, false, "John", "William", "Harbour", 
+				"Main Road", "Highway", "Australia", 
+				"WA", "Perth", "1234", "23432423");
+	} */
 	//------------------------------------------------------------------
 	
 	public static Product bluetop() {

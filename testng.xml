@@ -13,6 +13,7 @@
    			<class name="com.automation.tests.CartTests"/>
       		<class name="com.automation.tests.RegisterUserTest"/>
       		<class name="com.automation.tests.ProductTests"/>
+      		<class name="com.automation.tests.CheckoutTests"/>
 	      		<methods>
 	      			<!--exclude name="verifyValidEmailTakesUserToSignupPage()"/-->
 	    			<!--exclude name="verifyCreateAccountError()"/-->

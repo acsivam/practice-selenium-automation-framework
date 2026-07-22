@@ -24,7 +24,7 @@ public class ProductAssertions {
 	public ProductAssertions(ProductContainer productContainer) {
 		this.prodContainer = productContainer;
 	}
-	
+	 
 	public ProductAssertions(ProductImage productImg) {
 		this.productImg = productImg;
 	}

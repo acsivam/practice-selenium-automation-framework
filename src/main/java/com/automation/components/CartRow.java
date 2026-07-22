@@ -28,7 +28,7 @@ public class CartRow extends BaseComponent {
 	private final By total 			= By.cssSelector(".cart_total_price");
 	private final By removeButton	= By.cssSelector(".cart_quantity_delete");
 	
-	
+	 
 	@Override
 	public boolean isDisplayed() {
 	    return row.isDisplayed();

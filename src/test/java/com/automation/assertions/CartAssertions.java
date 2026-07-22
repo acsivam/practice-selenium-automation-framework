@@ -26,7 +26,7 @@ public class CartAssertions {
     public CartAssertions(CartTable cartTable) {
         this.cartTable = cartTable;
     }
-	
+	 
     public CartAssertions(CartPage cartPage) {
         this.cartPage = cartPage;
     }

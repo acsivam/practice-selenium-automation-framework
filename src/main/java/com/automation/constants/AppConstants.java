@@ -3,6 +3,8 @@ package com.automation.constants;
 public class AppConstants {
 	
 	private AppConstants() {}
+	
+	public static final String BASE_URL = "https://automationexercise.com";
 
 	// ******** Framework Constants // ********
 	public static final int DEFAULT_TIMEOUT = 5; 

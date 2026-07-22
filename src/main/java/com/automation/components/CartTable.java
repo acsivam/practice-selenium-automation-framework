@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,23 +25,26 @@ public class CartTable extends BaseComponent{
 	}
 
 	private By table 		= By.id("cart_info");
-	private By headers 		= By.cssSelector("thead th");
-	private By rows 		= By.cssSelector("#cart_info_table tbody tr"); //By.cssSelector("tbody tr[id^='product-']");
-	private By grandTotal 	= By.xpath("//h4/b[text()='Total Amount']/../../following-sibling::td//p");
+	private By headers 		= By.cssSelector("#cart_info thead td:not(:empty)");
+	private By rows 		= By.cssSelector("#cart_info tbody tr[id^='product-']");; //By.cssSelector("tbody tr[id^='product-']");
+	private By grandTotal 	= By.cssSelector("#cart_info .cart_total_price");// By.xpath("//h4/b[text()='Total Amount']/../../following-sibling::td//p");
 	private By emptyCart    = By.id("empty_cart");
 	
 	
-	@Override
+	@Override 
     public boolean isDisplayed() { 
     	return eleUtil.waitForVisibility(table).isDisplayed();
     }
-
+ 
 	public boolean isHeaderDisplayed() {
 		return eleUtil.isDisplayed(headers);
 	}
 	
 	public List<String> getHeaders() {
-		return eleUtil.getElementsText(headers);
+		return eleUtil.getElementsText(headers)
+				.stream()
+				.filter(header -> !header.isBlank())
+				.collect(Collectors.toList());
 	}
 	
     public int getProductCount() {
@@ -116,4 +120,7 @@ public class CartTable extends BaseComponent{
     public String getGrandTotal() {
     	return eleUtil.getText(grandTotal);
     }
+    
+    
 }
+

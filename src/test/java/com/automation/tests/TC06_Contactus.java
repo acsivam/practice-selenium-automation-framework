@@ -4,11 +4,33 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automation.base.BaseTest;
+import com.automation.models.User;
 import com.automation.pages.ContactUsPage;
 import com.automation.pages.HomePage;
+import com.automation.testdata.TestDataFactory;
 
 public class TC06_Contactus extends BaseTest{
+	
+	private HomePage homePage;
+	@Test
+	public void createUser() {
+		
+		User user = TestDataFactory.validCreateAccountUser();
+		homePage = new HomePage(driver);
+		
+		homePage
+			.getTopMenu()
+			.goToLoginPage()
+			.getSignupForm()
+			.signup(user)
+			.createAccount(user)
+			.clickContinue()
+			.getTopMenu()
+			.logout();
+	}
 	/*/
+	 * 
+	 * 
 	@Test
 	public void verifyUserCanSubmitMessage() {
 		HomePage homePage = new HomePage(driver);

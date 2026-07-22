@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BasePage;
+import com.automation.components.CartRow;
 import com.automation.components.CartTable;
 import com.automation.components.CheckoutModal;
 import com.automation.components.EmptyCart;
@@ -51,6 +52,15 @@ public class CartPage extends BasePage{
 	public CheckoutModal proceedToCheckoutAsGuest() {
 	    eleUtil.click(proceedToCheckoutButton);
 	    return new CheckoutModal(driver);
+	}
+	
+	public CartPage clearCart() {
+
+	    for (CartRow row : cartTable.getCartRows()) {
+	        row.remove();
+	    }
+
+	    return this;
 	}
     /*
     

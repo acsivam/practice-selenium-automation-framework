@@ -7,14 +7,14 @@ import com.automation.base.BaseComponent;
 
 public class CheckoutInformation extends BaseComponent {
 
-	private DeliveryAddressComponent deliveryAddress;
-	private BillingAddressComponent billingAddress;
+	private DeliveryAddress deliveryAddress;
+	private BillingAddress billingAddress;
 	
     public CheckoutInformation(WebDriver driver) {
         super(driver);
         
-        this.deliveryAddress = new DeliveryAddressComponent(driver);
-        this.billingAddress  = new BillingAddressComponent(driver);
+        this.deliveryAddress = new DeliveryAddress(driver);
+        this.billingAddress  = new BillingAddress(driver);
     }
 
     private By checkoutInfoContainer	= By.cssSelector("[data-qa='checkout-info']");
@@ -24,12 +24,12 @@ public class CheckoutInformation extends BaseComponent {
     	return eleUtil.waitForVisibility(checkoutInfoContainer).isDisplayed();
     }
     
-    public DeliveryAddressComponent getDeliveryAddress() {
+    public DeliveryAddress getDeliveryAddress() {
         return deliveryAddress;
     }
 
 
-    public BillingAddressComponent getBillingAddress() {
+    public BillingAddress getBillingAddress() {
         return billingAddress;
     }
 }

@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 
 import com.automation.base.BaseComponent;
 
-public class OrderCommentComponent extends BaseComponent{	
+public class OrderComment extends BaseComponent{	
 	
-	public OrderCommentComponent(WebDriver driver) {
+	public OrderComment(WebDriver driver) {
 		super(driver);
 	}
 
@@ -32,6 +32,6 @@ public class OrderCommentComponent extends BaseComponent{
 	}
 
 	public String getComment() {
-		return eleUtil.getText(commentField);
+		return eleUtil.getAttribute(commentField, "value");
 	}
 }

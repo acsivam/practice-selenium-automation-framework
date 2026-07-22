@@ -6,27 +6,28 @@ import org.openqa.selenium.WebDriver;
 import com.automation.base.BasePage;
 import com.automation.components.CartTable;
 import com.automation.components.CheckoutInformation;
-import com.automation.components.OrderCommentComponent;
+import com.automation.components.OrderComment;
 import com.automation.constants.AppConstants;
 
 public class CheckoutPage extends BasePage{
 	
 	private CartTable cartTable;
 	private CheckoutInformation checkoutInfo;
-    private OrderCommentComponent orderComment;
+    private OrderComment orderComment;
 	
 	public CheckoutPage(WebDriver driver) {
 		super(driver);
 		this.cartTable 		= new CartTable(driver);
 		this.checkoutInfo 	= new CheckoutInformation(driver);
+		this.orderComment	= new OrderComment(driver);
 	}
 	
-	
-	//private By reviewOrderHeading	= By.xpath("//h2[normalize-space()='Review Your Order']");
-	private By placeOderButton		= By.xpath("//a[@class='btn btn-default check_out']");
+	//
+	private By addressdetailsHeading 	= By.xpath("//h2[normalize-space()='Address Details']");
+	private By reviewOrderHeading		= By.xpath("//h2[normalize-space()='Review Your Order']");
+	private By placeOderButton			= By.xpath("//a[@class='btn btn-default check_out']");
 	
 	 
-	
 	public CartTable getCartTable() {
 		return cartTable;
 	}
@@ -35,8 +36,24 @@ public class CheckoutPage extends BasePage{
 		return checkoutInfo;
 	}
 	
-	public OrderCommentComponent getOrderCommentSection() {
+	public OrderComment getOrderCommentSection() {
 		return orderComment;
+	}
+	
+	public boolean isAddresDetailsHeadingDisplayed() {
+		return eleUtil.waitForVisibility(addressdetailsHeading).isDisplayed();
+	}
+	
+	public String getAddressDetailsHeading() {
+		return eleUtil.getText(addressdetailsHeading);
+	}
+	
+	public boolean isRevieworderHeadingDisplayed() {
+		return eleUtil.waitForVisibility(reviewOrderHeading).isDisplayed();
+	}
+	
+	public String getReviewOrdersHeading() {
+		return eleUtil.getText(reviewOrderHeading);
 	}
 	
 	public PaymentPage placeOder() {
@@ -48,11 +65,5 @@ public class CheckoutPage extends BasePage{
 		return getCurrentUrl().contains(AppConstants.CHECKOUT_PAGE_PATH)
 				&& getCheckoutInformation().isDisplayed();
 	}
-	
-	/*
-	public List<String> getDelliveryAddress(){
-		return eleUtil.getElementsText(deliveryAddressLines);
-	}
-	*/
 }
 

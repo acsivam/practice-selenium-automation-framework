@@ -17,7 +17,7 @@ public class CartItem {
     
     
     public Product getProduct() {
-    	return product;
+    	return product; 
     }
     
 	public void setProduct(Product product) {
