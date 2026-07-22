@@ -48,10 +48,10 @@ public class ElementUtils {
 	public void click(By locator) {
 		for (int i = 0; i < 3; i++) {
 		    try {
-		    	getElement(locator).click();
+		    	waitForVisibility(locator).click();
 		        return;
 		    } catch (ElementClickInterceptedException e) {
-		    	logger.warn("Click intercepted. Retrying...  Attempt {}/3");
+		    	logger.warn("Click intercepted. Retrying...  Attempt {}/3", i);
 		    	continue;
 		    }
 		}
