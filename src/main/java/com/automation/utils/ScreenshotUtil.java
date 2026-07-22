@@ -17,11 +17,28 @@ public class ScreenshotUtil {
     public static String captureScreenshot(WebDriver driver, String testName) {
     	
     	logger.info("Capturing screenshot for: " + testName);
-        String screenshotPath = System.getProperty("user.dir") 
-        		+ "./screenshots/" 
-        		+ testName 
-        		+ ".png";
+    	
+    	File screenshotDir = new File(
+    	        System.getProperty("user.dir") + "/screenshots"
+    			);
 
+    	if (!screenshotDir.exists()) {
+    	    screenshotDir.mkdirs();
+    	}
+    	
+    	String screenshotPath = screenshotDir.getAbsolutePath()
+    	        + "/"
+    	        + testName
+    	        + ".png";
+    	
+    	/*
+        String screenshotPath = System.getProperty("user.dir") 
+        		+ File.separator
+                + "screenshots" //+ "./screenshots/" 
+                + File.separator
+                + testName
+                + ".png";
+		*/
         TakesScreenshot ts = (TakesScreenshot) driver;
 
         File source = ts.getScreenshotAs(OutputType.FILE);
@@ -37,3 +54,4 @@ public class ScreenshotUtil {
         return screenshotPath;
     }
 }
+ 

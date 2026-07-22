@@ -25,7 +25,7 @@ public class ExtentReportListener implements ITestListener {
 
     }
 
-    @Override
+    @Override 
     public void onTestSuccess(ITestResult result) {
 
         extendTest.pass("Test Passed");
@@ -47,7 +47,7 @@ public class ExtentReportListener implements ITestListener {
                 		DriverManager.getDriver(),
                         result.getMethod().getMethodName()
                 );
-        System.out.println("Driver in listener: " + DriverManager.getDriver());
+        // System.out.println("Driver in listener: " + DriverManager.getDriver());
         extendTest.addScreenCaptureFromPath(screenshotPath, "Failed Screenshot");
     }
 
